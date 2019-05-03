@@ -1,0 +1,3076 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">Connection | buildthing-beacon-sdk</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<meta name="description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="buildthing-beacon-sdk"><meta property="twitter:description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core">core</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon-parser.js~BeaconParser.html">BeaconParser</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/ble.js~BLE.html">BLE</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html">EventEmitter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-getBLELibrary">getBLELibrary</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-Util">Util</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#core-beacon">core/beacon</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/buildthing-beacon.js~BuildThingBeacon.html">BuildThingBeacon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/eddystone-tlm.js~EddyStoneTLM.html">EddyStoneTLM</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/eddystone-uid.js~EddyStoneUID.html">EddyStoneUID</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/eddystone-url.js~EddyStoneURL.html">EddyStoneURL</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/eddystone.js~EddyStone.html">EddyStone</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/core/beacon/ibeacon.js~iBeacon.html">iBeacon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Accelerometer">Accelerometer</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Sensor">Sensor</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-TVOC">TVOC</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Temperature_Humidity">Temperature_Humidity</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-typedef">T</span><span data-ice="name"><span><a href="typedef/index.html#static-typedef-Vbatt">Vbatt</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service">service</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/connection.js~Connection.html">Connection</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/manager.js~Manager.html">Manager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/monitoring.js~Monitoring.html">Monitoring</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/monitoring.js~MonitoringData.html">MonitoringData</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/monitoring.js~RegionMonitoringState.html">RegionMonitoringState</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~RangedBeacon.html">RangedBeacon</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~Ranging.html">Ranging</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~RegionRangeState.html">RegionRangeState</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/region.js~Region.html">Region</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/scanner.js~Scanner.html">Scanner</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service-calculator">service/calculator</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/calculator/curve-fitted.js~CurveFittedDistanceCalculator.html">CurveFittedDistanceCalculator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/calculator/distance-config.js~DistanceConfig.html">DistanceConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/calculator/log-distance-path.js~LogDistancePathDistanceCalculator.html">LogDistancePathDistanceCalculator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/service/calculator/base.js~DistanceCalculator.html">DistanceCalculator</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#service-filter">service/filter</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/filter/arma.js~ArmaRssiFilter.html">ArmaRssiFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/filter/base.js~Measurement.html">Measurement</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/filter/kalman.js~KalmanRssiFilter.html">KalmanRssiFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/filter/running-average.js~RunningAverageRssiFilter.html">RunningAverageRssiFilter</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-interface">I</span><span data-ice="name"><span><a href="class/src/service/filter/base.js~RssiFilter.html">RssiFilter</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="header-notice">
+  <!-- <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode"></code></pre></div> -->
+  <div data-ice="importPath" class="import-path">
+    <pre class="prettyprint">
+      <code>import { <span data-ice="name">Connection</span> } form &apos;buildthing-ble-sdk&apos;</code>
+    </pre>
+  </div>
+  <a data-ice="dirPath"></a>
+
+  <span data-ice="access">public</span>
+  <span data-ice="kind">class</span>
+  
+  
+  
+  <span data-ice="source">| <span><a href="file/src/service/connection.js.html#lineNumber75">source</a></span></span>
+</div>
+
+<div class="self-detail detail">
+  <h1 data-ice="name">Connection</h1>
+
+  
+
+  
+  
+  <div class="flat-list" data-ice="extendsChain"><h4>Extends:</h4><div><span><a href="class/src/core/event-emitter.js~EventEmitter.html">EventEmitter</a></span> &#x2192; Connection</div></div>
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+</div>
+
+
+<div data-ice="staticMethodSummary"><h2>Static Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Static Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#static-method-getBLELibrary">getBLELibrary</a></span></span><span class="code" data-ice="signature">(): <span><a href="class/src/core/ble.js~BLE.html">BLE</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xC911;&#xC778; &#xBE44;&#xCF58; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#static-method-getTimeout">getTimeout</a></span></span><span class="code" data-ice="signature">(timeout: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC2DC; &#xBBF8; &#xC751;&#xB2F5;&#xC5D0; &#xB300;&#xD55C; Timeout &#xAC12;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.(&#xB2E8;&#xC704; : ms)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#static-method-setBLELibrary">setBLELibrary</a></span></span><span class="code" data-ice="signature">(coreBle: <span><a href="class/src/core/ble.js~BLE.html">BLE</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      <span data-ice="static">static</span>
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#static-method-setTimeout">setTimeout</a></span></span><span class="code" data-ice="signature">(timeout: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC2DC; &#xBBF8; &#xC751;&#xB2F5;&#xC5D0; &#xB300;&#xD55C; Timeout &#xAC12;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.(&#xB2E8;&#xC704; : ms)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="constructorSummary"><h2>Constructor Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Constructor</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xBE44;&#xCF58;&#xACFC; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xCD08;&#xAE30;&#xD654;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="memberSummary"><h2>Member Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Members</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-member-beacon">beacon</a></span></span><span class="code" data-ice="signature">: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158; &#xD560; &#xBE44;&#xCF58;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-member-isConnected">isConnected</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xC5F0;&#xACB0; &#xC0C1;&#xD0DC;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-member-isTimeout">isTimeout</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<div data-ice="methodSummary"><h2>Method Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3">Public Methods</td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeAdvertisingInterval">changeAdvertisingInterval</a></span></span><span class="code" data-ice="signature">(interval: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Advertising &#xC8FC;&#xAE30;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ &#xB2E8;&#xC704;&#xB294; 100ms&#xB85C; 1~102&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeInstanceID">changeInstanceID</a></span></span><span class="code" data-ice="signature">(instanceId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Instance ID &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(6byte)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeMajor">changeMajor</a></span></span><span class="code" data-ice="signature">(major: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Major &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)
+ 0~65535&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeMinor">changeMinor</a></span></span><span class="code" data-ice="signature">(minor: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Minor &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)
+ 0~65535&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeMode">changeMode</a></span></span><span class="code" data-ice="signature">(mode: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeName">changeName</a></span></span><span class="code" data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(8byte)
+ &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;&#xC740; 8&#xBC14;&#xC774;&#xD2B8; &#xC774;&#xD558;&#xB85C; &#xC785;&#xB825;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeNameSpaceID">changeNameSpaceID</a></span></span><span class="code" data-ice="signature">(namespaceId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Namespace ID &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(10byte)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changePassword">changePassword</a></span></span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC5F0;&#xACB0; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(6byte)
+ &#xBC18;&#xB4DC;&#xC2DC; 6&#xC790;&#xB9AC;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeSchemePrefix">changeSchemePrefix</a></span></span><span class="code" data-ice="signature">(scheme: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Scheme Prefix &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeSensorInterval">changeSensorInterval</a></span></span><span class="code" data-ice="signature">(interval: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; &#xC13C;&#xC11C; &#xAC31;&#xC2E0; &#xC8FC;&#xAE30;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ 2~255&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeTxPower">changeTxPower</a></span></span><span class="code" data-ice="signature">(txPower: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Tx Power &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ 1 : -20dBm
+ 2 : -16dBm
+ 3 : -12dBm
+ 4 : -8dBm
+ 5 : -4dBm
+ 6 : 0dBm
+ 7 : 4dBm</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-changeUrl">changeUrl</a></span></span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; URL &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(17byte)</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-connect">connect</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC5D0; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xC2DC;&#xB3C4;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-disconnect">disconnect</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC5D0; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xD574;&#xC81C;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-isConnectedBeacon">isConnectedBeacon</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xD604;&#xC7AC; &#xBE44;&#xCF58;&#xC758; &#xC5F0;&#xACB0; &#xC0C1;&#xD0DC;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-isValidPassword">isValidPassword</a></span></span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC5F0;&#xACB0; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-read">read</a></span></span><span class="code" data-ice="signature">(characteristicUUID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC758; &#xD2B9;&#xC815; Characteristic Service&#xC5D0;&#xC11C; &#xAC12;&#xC744; &#xC77D;&#xB294; &#xD568;&#xC218;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-setPassword">setPassword</a></span></span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158;&#xC2DC; &#xC0AC;&#xC6A9;&#xD560; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-wrapConnectionCallback">wrapConnectionCallback</a></span></span><span class="code" data-ice="signature">()</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xD0C0;&#xC785;&#xBCC4;&#xB85C; &#xCEE4;&#xB125;&#xC158; &#xC2DC; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xCF5C;&#xBC31;&#xC744; &#xC5F0;&#xACB0;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-wrapRWCallback">wrapRWCallback</a></span></span><span class="code" data-ice="signature">(characteristics: <span><span>Characteristic</span><span>[]</span></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158; &#xD6C4; read, write, notify, stopNotify &#xCF5C;&#xBC31;&#xC744; &#xB4F1;&#xB85D;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/service/connection.js~Connection.html#instance-method-write">write</a></span></span><span class="code" data-ice="signature">(data: <span>Buffer</span>, isWithoutResponse: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xD604;&#xC7AC; &#xC5F0;&#xACB0;&#xB41C; &#xBE44;&#xCF58;&#xC758; Write Characteristic&#xC744; &#xD1B5;&#xD574; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC785;&#xB825;&#xD55C;&#xB2E4;.</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+<div class="inherited-summary" data-ice="inheritedSummary"><h2>Inherited Summary</h2><table class="summary" data-ice="summary">
+  <thead><tr><td data-ice="title" colspan="3"><span class="toggle closed"></span> From class <span><a href="class/src/core/event-emitter.js~EventEmitter.html">EventEmitter</a></span></td></tr></thead>
+  <tbody>
+  
+  <tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-member-events">events</a></span></span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>&#xB4F1;&#xB85D;&#xB41C; &#xC774;&#xBCA4;&#xD2B8; Set &#xC744; &#xC800;&#xC7A5; &#xD560; &#xAC1D;&#xCCB4;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-method-emit">emit</a></span></span><span class="code" data-ice="signature">(eventName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, args: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xCF1C; &#xD574;&#xB2F9; &#xC774;&#xBCA4;&#xD2B8;&#xC5D0; &#xB4F1;&#xB85D;&#xB41C; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C; &#xD638;&#xCD9C; &#xD558;&#xB294; &#xD568;&#xC218;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-method-off">off</a></span></span><span class="code" data-ice="signature">(eventName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, fn: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>&#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC774;&#xBCA4;&#xD2B8; &#xBA85; &#xACFC; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31;&#xD568;&#xC218; &#xD1B5;&#xD574;&#xC11C; &#xC774;&#xBCA4;&#xD2B8; Set &#xC5D0;&#xC11C; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C; &#xC81C;&#xAC70;&#xD558;&#xB294; &#xD568;&#xC218;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-method-on">on</a></span></span><span class="code" data-ice="signature">(eventName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, fn: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p> &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC774;&#xBCA4;&#xD2B8; &#xBA85;&#xC73C;&#xB85C;, &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C; &#xB4F1;&#xB85D;&#xD558;&#xB294; &#xD568;&#xC218;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+<tr data-ice="target">
+    <td>
+      <span class="access" data-ice="access">public</span>
+      
+      
+      
+      <span class="override" data-ice="override"></span>
+    </td>
+    <td>
+      <div>
+        <p>
+          
+          
+          
+          <span class="code" data-ice="name"><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-method-once">once</a></span></span><span class="code" data-ice="signature">(eventName: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>, fn: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span>)</span>
+        </p>
+      </div>
+      <div>
+        
+        
+        <div data-ice="description"><p>&#xC774;&#xBCA4;&#xD2B8;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C; &#xACBD;&#xC6B0; &#xD55C;&#xBC88;&#xB9CC; &#xD638;&#xCD9C;&#xB418;&#xB294; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218;&#xB97C; &#xB4F1;&#xB85D; &#xD558;&#xB294; &#xD568;&#xC218;</p>
+</div>
+      </div>
+    </td>
+    <td>
+      
+      
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+
+<div data-ice="staticMethodDetails"><h2 data-ice="title">Static Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-getBLELibrary">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">getBLELibrary</span><span class="code" data-ice="signature">(): <span><a href="class/src/core/ble.js~BLE.html">BLE</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber143">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xD604;&#xC7AC; &#xC0AC;&#xC6A9;&#xC911;&#xC778; &#xBE44;&#xCF58; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="class/src/core/ble.js~BLE.html">BLE</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-getTimeout">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">getTimeout</span><span class="code" data-ice="signature">(timeout: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span>*</span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber157">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC2DC; &#xBBF8; &#xC751;&#xB2F5;&#xC5D0; &#xB300;&#xD55C; Timeout &#xAC12;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.(&#xB2E8;&#xC704; : ms)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">timeout</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span>*</span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-setBLELibrary">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">setBLELibrary</span><span class="code" data-ice="signature">(coreBle: <span><a href="class/src/core/ble.js~BLE.html">BLE</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber136">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">coreBle</td>
+      <td data-ice="type" class="code"><span><a href="class/src/core/ble.js~BLE.html">BLE</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBE44;&#xCF58; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="static-method-setTimeout">
+    <span class="access" data-ice="access">public</span>
+    <span data-ice="static">static</span>
+    
+    
+    
+    
+    <span class="code" data-ice="name">setTimeout</span><span class="code" data-ice="signature">(timeout: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber150">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58; &#xC5F0;&#xACB0;&#xC2DC; &#xBBF8; &#xC751;&#xB2F5;&#xC5D0; &#xB300;&#xD55C; Timeout &#xAC12;&#xC744; &#xC124;&#xC815;&#xD55C;&#xB2E4;.(&#xB2E8;&#xC704; : ms)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">timeout</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"></td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="constructorDetails"><h2 data-ice="title">Public Constructors</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-constructor-constructor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber81">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xC804;&#xB2EC;&#xBC1B;&#xC740; &#xBE44;&#xCF58;&#xACFC; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB85C; &#xC0C8;&#xB85C;&#xC6B4; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xCD08;&#xAE30;&#xD654;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  <div data-ice="override"><h4>Override:</h4><span><a href="class/src/core/event-emitter.js~EventEmitter.html#instance-constructor-constructor">EventEmitter#constructor</a></span></div>
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">beacon</td>
+      <td data-ice="type" class="code"><span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xCEE4;&#xB125;&#xC158;&#xC744; &#xC0DD;&#xC131; &#xD560; &#xBE44;&#xCF58; &#xAC1D;&#xCCB4;</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">password</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: &quot;000000&quot;</li></ul></td>
+      <td data-ice="description"><p>&#xCEE4;&#xB125;&#xC158; &#xD6C4; &#xB370;&#xC774;&#xD130; &#xAD50;&#xD658;&#xC5D0; &#xD544;&#xC694;&#xD55C; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-beacon">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">beacon</span><span class="code" data-ice="signature">: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber99">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158; &#xD560; &#xBE44;&#xCF58;</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-isConnected">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">isConnected</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber110">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xC5F0;&#xACB0; &#xC0C1;&#xD0DC;</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-member-isTimeout">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">isTimeout</span><span class="code" data-ice="signature">: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber111">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+<div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
+
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeAdvertisingInterval">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeAdvertisingInterval</span><span class="code" data-ice="signature">(interval: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber678">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Advertising &#xC8FC;&#xAE30;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ &#xB2E8;&#xC704;&#xB294; 100ms&#xB85C; 1~102&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
+ &#xCD5C;&#xC19F;&#xAC12;&#xBCF4;&#xB2E4; &#xC791;&#xC740; &#xAC12;&#xC744; &#xC785;&#xB825;&#xD560; &#xACBD;&#xC6B0; 1, &#xCD5C;&#xB313;&#xAC12;&#xBCF4;&#xB2E4; &#xD070; &#xAC12;&#xC744; &#xC785;&#xB825;&#xD560; &#xACBD;&#xC6B0; 102&#xB85C; &#xC801;&#xC6A9;&#xB41C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">interval</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; Advertising &#xC8FC;&#xAE30;(100ms)</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeInstanceID">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeInstanceID</span><span class="code" data-ice="signature">(instanceId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber748">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Instance ID &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(6byte)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">instanceId</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; instanceId&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeMajor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeMajor</span><span class="code" data-ice="signature">(major: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber707">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Major &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)
+ 0~65535&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">major</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; &#xBE44;&#xCF58;&#xC758; major&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeMinor">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeMinor</span><span class="code" data-ice="signature">(minor: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber722">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Minor &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)
+ 0~65535&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">minor</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; &#xBE44;&#xCF58;&#xC758; minor&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeMode">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeMode</span><span class="code" data-ice="signature">(mode: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber665">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;. &#xC13C;&#xC11C;&#xB97C; &#xBD80;&#xCC29;&#xC911;&#xC778; &#xACBD;&#xC6B0; &#xC13C;&#xC11C; &#xC81C;&#xAC70;&#xC2DC; &#xBCC0;&#xACBD;&#xB41C; &#xBAA8;&#xB4DC;&#xB85C; &#xD45C;&#xC2DC;&#xB41C;&#xB2E4;.(1byte)
+ 0 : BuildThing
+ 1 : iBeacon
+ 2 : Eddystone-UID
+ 3 : Eddystone-URL
+ 4 : Eddystone-TLM</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">mode</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBE44;&#xCF58;&#xC758; &#xC0C8;&#xB85C;&#xC6B4; &#xBAA8;&#xB4DC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeName">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeName</span><span class="code" data-ice="signature">(name: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber649">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC774;&#xB984;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(8byte)
+ &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;&#xC740; 8&#xBC14;&#xC774;&#xD2B8; &#xC774;&#xD558;&#xB85C; &#xC785;&#xB825;&#xD55C;&#xB2E4;.
+ 9&#xBC14;&#xC774;&#xD2B8; &#xC774;&#xC0C1; &#xC785;&#xB825;&#xD560; &#xACBD;&#xC6B0; 9&#xBC88;&#xC9F8; &#xC774;&#xD6C4;&#xC758; &#xBC14;&#xC774;&#xD2B8;&#xB294; &#xBB34;&#xC2DC;&#xB41C;&#xB2E4;.
+ 31&#xBC14;&#xC774;&#xD2B8; &#xCD08;&#xACFC;&#xC2DC; NO &#xC751;&#xB2F5;</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">name</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBE44;&#xCF58;&#xC758; &#xC0C8;&#xB85C;&#xC6B4; &#xC774;&#xB984;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeNameSpaceID">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeNameSpaceID</span><span class="code" data-ice="signature">(namespaceId: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber738">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Namespace ID &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(10byte)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">namespaceId</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; Eddystone-UID &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; namespaceId&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changePassword">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changePassword</span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber635">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC5F0;&#xACB0; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(6byte)
+ &#xBC18;&#xB4DC;&#xC2DC; 6&#xC790;&#xB9AC;&#xB85C; &#xC785;&#xB825;&#xD574;&#xC57C; &#xD55C;&#xB2E4;. &#xB2E4;&#xB97C; &#xACBD;&#xC6B0; NO &#xC751;&#xB2F5;</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">password</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeSchemePrefix">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeSchemePrefix</span><span class="code" data-ice="signature">(scheme: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber761">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; Scheme Prefix &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(2byte)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">scheme</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; scheme&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeSensorInterval">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeSensorInterval</span><span class="code" data-ice="signature">(interval: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber693">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; &#xC13C;&#xC11C; &#xAC31;&#xC2E0; &#xC8FC;&#xAE30;&#xB97C; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ 2~255&#xC758; &#xAC12;&#xC744; &#xC785;&#xB825; &#xAC00;&#xB2A5;&#xD558;&#xB2E4;.
+ Advertising &#xC8FC;&#xAE30;&#xC758; &#xBC30;&#xC218;&#xB85C; &#xC801;&#xC6A9;&#xC744; &#xAD8C;&#xC7A5;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">interval</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; &#xC13C;&#xC11C; &#xAC31;&#xC2E0; &#xC8FC;&#xAE30;(100ms)</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeTxPower">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeTxPower</span><span class="code" data-ice="signature">(txPower: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber789">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58;&#xC758; Tx Power &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(1byte)
+ 1 : -20dBm
+ 2 : -16dBm
+ 3 : -12dBm
+ 4 : -8dBm
+ 5 : -4dBm
+ 6 : 0dBm
+ 7 : 4dBm</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">txPower</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; &#xBE44;&#xCF58;&#xC758; txPower index&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-changeUrl">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">changeUrl</span><span class="code" data-ice="signature">(url: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber772">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; URL &#xAC12;&#xC744; &#xBCC0;&#xACBD;&#xD55C;&#xB2E4;.(17byte)</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">url</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD;&#xD560; Eddystone-URL &#xBE44;&#xCF58; &#xBAA8;&#xB4DC;&#xC758; url&#xAC12;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-connect">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">connect</span><span class="code" data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber463">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC5D0; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xC2DC;&#xB3C4;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  <div data-ice="emitWrap">
+    <h4>Emit:</h4>
+    <table>
+      <tbody>
+      
+      <tr class="emit" data-ice="emit">
+        <td><p data-ice="emitName"><span><a href="class/src/service/connection.js~Connection.html#instance-method-connect">connect</a></span></p></td>
+        <td data-ice="emitDesc"><p>&#xCEE4;&#xB125;&#xC158; &#xC131;&#xACF5;&#xC2DC; &#xCF5C;&#x3142;</p>
+</td>
+      </tr>
+</tbody>
+    </table>
+  </div>
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode"> var connection = new Connection(beacon)
+ connection.on(&apos;connect&apos;, (...args) =&gt; {
+   console.log(&apos;connected!&apos;)
+ })
+ connection.connect()</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-disconnect">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">disconnect</span><span class="code" data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber491">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC5D0; &#xCEE4;&#xB125;&#xC158;&#xC744; &#xD574;&#xC81C;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <div data-ice="example">
+    <h4>Example:</h4>
+    
+  <div class="example-doc" data-ice="exampleDoc">
+      
+      <pre class="prettyprint source-code"><code data-ice="exampleCode"> connection.on(&apos;disconnect&apos;, (...args) =&gt; {
+   console.log(&apos;disconnected!&apos;)
+ })
+ connection.disconnect()</code></pre>
+    </div>
+</div>
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isConnectedBeacon">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">isConnectedBeacon</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber185">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xD604;&#xC7AC; &#xBE44;&#xCF58;&#xC758; &#xC5F0;&#xACB0; &#xC0C1;&#xD0DC;&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-isValidPassword">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">isValidPassword</span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>): <span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber625">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> (Async)&#xBE44;&#xCF58; &#xC5F0;&#xACB0; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xD655;&#xC778;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">password</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xD655;&#xC778;&#xD560; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  <div class="return-params" data-ice="returnParams">
+    <h4>Return:</h4>
+    <table>
+      <tbody>
+        <tr>
+          <td class="return-type code" data-ice="returnType"><span><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">function</a></span><span>(beacon: <span><a href="class/src/core/beacon/beacon.js~Beacon.html">Beacon</a></span>, data: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span>)</span>: <span>Beacon, data</span></span></td>
+          
+        </tr>
+      </tbody>
+    </table>
+    <div data-ice="returnProperties">
+</div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-read">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">read</span><span class="code" data-ice="signature">(characteristicUUID: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber437">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xBE44;&#xCF58;&#xC758; &#xD2B9;&#xC815; Characteristic Service&#xC5D0;&#xC11C; &#xAC12;&#xC744; &#xC77D;&#xB294; &#xD568;&#xC218;</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">characteristicUUID</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xB370;&#xC774;&#xD130;&#xB97C; &#xC77D;&#xC5B4;&#xC62C; Characteristic Service UUID</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-setPassword">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">setPassword</span><span class="code" data-ice="signature">(password: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber616">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158;&#xC2DC; &#xC0AC;&#xC6A9;&#xD560; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;&#xB97C; &#xC124;&#xC815;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">password</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xBCC0;&#xACBD; &#xD560; &#xD328;&#xC2A4;&#xC6CC;&#xB4DC;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-wrapConnectionCallback">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">wrapConnectionCallback</span><span class="code" data-ice="signature">()</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber192">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xD0C0;&#xC785;&#xBCC4;&#xB85C; &#xCEE4;&#xB125;&#xC158; &#xC2DC; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xCF5C;&#xBC31;&#xC744; &#xC5F0;&#xACB0;&#xD55C;&#xB2E4;.
+ &#xD604;&#xC7AC;&#xB294; Cordova&#xB9CC; &#xC5F0;&#xACB0;, Noble&#xC740; Peripheral&#xC5D0;&#xC11C; &#xCEE4;&#xB125;&#xC158; &#xCF5C;&#xBC31;&#xC744; &#xC9C1;&#xC811; &#xAD00;&#xB9AC;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties">
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-wrapRWCallback">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">wrapRWCallback</span><span class="code" data-ice="signature">(characteristics: <span><span>Characteristic</span><span>[]</span></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber296">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xCEE4;&#xB125;&#xC158; &#xD6C4; read, write, notify, stopNotify &#xCF5C;&#xBC31;&#xC744; &#xB4F1;&#xB85D;&#xD55C;&#xB2E4;.
+ &#xD604;&#xC7AC;&#xB294; Cordova&#xC5D0;&#xC11C;&#xB9CC; &#xCF5C;&#xBC31;&#xC744; &#xB4F1;&#xB85D;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">characteristics</td>
+      <td data-ice="type" class="code"><span><span>Characteristic</span><span>[]</span></span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xCF5C;&#xBC31;&#xC744; &#xB4F1;&#xB85D;&#xD560; &#xBE44;&#xCF58;&#xC758; Characteristic &#xAC1D;&#xCCB4;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+<div class="detail" data-ice="detail">
+  <h3 data-ice="anchor" id="instance-method-write">
+    <span class="access" data-ice="access">public</span>
+    
+    
+    
+    
+    
+    <span class="code" data-ice="name">write</span><span class="code" data-ice="signature">(data: <span>Buffer</span>, isWithoutResponse: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>)</span>
+    <span class="right-info">
+      
+      
+      <span data-ice="source"><span><a href="file/src/service/connection.js.html#lineNumber408">source</a></span></span>
+    </span>
+  </h3>
+
+  
+  
+  
+  <div data-ice="description"><p> &#xD604;&#xC7AC; &#xC5F0;&#xACB0;&#xB41C; &#xBE44;&#xCF58;&#xC758; Write Characteristic&#xC744; &#xD1B5;&#xD574; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC785;&#xB825;&#xD55C;&#xB2E4;.</p>
+</div>
+
+  
+
+  <div data-ice="properties"><div data-ice="properties">
+  <h4 data-ice="title">Params:</h4>
+  <table class="params">
+    <thead>
+    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+    
+    <tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">data</td>
+      <td data-ice="type" class="code"><span>Buffer</span></td>
+      <td data-ice="appendix"></td>
+      <td data-ice="description"><p>&#xC785;&#xB825;&#xD560; &#xB370;&#xC774;&#xD130; &#xBC84;&#xD37C;</p>
+</td>
+    </tr>
+<tr data-ice="property" data-depth="0">
+      <td data-ice="name" class="code" data-depth="0">isWithoutResponse</td>
+      <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+      <td data-ice="appendix"><ul><li>optional</li>
+<li>default: false</li></ul></td>
+      <td data-ice="description"><p>Response &#xD638;&#xCD9C; &#xC5EC;&#xBD80;</p>
+</td>
+    </tr>
+</tbody>
+  </table>
+</div>
+</div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

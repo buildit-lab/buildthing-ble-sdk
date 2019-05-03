@@ -1,0 +1,64 @@
+[
+  {
+    "name": "Connection.getTimeout",
+    "filePath": "src/service/connection.js",
+    "lines": [
+      {
+        "lineNumber": 152
+      },
+      {
+        "lineNumber": 153
+      },
+      {
+        "lineNumber": 154
+      },
+      {
+        "lineNumber": 155
+      },
+      {
+        "lineNumber": 156
+      }
+    ],
+    "codeParams": [],
+    "docParams": [
+      "timeout"
+    ]
+  },
+  {
+    "name": "Monitoring#_emitUpdateState",
+    "filePath": "src/service/monitoring.js",
+    "lines": [
+      {
+        "lineNumber": 304
+      },
+      {
+        "lineNumber": 305
+      },
+      {
+        "lineNumber": 306
+      },
+      {
+        "lineNumber": 307
+      },
+      {
+        "lineNumber": 308
+      },
+      {
+        "lineNumber": 309
+      },
+      {
+        "lineNumber": 310
+      },
+      {
+        "lineNumber": 311
+      }
+    ],
+    "codeParams": [
+      "monitoringData",
+      "beacon"
+    ],
+    "docParams": [
+      "monitoringData"
+    ]
+  }
+]

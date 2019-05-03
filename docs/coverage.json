@@ -1,0 +1,202 @@
+{
+  "coverage": "89.15%",
+  "expectCount": 507,
+  "actualCount": 452,
+  "files": {
+    "src/core/beacon/beacon.js": {
+      "expectCount": 35,
+      "actualCount": 35,
+      "undocumentLines": []
+    },
+    "src/core/beacon/buildthing-beacon.js": {
+      "expectCount": 24,
+      "actualCount": 24,
+      "undocumentLines": []
+    },
+    "src/core/beacon/eddystone-tlm.js": {
+      "expectCount": 17,
+      "actualCount": 17,
+      "undocumentLines": []
+    },
+    "src/core/beacon/eddystone-uid.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "src/core/beacon/eddystone-url.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "src/core/beacon/eddystone.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/core/beacon/ibeacon.js": {
+      "expectCount": 18,
+      "actualCount": 18,
+      "undocumentLines": []
+    },
+    "src/core/beacon-parser.js": {
+      "expectCount": 41,
+      "actualCount": 41,
+      "undocumentLines": []
+    },
+    "src/core/ble-resolver.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/core/ble.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/core/event-emitter.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/core/util.js": {
+      "expectCount": 15,
+      "actualCount": 12,
+      "undocumentLines": [
+        4,
+        17,
+        199
+      ]
+    },
+    "src/service/calculator/base.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "src/service/calculator/curve-fitted.js": {
+      "expectCount": 8,
+      "actualCount": 6,
+      "undocumentLines": [
+        51,
+        60
+      ]
+    },
+    "src/service/calculator/distance-config.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        71
+      ]
+    },
+    "src/service/calculator/log-distance-path.js": {
+      "expectCount": 8,
+      "actualCount": 0,
+      "undocumentLines": [
+        10,
+        11,
+        12,
+        14,
+        15,
+        17,
+        18,
+        20
+      ]
+    },
+    "src/service/connection.js": {
+      "expectCount": 60,
+      "actualCount": 56,
+      "undocumentLines": [
+        43,
+        75,
+        111,
+        112
+      ]
+    },
+    "src/service/filter/arma.js": {
+      "expectCount": 10,
+      "actualCount": 0,
+      "undocumentLines": [
+        8,
+        10,
+        11,
+        13,
+        14,
+        16,
+        19,
+        27,
+        30,
+        33
+      ]
+    },
+    "src/service/filter/base.js": {
+      "expectCount": 13,
+      "actualCount": 13,
+      "undocumentLines": []
+    },
+    "src/service/filter/kalman.js": {
+      "expectCount": 12,
+      "actualCount": 0,
+      "undocumentLines": [
+        35,
+        36,
+        38,
+        39,
+        41,
+        42,
+        43,
+        47,
+        49,
+        60,
+        63,
+        66
+      ]
+    },
+    "src/service/filter/running-average.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "src/service/manager.js": {
+      "expectCount": 59,
+      "actualCount": 51,
+      "undocumentLines": [
+        21,
+        26,
+        31,
+        36,
+        40,
+        45,
+        118,
+        148
+      ]
+    },
+    "src/service/monitoring.js": {
+      "expectCount": 31,
+      "actualCount": 29,
+      "undocumentLines": [
+        37,
+        41
+      ]
+    },
+    "src/service/ranging.js": {
+      "expectCount": 51,
+      "actualCount": 51,
+      "undocumentLines": []
+    },
+    "src/service/region.js": {
+      "expectCount": 15,
+      "actualCount": 10,
+      "undocumentLines": [
+        50,
+        87,
+        98,
+        109,
+        120
+      ]
+    },
+    "src/service/scanner.js": {
+      "expectCount": 26,
+      "actualCount": 26,
+      "undocumentLines": []
+    }
+  }
+}
