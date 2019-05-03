@@ -1,0 +1,39 @@
+{
+  "name": "buildthing-beacon-sdk",
+  "version": "0.0.1",
+  "description": "Buildit Inc. Buildthing Beacon Cross Platform SDK",
+  "main": "./index.js",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "buildthing",
+    "ble",
+    "beacon",
+    "blutooth low energy"
+  ],
+  "author": "Buildit Inc.",
+  "license": "MIT",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.2.0",
+    "aws-sdk": "^2.400.0",
+    "esdoc-exclude-source-plugin": "^1.0.0",
+    "noble": "^1.9.1",
+    "noble-mac": "git+https://github.com/Timeular/noble-mac.git"
+  },
+  "optionalDependencies": {
+    "bluetooth-hci-socket": "git+https://github.com/sandeepmistry/node-bluetooth-hci-socket.git",
+    "buildthing-ble-sdk-usb": "^1.5.0"
+  },
+  "standard": {
+    "ignore": [
+      "dist/",
+      "webpack.*.js"
+    ],
+    "parser": "babel-eslint"
+  }
+}
