@@ -182,8 +182,9 @@ BuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertis
 
 ## Connection Service
 아래 Connection Service UUID를 통하여 BuildThing beacon Connection Service에 연결합니다.
+
 | 항목 | Service UUID |
-| ------ |------ |
+| ------ | ------ |
 | Connection Service | 6E400001-B5A3-F393-E0A9-E50E24DCCA9E |
 
 Connection이 완료되면 아래 2개의 Characteristic에 접근할 수 있습니다.
