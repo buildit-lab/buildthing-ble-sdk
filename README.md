@@ -72,7 +72,8 @@ $ npm install --global --production windows-build-tools
 Bluetooth 4.0 USB 어댑터를 위하여 [Zadig Tool](https://zadig.akeo.ie/)을 통해 [WinUSB](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/index) 드라이버를 설치합니다.
 WinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴얼](https://buildit.kr/dist/assets/BuildThing_beacon_Admin_App_User_Manual_v1.0_KR.pdf) 내 **Windows 지원 블루투스 장치 및 실행 가이드**를 참고합니다.
 
-Windows 블루투스 지원 장치는 아래와 같습니다.
+지원 Windows 블루투스 장치는 아래와 같습니다.
+
 | 장치 이름 | USB VID | USB PID |
 | ------ | ------ | ------ |
 | Qualcomm Athreos QCA61x4 | 0CF3 | E300 |
