@@ -145,7 +145,25 @@ $ npm install native-ext-loader
     }
 ```
 ### Webpack 미사용
-Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다
+Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.
+#### Mobile
+```
+// for Mobile (iOS, Android) (No Webpack Configuration)
+var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
+module.exports = BuildThingBLE
+```
+#### MacOS
+```
+// for MacOS (No Webpack Configuration)
+var BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')
+module.exports = BuildThingBLE
+```
+#### Windows
+```
+// for Windows (No Webpack Configuration)
+var BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')
+module.exports = BuildThingBLE
+```
 
 ## 예제 코드
 ```
@@ -204,6 +222,7 @@ Connection이 완료되면 아래 2개의 Characteristic에 접근할 수 있습
 ## 참고 사항
 ### 거리 계산 테스트
 비콘과 기기 간의 거리 계산에 대하여 테스트가 완료된 기기 모델은 아래와 같습니다.
+
 | 플랫폼 | 모델명 |
 | ------ | ------ |
 | iOS | iPhone8, iPhoneX, iPhoneXS, iPad 9.7 5세대 |
