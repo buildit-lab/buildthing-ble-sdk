@@ -4,11 +4,12 @@
 //타겟 플랫폼에 해당하는 모듈을 참조하는 라인의 주석을 해제하세요.
 // And then, Uncomment specific line of code about reference to the module that corresponds to the target platform.
 
-// var BuildThingBLE = require('buildthing-beacon-sdk')
-// for MacOS
+// for MacOS (No Webpack Configuration)
 // var BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')
-// for Windows
+// for Windows (No Webpack Configuration)
 //var BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')
-// for Mobile (iOS, Android)
-var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
+// for Mobile (iOS, Android) (No Webpack Configuration)
+//var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
+// for Webpack alias Configuration
+var BuildThingBLE = require('buildthing-beacon-sdk')
 module.exports = BuildThingBLE
