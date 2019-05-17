@@ -1,6 +1,6 @@
 {
   "name": "buildthing-beacon-sdk",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Buildit Inc. Buildthing Beacon Cross Platform SDK",
   "main": "./index.js",
   "scripts": {
@@ -17,15 +17,15 @@
   "author": "Buildit Inc.",
   "license": "MIT",
   "devDependencies": {
+    "esdoc-exclude-source-plugin": "^1.0.0"
   },
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "aws-sdk": "^2.400.0",
-    "esdoc-exclude-source-plugin": "^1.0.0",
-    "noble": "^1.9.1",
-    "noble-mac": "git+https://github.com/Timeular/noble-mac.git"
+    "noble": "^1.9.1"
   },
   "optionalDependencies": {
+    "noble-mac": "git+https://github.com/Timeular/noble-mac.git",
     "bluetooth-hci-socket": "git+https://github.com/sandeepmistry/node-bluetooth-hci-socket.git",
     "buildthing-ble-sdk-usb": "^1.5.0"
   },
@@ -35,5 +35,16 @@
       "webpack.*.js"
     ],
     "parser": "babel-eslint"
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://KimYeonBong@github.com/buildit-lab/buildthing-beacon-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/buildit-lab/buildthing-beacon-sdk/issues"
+  },
+  "homepage": "https://github.com/buildit-lab/buildthing-beacon-sdk#readme"
 }
