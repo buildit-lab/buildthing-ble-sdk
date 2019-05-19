@@ -14,7 +14,6 @@ SDK에서 제공하는 주요 기능들은 다음과 같습니다.
 ## 목차
 * [설치](#설치)
 * [사용 가이드](#사용-가이드)
-* [예제 코드](#예제-코드)
 * [API 문서](#API-문서)
 * [Scan Response](#Scan-Response)
 * [Advertising Packet](#Advertising-Packet)
@@ -30,26 +29,42 @@ $ npm install buildthing-beacon-sdk
 ```
 
 ## 사용 가이드
-iOS/Android Mobile 플랫폼은 Codrova 기반의 개발 환경(e.g : Ionic, PhoneGap 등)에서 사용 가능하며, MacOS/Windows Desktop 플랫폼은 Electron 기반의 개발 환경에서 사용 가능합니다.
+iOS/Android 등 Mobile 플랫폼은 Codrova 기반의 개발 환경(e.g : Ionic Framework, PhoneGap 등)에서 사용 가능하며, MacOS/Windows 등 Desktop 플랫폼은 Electron 기반의 개발 환경에서 사용 가능합니다.
+
 ### Mobile
-#### Cordova
-Cordova 기반의 개발 환경은 Cordova 프로젝트 루트 디렉토리에서 아래와 같은 Cordova cli 를 통해 의존 Cordova 플러그인들을 설치 해야 합니다.
-##### 설치
-###### cordova-plugin-ble-central
+#### 의존 Cordova Plugin 설치
+Ionic Framework, Phonegap 등 Cordova 기반의 개발 환경은 아래와 같이 프로젝트 Root 디렉토리에서 Cordova CLI 를 통해 의존 Cordova 플러그인들을 설치 해야합니다.
+##### cordova-plugin-ble-central
 BLE 통신을 위한 플러그인 입니다.
 ```sh
+# Cordova
 $ cordova plugin add cordova-plugin-ble-central
+# PhoenGap
+$ phonegap cordova plugin add cordova-plugin-ble-central
+# Ionic Framework
+$ ionic cordova plugin add cordova-plugin-ble-central
 ```
-###### cordova-plugin-background-mode
+##### cordova-plugin-background-mode
 백그라운드 모드 스캔을 지원하기 위한 플러그인 입니다.
 ```sh
+# Cordova
 $ cordova plugin add cordova-plugin-background-mode
+# PhoneGap
+$ phonegap cordova plugin add cordova-plugin-background-mode
+# Ionic Framework
+$ ionic cordova plugin add cordova-plugin-background-mode
 ```
-###### cordova-custom-config
-iOS는 백그라운드 모드 스캔을 사용하기위해서 아래과 같이 cordova-custom-config 플러그인을 추가하고 config.xml에 UIBackgroundModes 관련 설정을 추가해야 합니다.
+##### cordova-custom-config
+iOS는 백그라운드 모드 스캔을 사용하기 위해서 아래과 같이 cordova-custom-config 플러그인을 추가하고 config.xml에 UIBackgroundModes 관련 설정을 추가합니다.
 ```sh
-$ cordova plugin add cordova-plugin-background-mode
+# Cordova
+$ cordova plugin add cordova-custom-config
+# PhoneGap
+$ phonegap cordova plugin add cordova-custom-config
+# Ionic Framework
+$ ionic cordova plugin add cordova-custom-config
 ```
+###### config.xml
 ```sh
 <platform name="ios">
   <allow-intent href="itms:*" />
@@ -60,6 +75,131 @@ $ cordova plugin add cordova-plugin-background-mode
     </array>
   </config-file>
 </platform>
+```
+#### Cordova / PhoneGap
+##### index.js
+아래와 같이 buildthing-beacon-sdk 모듈을 사용합니다. `deviceready 이벤트 함수 (cordova 정의 이벤트) 호출된 이후에 사용해야 정상적으로 동작합니다.`
+```
+const { Manager } = require('buildthing-beacon-sdk')
+
+var app = {
+   // Application Constructor
+   initialize: function() {
+     this.bleManager = null
+     this.bindEvents();
+   },
+   // Bind Event Listeners
+   //
+   // Bind any events that are required on startup. Common events are:
+   // 'load', 'deviceready', 'offline', and 'online'.
+   bindEvents: function() {
+       document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+   },
+   // deviceready Event Handler
+   //
+   onDeviceReady: function() {
+       this.receivedEvent('deviceready');
+       // sdk test code
+       this.bleManager = new Manager()
+       this.bleManager._ble.on('stateChange', function (state) {
+         console.log(state)
+         if(state === 'on' || state === 'turningOn') this.bleManager.startScan()
+       }.bind(this))
+   },
+   ...
+};
+
+window.app = app
+```
+
+##### Webpack 또는 Browserify
+`Cordova, PhoneGap CLI 로 생성한 프로젝트의 경우, 기본 번들러(Bundler)가 존재하지 않습니다.` 이에 따라, webpack, browserify 등의 번들러를 통하여 bundle.js를 생성하여 사용해야하므로 webpack 또는 browserify 등과 같은 JS 모듈 번들러를 설치합니다.
+```sh
+$ npm install -g webpack
+```
+또는
+```sh
+$ npm install -g browserify
+```
+###### Webpack
+아래와 같이 webpack.config.js 를 생성합니다.
+```
+// webpack.config.js
+module.exports = {
+  entry: ['./www/js/index'],
+  module: {...},
+  output: {
+		chunkFilename: '[name].js',
+		filename: 'bundle.js',
+		path: path.resolve(__dirname, './www/dist/js')
+	},
+  ...
+}
+```
+아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.
+```sh
+$ webpack
+```
+###### Browserify
+아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.
+```sh
+$ browserify ./www/js/index.js -o ./www/dist/js/bundle.js
+```
+##### index.html
+아래와 같이 index.html 에 번들링 된 bundle.js를 삽입 합니다.
+```
+<!-- www/index.html -->
+
+<html>
+<head>
+    ...
+</head>
+<body>
+    <div class="app">
+        <h1>PhoneGap</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="js/index.js"></script> -->
+    <script type="text/javascript" src="dist/js/bundle.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+</html>
+```
+
+#### Ionic 4 (Cordova + AngularJS)
+##### Known Issues
+###### iOS 12.2 에서 cordova-plugin-ionic-webview 와 cordova-plugin-background-mode 플러그인 충돌
+ Ionic Framework는 iOS에서 기본적으로 WKWebView를 사용하는데, 관련 플러그인과 buildthing-ble-sdk의 의존 플러그인인 cordova-plugin-background-mode 플러그인이 iOS 12.2 에서 충돌하는 이슈가 존재합니다. 2019년 5월 10일 기준, 아직 버그가 Fix 되지 않아 [연관 이슈](https://github.com/katzer/cordova-plugin-background-mode/issues/419#issuecomment-473851949)와 같이 플러그인의 iOS 코드를 수정해야만 정상 동작 합니다.
+
+##### Ionic 4 : 예제
+buildthing-beacon-sdk 는 다른 Cordova 플러그인들과 마찬가지로 deviceready 이벤트 호출 이후에 사용가능합니다. 따라서 Ionic 4 내 Angular JS Component 에서 사용할 때에도 아래 코드와 같이 deviceready 이벤트 호출 이후에 사용합니다.
+```
+// home.page.ts
+
+import { Platform } from '@ionic/angular';
+import { Manager } from 'buildthing-beacon-sdk';
+
+@Component({
+selector: 'app-home',
+templateUrl: 'home.page.html',
+styleUrls: ['home.page.scss'],
+})
+export class HomePage {
+public bleManager: Manager
+  constructor(public plt: Platform) {
+    // ionic 프레임워크 사용시, 다음과 같은 방법으로도 cordovad의 deviceready 이벤트 콜백 함수를 정의 및 등록 할 수 있습니다.
+    this.plt.ready().then((readySource) => {
+      this.bleManager = new Manager()
+      this.bleManager.on('discover', function(beacon) { console.log(beacon) })
+    });
+  }
+}
 ```
 
 ### Desktop
@@ -93,16 +233,176 @@ WinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴�
 - [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)를 설치합니다.
 
 #### Electron
-Electron에서 BLE 통신을 위해서는 [noble](https://github.com/noble/noble)의 설치가 필요합니다.
 ##### 설치
-###### noble
-BLE 통신을 위한 의존 라이브러리 입니다.
+###### electron-packager
+Electron 에서 앱을 빌드/패키징 할때 사용하는 노드 모듈 입니다. 아래의 명령어로 Electron 프로젝트에 설치합니다.
 ```sh
-$ npm install noble
+$ npm install electron-packager --save -dev
 ```
-### Webpack 설정
-#### alias 지정을 통한 타겟 플랫폼 별 빌드 설정
-아래와 같이 Webpack의 alias 를 설정하여 플랫폼 별로 다른 buildthing-ble-sdk bundle  파일을 참조하여 개발이 가능합니다.
+자세한 설정 및 사용 방법은 [electron-packager](https://github.com/electron-userland/electron-packager) 에서 확인할 수 있습니다.
+
+###### package.json
+electron-packager 로 빌드를 수행하는 경우, package.json 내 dependencies에 buildthing-beacon-sdk를 명시해야만합니다.
+```
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --overwrite"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^3.0.8",
+    "electron-packager": "^13.1.1"
+  },
+  "dependencies": {
+    "buildthing-beacon-sdk": "^1.0.0"
+  }
+}
+```
+##### Electron : 예제
+아래와 같이 renderer.js(Renderer Process)에서 buildthing-beacon-sdk를 사용할 수 있습니다.
+```
+const { Manager } = require('buildthing-beacon-sdk')
+
+window.addEventListener("load", function(event) {
+  var bleManager = new Manager()
+
+  bleManager.on('discover', function(beacon) {
+    console.log(beacon)
+  })
+
+  bleManager._ble.on('stateChange', function (state) {
+    if(state[0] === 'poweredOn') bleManager.startScan()
+  })
+
+  window.bleManager = bleManager
+});
+
+```
+##### Electron-vue : 예제
+Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://github.com/SimulatedGREG/electron-vue) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.
+
+```
+// LandingPage.vue
+
+<template>
+  <div id="wrapper">
+  ...
+    <main>
+      <div>hello buildthing Beacon</div>
+    </main>
+  </div>
+</template>
+
+<script>
+  import SystemInformation from './LandingPage/SystemInformation'
+  import { Manager } from 'buildthing-beacon-sdk'
+
+  export default {
+    name: 'landing-page',
+    components: { SystemInformation },
+    mounted () {
+      window.addEventListener("load", function(event) {
+        var bleManager = new Manager()
+
+        bleManager.on('discover', function(beacon) {
+          console.log(beacon)
+        })
+
+        bleManager._ble.on('stateChange', function (state) {
+          if(state[0] === 'poweredOn') bleManager.startScan()
+        })
+
+        window.bleManager = bleManager
+      });
+    }
+  }
+</script>
+
+<style>
+ ...
+</style>
+
+```
+
+##### Electron-react : 예제
+Electron 과 React 를 같이 사용 하는 경우, [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.
+```
+import React, { Component } from 'react';
+import { Manager } from 'buildthing-beacon-sdk';
+import styles from './Home.css';
+
+type Props = {};
+
+export default class Home extends Component<Props> {
+  props: Props;
+
+  constructor(props) {
+    super(props);
+    window.addEventListener("load", () => {
+       const bleManager = new Manager()
+
+       bleManager.on('discover', (beacon) => {
+         console.log(beacon)
+       })
+
+       bleManager._ble.on('stateChange', (state) => {
+         if(state[0] === 'poweredOn') bleManager.startScan()
+       })
+
+       window.bleManager = bleManager
+     });
+  }
+
+  render() {
+    return (
+      <div className={styles.container} data-tid="container">
+        <h2>hello !! BuildThing Beacon</h2>
+      </div>
+    );
+  }
+}
+```
+
+##### Windows에서의 불필요 의존 모듈 삭제 및 rebuild 수행
+Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시킵니다.
+
+### 공통 Webpack 설정
+#### Webpack 미사용
+Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.
+##### Mobile
+```
+// for Mobile (iOS, Android) (No Webpack Configuration)
+var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
+module.exports = BuildThingBLE
+```
+##### MacOS
+```
+// for MacOS (No Webpack Configuration)
+var BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')
+module.exports = BuildThingBLE
+```
+##### Windows
+```
+// for Windows (No Webpack Configuration)
+var BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')
+module.exports = BuildThingBLE
+```
+#### Webpack 사용
+아래와 같이 Webpack.config.js 파일에서 alias 를 설정하여 플랫폼 별로 다른 buildthing-ble-sdk bundle  파일을 참조하여 개발이 가능합니다.
 ```
 const path = require('path')
 // Set Root Path
@@ -121,51 +421,9 @@ const CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'
         }
     }
 ```
-#### .node 빌드 설정 (Electron)
-noble 에서 네이티브 노드 모듈 (.node) 을 사용하여, 데스크탑과 비콘이 BLE 통신을 할 수 있게 지원하기 때문에 빌드 시, 해당 네이티브 노드 모듈을 가져와 앱에 포합 시켜야 합니다.
-##### native-ext-loader
-이를 위해 native-ext-loader의 설치가 필요합니다.
-```sh
-$ npm install native-ext-loader
-```
-네이티브 노드 모듈을 앱에 포합시키기 위해 아래와 같이 Webpack을 설정합니다.
-```
-//.. Webpack Config Object
-    //아래와 같이 런타임 환경에서 의존 하고있는 네이티브 노드 모듈을 로드 할 수 있음.
-    module: {
-        rules: [
-            {
-                test: /\.node$/,
-                loader: 'native-ext-loader',
-                options: {
-                    rewritePath: undefined // production  배포 시, .node 모듈을 찾기 위함.
-                }
-            }
-        ]
-    }
-```
-### Webpack 미사용
-Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.
-#### Mobile
-```
-// for Mobile (iOS, Android) (No Webpack Configuration)
-var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
-module.exports = BuildThingBLE
-```
-#### MacOS
-```
-// for MacOS (No Webpack Configuration)
-var BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')
-module.exports = BuildThingBLE
-```
-#### Windows
-```
-// for Windows (No Webpack Configuration)
-var BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')
-module.exports = BuildThingBLE
-```
 
-## 예제 코드
+## API 문서
+플랫폼 별 라이브러리 사용의 예제 코드는 아래와 같습니다.
 ```
 import { Manager } from 'buildthing-beacon-sdk'
 var manager = new Manager()
@@ -173,8 +431,6 @@ manager.on('discover', function(beacon){...})
 manager.startScan() //스캔 시작
 manager.stopScan() //스캔 종료
 ```
-
-## API 문서
 상세한 API는 아래 문서를 참고해주시기 바랍니다.
 [API 문서 바로가기](https://buildit-lab.github.io/buildthing-beacon-sdk/)
 
