@@ -16,9 +16,6 @@
   ],
   "author": "Buildit Inc.",
   "license": "MIT",
-  "devDependencies": {
-    "esdoc-exclude-source-plugin": "^1.0.0"
-  },
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "aws-sdk": "^2.400.0",
