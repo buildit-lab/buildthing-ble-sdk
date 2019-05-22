@@ -272,6 +272,10 @@ electron-packager 로 빌드를 수행하는 경우, package.json 내 dependenci
   }
 }
 ```
+
+###### Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (Windows 환경 필수)
+Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.
+
 ##### Electron : 예제
 아래와 같이 renderer.js(Renderer Process)에서 buildthing-beacon-sdk를 사용할 수 있습니다.
 ```
@@ -376,9 +380,6 @@ export default class Home extends Component<Props> {
   }
 }
 ```
-
-##### Windows에서의 불필요 의존 모듈 삭제 및 rebuild 수행
-Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시킵니다.
 
 ### 공통 Webpack 설정
 #### Webpack 미사용
