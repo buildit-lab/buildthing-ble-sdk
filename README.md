@@ -237,7 +237,7 @@ WinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴�
 ###### electron-packager
 Electron 에서 앱을 빌드/패키징 할때 사용하는 노드 모듈 입니다. 아래의 명령어로 Electron 프로젝트에 설치합니다.
 ```sh
-$ npm install electron-packager --save -dev
+$ npm install electron-packager --save-dev
 ```
 자세한 설정 및 사용 방법은 [electron-packager](https://github.com/electron-userland/electron-packager) 에서 확인할 수 있습니다.
 
