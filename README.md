@@ -439,10 +439,10 @@ manager.stopScan() //스캔 종료
 BuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.
 아래 Scan Response는 BuildThing, iBeacon, Eddystone 모드 모두 동일합니다.
 
-| 항목 | Service UUID | 수신 값 |
-| ------ | ------ | ------ |
-| Device Information | 0x180A | 0x983006 |
-| Mac Address | 0xADD0 | Mac Address |
+| 항목 | Service UUID | 수신 값 | 비고 |
+| ------ | ------ | ------ |------ |
+| Device Information & Firmware Version | 0x180A | 0x983006 또는 0x3006XX | 0x983006 : 펌웨어 v1.0, 0x3006XX : 펌웨어 vXX/10 (예 : 0x300611은 펌웨어 v1.1)
+| Mac Address | 0xADD0 | Mac Address | - |
 
 ## Advertising Packet
 BuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertising Packet 을 지원합니다. Advertising Packet을 수신하기 위한 각 모드 별 UUID 및 Service UUID는 다음과 같습니다.
