@@ -492,6 +492,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/core/beacon/beacon.js~adc",
+    "typedef/index.html#static-typedef-ADC",
+    "src/core/beacon/beacon.js~ADC",
+    "typedef"
+  ],
+  [
     "src/core/beacon/beacon.js~accelerometer",
     "typedef/index.html#static-typedef-Accelerometer",
     "src/core/beacon/beacon.js~Accelerometer",
@@ -522,6 +528,12 @@ window.esdocSearchIndex = [
     "member"
   ],
   [
+    "src/core/beacon/beacon.js~beacon#firmwareversion",
+    "class/src/core/beacon/beacon.js~Beacon.html#instance-member-firmwareVersion",
+    "src/core/beacon/beacon.js~Beacon#firmwareVersion",
+    "member"
+  ],
+  [
     "src/core/beacon/beacon.js~beacon#getaddress",
     "class/src/core/beacon/beacon.js~Beacon.html#instance-method-getAddress",
     "src/core/beacon/beacon.js~Beacon#getAddress",
@@ -531,6 +543,12 @@ window.esdocSearchIndex = [
     "src/core/beacon/beacon.js~beacon#getdistance",
     "class/src/core/beacon/beacon.js~Beacon.html#instance-method-getDistance",
     "src/core/beacon/beacon.js~Beacon#getDistance",
+    "method"
+  ],
+  [
+    "src/core/beacon/beacon.js~beacon#getfirmwareversion",
+    "class/src/core/beacon/beacon.js~Beacon.html#instance-method-getFirmwareVersion",
+    "src/core/beacon/beacon.js~Beacon#getFirmwareVersion",
     "method"
   ],
   [
@@ -624,6 +642,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/core/beacon/beacon.js~beacon#setfirmwareversion",
+    "class/src/core/beacon/beacon.js~Beacon.html#instance-method-setFirmwareVersion",
+    "src/core/beacon/beacon.js~Beacon#setFirmwareVersion",
+    "method"
+  ],
+  [
     "src/core/beacon/beacon.js~beacon#setid",
     "class/src/core/beacon/beacon.js~Beacon.html#instance-method-setId",
     "src/core/beacon/beacon.js~Beacon#setId",
@@ -694,6 +718,30 @@ window.esdocSearchIndex = [
     "class/src/core/beacon/beacon.js~Beacon.html#static-method-setDistanceCalculator",
     "src/core/beacon/beacon.js~Beacon.setDistanceCalculator",
     "method"
+  ],
+  [
+    "src/core/beacon/beacon.js~finedust",
+    "typedef/index.html#static-typedef-FineDust",
+    "src/core/beacon/beacon.js~FineDust",
+    "typedef"
+  ],
+  [
+    "src/core/beacon/beacon.js~io",
+    "typedef/index.html#static-typedef-IO",
+    "src/core/beacon/beacon.js~IO",
+    "typedef"
+  ],
+  [
+    "src/core/beacon/beacon.js~nh3",
+    "typedef/index.html#static-typedef-NH3",
+    "src/core/beacon/beacon.js~NH3",
+    "typedef"
+  ],
+  [
+    "src/core/beacon/beacon.js~no2",
+    "typedef/index.html#static-typedef-NO2",
+    "src/core/beacon/beacon.js~NO2",
+    "typedef"
   ],
   [
     "src/core/beacon/beacon.js~sensor",
@@ -1455,6 +1503,12 @@ window.esdocSearchIndex = [
     "src/service/connection.js~connection#changeadvertisinginterval",
     "class/src/service/connection.js~Connection.html#instance-method-changeAdvertisingInterval",
     "src/service/connection.js~Connection#changeAdvertisingInterval",
+    "method"
+  ],
+  [
+    "src/service/connection.js~connection#changeiooutput",
+    "class/src/service/connection.js~Connection.html#instance-method-changeIOOutput",
+    "src/service/connection.js~Connection#changeIOOutput",
     "method"
   ],
   [

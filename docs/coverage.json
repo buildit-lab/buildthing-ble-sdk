@@ -1,11 +1,11 @@
 {
-  "coverage": "89.15%",
-  "expectCount": 507,
-  "actualCount": 452,
+  "coverage": "88.97%",
+  "expectCount": 517,
+  "actualCount": 460,
   "files": {
     "src/core/beacon/beacon.js": {
-      "expectCount": 35,
-      "actualCount": 35,
+      "expectCount": 38,
+      "actualCount": 38,
       "undocumentLines": []
     },
     "src/core/beacon/buildthing-beacon.js": {
@@ -39,8 +39,8 @@
       "undocumentLines": []
     },
     "src/core/beacon-parser.js": {
-      "expectCount": 41,
-      "actualCount": 41,
+      "expectCount": 45,
+      "actualCount": 45,
       "undocumentLines": []
     },
     "src/core/ble-resolver.js": {
@@ -59,12 +59,14 @@
       "undocumentLines": []
     },
     "src/core/util.js": {
-      "expectCount": 15,
+      "expectCount": 17,
       "actualCount": 12,
       "undocumentLines": [
         4,
         17,
-        199
+        199,
+        209,
+        223
       ]
     },
     "src/service/calculator/base.js": {
@@ -102,13 +104,13 @@
       ]
     },
     "src/service/connection.js": {
-      "expectCount": 60,
-      "actualCount": 56,
+      "expectCount": 61,
+      "actualCount": 57,
       "undocumentLines": [
-        43,
-        75,
-        111,
-        112
+        44,
+        76,
+        112,
+        113
       ]
     },
     "src/service/filter/arma.js": {
