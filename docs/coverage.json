@@ -1,7 +1,7 @@
 {
-  "coverage": "88.97%",
-  "expectCount": 517,
-  "actualCount": 460,
+  "coverage": "89.01%",
+  "expectCount": 519,
+  "actualCount": 462,
   "files": {
     "src/core/beacon/beacon.js": {
       "expectCount": 38,
@@ -104,13 +104,13 @@
       ]
     },
     "src/service/connection.js": {
-      "expectCount": 61,
-      "actualCount": 57,
+      "expectCount": 63,
+      "actualCount": 59,
       "undocumentLines": [
-        44,
-        76,
-        112,
-        113
+        47,
+        79,
+        115,
+        116
       ]
     },
     "src/service/filter/arma.js": {

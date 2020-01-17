@@ -1626,6 +1626,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "src/service/connection.js~connection#rebootbeacon",
+    "class/src/service/connection.js~Connection.html#instance-method-rebootBeacon",
+    "src/service/connection.js~Connection#rebootBeacon",
+    "method"
+  ],
+  [
     "src/service/connection.js~connection#setpassword",
     "class/src/service/connection.js~Connection.html#instance-method-setPassword",
     "src/service/connection.js~Connection#setPassword",

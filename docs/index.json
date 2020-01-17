@@ -8169,6 +8169,26 @@
   {
     "__docId__": 345,
     "kind": "variable",
+    "name": "REBOOT_COMMAND",
+    "memberof": "src/service/connection.js",
+    "static": true,
+    "longname": "src/service/connection.js~REBOOT_COMMAND",
+    "access": "public",
+    "export": false,
+    "importPath": "buildthing-beacon-sdk/src/service/connection.js",
+    "importStyle": null,
+    "description": "비콘 Reboot 입력",
+    "lineNumber": 24,
+    "type": {
+      "types": [
+        "string"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 346,
+    "kind": "variable",
     "name": "COMMANDS",
     "memberof": "src/service/connection.js",
     "static": true,
@@ -8178,16 +8198,16 @@
     "importPath": "buildthing-beacon-sdk/src/service/connection.js",
     "importStyle": null,
     "description": "비콘 커맨드 목록",
-    "lineNumber": 26,
+    "lineNumber": 28,
     "type": {
       "types": [
-        "{\"CONFIRM_PASSWORD\": *, \"CHANGE_PASSWORD\": *, \"CHANGE_NAME\": *, \"CHANGE_MODE\": *, \"CHANGE_ADVERTISING_INTERVAL\": *, \"CHANGE_SENSOR_INTERVAL\": *, \"CHANGE_MAJOR\": *, \"CHANGE_MINOR\": *, \"CHANGE_NAMESPACE_ID\": *, \"CHANGE_INSTANCE_ID\": *, \"CHANGE_SCHEME_PREFIX\": *, \"CHANGE_URL\": *, \"CHANGE_TX_POWER\": *, \"CHANGE_IO_OUTPUT\": *}"
+        "{\"CONFIRM_PASSWORD\": *, \"CHANGE_PASSWORD\": *, \"CHANGE_NAME\": *, \"CHANGE_MODE\": *, \"CHANGE_ADVERTISING_INTERVAL\": *, \"CHANGE_SENSOR_INTERVAL\": *, \"CHANGE_MAJOR\": *, \"CHANGE_MINOR\": *, \"CHANGE_NAMESPACE_ID\": *, \"CHANGE_INSTANCE_ID\": *, \"CHANGE_SCHEME_PREFIX\": *, \"CHANGE_URL\": *, \"CHANGE_TX_POWER\": *, \"CHANGE_IO_OUTPUT\": *, \"REBOOT\": *}"
       ]
     },
     "ignore": true
   },
   {
-    "__docId__": 346,
+    "__docId__": 347,
     "kind": "variable",
     "name": "RESPONSE",
     "memberof": "src/service/connection.js",
@@ -8198,7 +8218,7 @@
     "importPath": "buildthing-beacon-sdk/src/service/connection.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 44,
+    "lineNumber": 47,
     "undocument": true,
     "type": {
       "types": [
@@ -8208,7 +8228,7 @@
     "ignore": true
   },
   {
-    "__docId__": 347,
+    "__docId__": 348,
     "kind": "class",
     "name": "Connection",
     "memberof": "src/service/connection.js",
@@ -8219,7 +8239,7 @@
     "importPath": "buildthing-beacon-sdk/src/service/connection.js",
     "importStyle": "Connection",
     "description": null,
-    "lineNumber": 76,
+    "lineNumber": 79,
     "undocument": true,
     "interface": false,
     "extends": [
@@ -8227,7 +8247,7 @@
     ]
   },
   {
-    "__docId__": 348,
+    "__docId__": 349,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/connection.js~Connection",
@@ -8237,7 +8257,7 @@
     "longname": "src/service/connection.js~Connection#constructor",
     "access": "public",
     "description": " 전달받은 비콘과 패스워드로 새로운 커넥션을 초기화한다.",
-    "lineNumber": 82,
+    "lineNumber": 85,
     "params": [
       {
         "nullable": null,
@@ -8264,7 +8284,7 @@
     ]
   },
   {
-    "__docId__": 349,
+    "__docId__": 350,
     "kind": "member",
     "name": "_os",
     "memberof": "src/service/connection.js~Connection",
@@ -8272,27 +8292,7 @@
     "longname": "src/service/connection.js~Connection#_os",
     "access": "private",
     "description": " 현재 작동중인 os 정보",
-    "lineNumber": 90,
-    "type": {
-      "nullable": null,
-      "types": [
-        "string"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 350,
-    "kind": "member",
-    "name": "_type",
-    "memberof": "src/service/connection.js~Connection",
-    "static": false,
-    "longname": "src/service/connection.js~Connection#_type",
-    "access": "private",
-    "description": " 현재 작동중인 기기 정보(cordova / electron)",
-    "lineNumber": 95,
+    "lineNumber": 93,
     "type": {
       "nullable": null,
       "types": [
@@ -8306,32 +8306,13 @@
   {
     "__docId__": 351,
     "kind": "member",
-    "name": "beacon",
+    "name": "_type",
     "memberof": "src/service/connection.js~Connection",
     "static": false,
-    "longname": "src/service/connection.js~Connection#beacon",
-    "access": "public",
-    "description": " 커넥션 할 비콘",
-    "lineNumber": 100,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Beacon"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 352,
-    "kind": "member",
-    "name": "_password",
-    "memberof": "src/service/connection.js~Connection",
-    "static": false,
-    "longname": "src/service/connection.js~Connection#_password",
+    "longname": "src/service/connection.js~Connection#_type",
     "access": "private",
-    "description": " 데이터 교환에 필요한 패스워드",
-    "lineNumber": 105,
+    "description": " 현재 작동중인 기기 정보(cordova / electron)",
+    "lineNumber": 98,
     "type": {
       "nullable": null,
       "types": [
@@ -8343,7 +8324,46 @@
     "ignore": true
   },
   {
-    "__docId__": 354,
+    "__docId__": 352,
+    "kind": "member",
+    "name": "beacon",
+    "memberof": "src/service/connection.js~Connection",
+    "static": false,
+    "longname": "src/service/connection.js~Connection#beacon",
+    "access": "public",
+    "description": " 커넥션 할 비콘",
+    "lineNumber": 103,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Beacon"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 353,
+    "kind": "member",
+    "name": "_password",
+    "memberof": "src/service/connection.js~Connection",
+    "static": false,
+    "longname": "src/service/connection.js~Connection#_password",
+    "access": "private",
+    "description": " 데이터 교환에 필요한 패스워드",
+    "lineNumber": 108,
+    "type": {
+      "nullable": null,
+      "types": [
+        "string"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 355,
     "kind": "member",
     "name": "isConnected",
     "memberof": "src/service/connection.js~Connection",
@@ -8351,7 +8371,7 @@
     "longname": "src/service/connection.js~Connection#isConnected",
     "access": "public",
     "description": " 연결 상태",
-    "lineNumber": 111,
+    "lineNumber": 114,
     "type": {
       "nullable": null,
       "types": [
@@ -8362,7 +8382,7 @@
     }
   },
   {
-    "__docId__": 355,
+    "__docId__": 356,
     "kind": "member",
     "name": "isTimeout",
     "memberof": "src/service/connection.js~Connection",
@@ -8370,7 +8390,7 @@
     "longname": "src/service/connection.js~Connection#isTimeout",
     "access": "public",
     "description": null,
-    "lineNumber": 112,
+    "lineNumber": 115,
     "undocument": true,
     "type": {
       "types": [
@@ -8379,7 +8399,7 @@
     }
   },
   {
-    "__docId__": 356,
+    "__docId__": 357,
     "kind": "member",
     "name": "_connectionTimeout",
     "memberof": "src/service/connection.js~Connection",
@@ -8387,7 +8407,7 @@
     "longname": "src/service/connection.js~Connection#_connectionTimeout",
     "access": "private",
     "description": null,
-    "lineNumber": 113,
+    "lineNumber": 116,
     "undocument": true,
     "ignore": true,
     "type": {
@@ -8397,7 +8417,7 @@
     }
   },
   {
-    "__docId__": 357,
+    "__docId__": 358,
     "kind": "member",
     "name": "_readCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8405,27 +8425,7 @@
     "longname": "src/service/connection.js~Connection#_readCallback",
     "access": "private",
     "description": " Noble에서 read시 발생하는 콜백을 연결",
-    "lineNumber": 120,
-    "type": {
-      "nullable": null,
-      "types": [
-        "function(beaconId: string)"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 358,
-    "kind": "member",
-    "name": "_writeCallback",
-    "memberof": "src/service/connection.js~Connection",
-    "static": false,
-    "longname": "src/service/connection.js~Connection#_writeCallback",
-    "access": "private",
-    "description": " Noble에서 write시 발생하는 콜백을 연결",
-    "lineNumber": 125,
+    "lineNumber": 123,
     "type": {
       "nullable": null,
       "types": [
@@ -8439,13 +8439,13 @@
   {
     "__docId__": 359,
     "kind": "member",
-    "name": "_notifyCallback",
+    "name": "_writeCallback",
     "memberof": "src/service/connection.js~Connection",
     "static": false,
-    "longname": "src/service/connection.js~Connection#_notifyCallback",
+    "longname": "src/service/connection.js~Connection#_writeCallback",
     "access": "private",
-    "description": " Noble에서 notify시 발생하는 콜백을 연결",
-    "lineNumber": 130,
+    "description": " Noble에서 write시 발생하는 콜백을 연결",
+    "lineNumber": 128,
     "type": {
       "nullable": null,
       "types": [
@@ -8458,6 +8458,26 @@
   },
   {
     "__docId__": 360,
+    "kind": "member",
+    "name": "_notifyCallback",
+    "memberof": "src/service/connection.js~Connection",
+    "static": false,
+    "longname": "src/service/connection.js~Connection#_notifyCallback",
+    "access": "private",
+    "description": " Noble에서 notify시 발생하는 콜백을 연결",
+    "lineNumber": 133,
+    "type": {
+      "nullable": null,
+      "types": [
+        "function(beaconId: string)"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 361,
     "kind": "method",
     "name": "setBLELibrary",
     "memberof": "src/service/connection.js~Connection",
@@ -8467,7 +8487,7 @@
     "longname": "src/service/connection.js~Connection.setBLELibrary",
     "access": "public",
     "description": " 비콘 연결에 사용할 라이브러리를 설정한다.",
-    "lineNumber": 137,
+    "lineNumber": 140,
     "params": [
       {
         "nullable": null,
@@ -8483,7 +8503,7 @@
     "return": null
   },
   {
-    "__docId__": 361,
+    "__docId__": 362,
     "kind": "method",
     "name": "getBLELibrary",
     "memberof": "src/service/connection.js~Connection",
@@ -8493,7 +8513,7 @@
     "longname": "src/service/connection.js~Connection.getBLELibrary",
     "access": "public",
     "description": " 현재 사용중인 비콘 라이브러리를 반환한다.",
-    "lineNumber": 144,
+    "lineNumber": 147,
     "return": {
       "nullable": null,
       "types": [
@@ -8505,7 +8525,7 @@
     "params": []
   },
   {
-    "__docId__": 362,
+    "__docId__": 363,
     "kind": "method",
     "name": "setTimeout",
     "memberof": "src/service/connection.js~Connection",
@@ -8515,7 +8535,7 @@
     "longname": "src/service/connection.js~Connection.setTimeout",
     "access": "public",
     "description": " 비콘 연결시 미 응답에 대한 Timeout 값을 설정한다.(단위 : ms)",
-    "lineNumber": 151,
+    "lineNumber": 154,
     "params": [
       {
         "nullable": null,
@@ -8531,7 +8551,7 @@
     "return": null
   },
   {
-    "__docId__": 363,
+    "__docId__": 364,
     "kind": "method",
     "name": "getTimeout",
     "memberof": "src/service/connection.js~Connection",
@@ -8541,7 +8561,7 @@
     "longname": "src/service/connection.js~Connection.getTimeout",
     "access": "public",
     "description": " 비콘 연결시 미 응답에 대한 Timeout 값을 반환한다.(단위 : ms)",
-    "lineNumber": 158,
+    "lineNumber": 161,
     "return": {
       "nullable": null,
       "types": [
@@ -8553,7 +8573,7 @@
     "params": []
   },
   {
-    "__docId__": 364,
+    "__docId__": 365,
     "kind": "method",
     "name": "_setConnected",
     "memberof": "src/service/connection.js~Connection",
@@ -8563,7 +8583,7 @@
     "longname": "src/service/connection.js~Connection#_setConnected",
     "access": "private",
     "description": " 현재 연결 상태를 변경한다.",
-    "lineNumber": 165,
+    "lineNumber": 168,
     "params": [
       {
         "nullable": null,
@@ -8580,7 +8600,7 @@
     "return": null
   },
   {
-    "__docId__": 365,
+    "__docId__": 366,
     "kind": "method",
     "name": "isConnectedBeacon",
     "memberof": "src/service/connection.js~Connection",
@@ -8590,7 +8610,7 @@
     "longname": "src/service/connection.js~Connection#isConnectedBeacon",
     "access": "public",
     "description": " 현재 비콘의 연결 상태를 반환한다.",
-    "lineNumber": 186,
+    "lineNumber": 189,
     "return": {
       "nullable": null,
       "types": [
@@ -8602,7 +8622,7 @@
     "params": []
   },
   {
-    "__docId__": 366,
+    "__docId__": 367,
     "kind": "method",
     "name": "wrapConnectionCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8612,12 +8632,12 @@
     "longname": "src/service/connection.js~Connection#wrapConnectionCallback",
     "access": "public",
     "description": " 타입별로 커넥션 시 발생하는 콜백을 연결한다.\n 현재는 Cordova만 연결, Noble은 Peripheral에서 커넥션 콜백을 직접 관리한다.",
-    "lineNumber": 193,
+    "lineNumber": 196,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 367,
+    "__docId__": 368,
     "kind": "method",
     "name": "_nobleConnectCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8627,7 +8647,7 @@
     "longname": "src/service/connection.js~Connection#_nobleConnectCallback",
     "access": "private",
     "description": " Noble에서 비콘 커넥션 성공시 콜백을 호출한다.",
-    "lineNumber": 243,
+    "lineNumber": 246,
     "params": [
       {
         "nullable": null,
@@ -8668,7 +8688,7 @@
     "return": null
   },
   {
-    "__docId__": 368,
+    "__docId__": 369,
     "kind": "method",
     "name": "_nobleDisconnectCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8678,7 +8698,7 @@
     "longname": "src/service/connection.js~Connection#_nobleDisconnectCallback",
     "access": "private",
     "description": " Noble에서 비콘 커넥션 해제 성공시 콜백을 호출한다.",
-    "lineNumber": 279,
+    "lineNumber": 282,
     "params": [
       {
         "nullable": null,
@@ -8719,7 +8739,7 @@
     "return": null
   },
   {
-    "__docId__": 369,
+    "__docId__": 370,
     "kind": "method",
     "name": "wrapRWCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8729,7 +8749,7 @@
     "longname": "src/service/connection.js~Connection#wrapRWCallback",
     "access": "public",
     "description": " 커넥션 후 read, write, notify, stopNotify 콜백을 등록한다.\n 현재는 Cordova에서만 콜백을 등록한다.",
-    "lineNumber": 297,
+    "lineNumber": 300,
     "params": [
       {
         "nullable": null,
@@ -8745,7 +8765,7 @@
     "return": null
   },
   {
-    "__docId__": 370,
+    "__docId__": 371,
     "kind": "method",
     "name": "_nobleReadCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8755,7 +8775,7 @@
     "longname": "src/service/connection.js~Connection#_nobleReadCallback",
     "access": "private",
     "description": " Noble에서 read시 발생하는 콜백 등록 함수",
-    "lineNumber": 336,
+    "lineNumber": 339,
     "params": [
       {
         "nullable": null,
@@ -8800,7 +8820,7 @@
     "return": null
   },
   {
-    "__docId__": 371,
+    "__docId__": 372,
     "kind": "method",
     "name": "_nobleWriteCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8810,7 +8830,7 @@
     "longname": "src/service/connection.js~Connection#_nobleWriteCallback",
     "access": "private",
     "description": " Noble에서 write시 발생하는 콜백 등록 함수",
-    "lineNumber": 354,
+    "lineNumber": 357,
     "params": [
       {
         "nullable": null,
@@ -8851,7 +8871,7 @@
     "return": null
   },
   {
-    "__docId__": 372,
+    "__docId__": 373,
     "kind": "method",
     "name": "_nobleNotifyCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -8861,7 +8881,7 @@
     "longname": "src/service/connection.js~Connection#_nobleNotifyCallback",
     "access": "private",
     "description": " Noble에서 notify시 발생하는 콜백 등록 함수",
-    "lineNumber": 372,
+    "lineNumber": 375,
     "params": [
       {
         "nullable": null,
@@ -8912,7 +8932,7 @@
     "return": null
   },
   {
-    "__docId__": 373,
+    "__docId__": 374,
     "kind": "method",
     "name": "_getWriteCharacteristic",
     "memberof": "src/service/connection.js~Connection",
@@ -8922,7 +8942,7 @@
     "longname": "src/service/connection.js~Connection#_getWriteCharacteristic",
     "access": "private",
     "description": " Characteristics에서 Write를 제공하는 Characteristic을 반환한다.",
-    "lineNumber": 382,
+    "lineNumber": 385,
     "return": {
       "nullable": null,
       "types": [
@@ -8935,7 +8955,7 @@
     "params": []
   },
   {
-    "__docId__": 374,
+    "__docId__": 375,
     "kind": "method",
     "name": "_getNotifyCharacteristic",
     "memberof": "src/service/connection.js~Connection",
@@ -8945,7 +8965,7 @@
     "longname": "src/service/connection.js~Connection#_getNotifyCharacteristic",
     "access": "private",
     "description": " Characteristics에서 Notify를 제공하는 Characteristic을 반환한다.",
-    "lineNumber": 389,
+    "lineNumber": 392,
     "return": {
       "nullable": null,
       "types": [
@@ -8958,7 +8978,7 @@
     "params": []
   },
   {
-    "__docId__": 375,
+    "__docId__": 376,
     "kind": "method",
     "name": "_findCharacteristic",
     "memberof": "src/service/connection.js~Connection",
@@ -8968,7 +8988,7 @@
     "longname": "src/service/connection.js~Connection#_findCharacteristic",
     "access": "private",
     "description": " Characteristics에서 characteristicUUID에 해당하는 Characteristic을 반환한다.",
-    "lineNumber": 397,
+    "lineNumber": 400,
     "params": [
       {
         "nullable": null,
@@ -8992,7 +9012,7 @@
     "ignore": true
   },
   {
-    "__docId__": 376,
+    "__docId__": 377,
     "kind": "method",
     "name": "write",
     "memberof": "src/service/connection.js~Connection",
@@ -9002,7 +9022,7 @@
     "longname": "src/service/connection.js~Connection#write",
     "access": "public",
     "description": " 현재 연결된 비콘의 Write Characteristic을 통해 데이터를 입력한다.",
-    "lineNumber": 409,
+    "lineNumber": 412,
     "params": [
       {
         "nullable": null,
@@ -9030,7 +9050,7 @@
     "return": null
   },
   {
-    "__docId__": 377,
+    "__docId__": 378,
     "kind": "method",
     "name": "read",
     "memberof": "src/service/connection.js~Connection",
@@ -9040,7 +9060,7 @@
     "longname": "src/service/connection.js~Connection#read",
     "access": "public",
     "description": " 비콘의 특정 Characteristic Service에서 값을 읽는 함수",
-    "lineNumber": 438,
+    "lineNumber": 441,
     "params": [
       {
         "nullable": null,
@@ -9056,7 +9076,7 @@
     "return": null
   },
   {
-    "__docId__": 378,
+    "__docId__": 379,
     "kind": "method",
     "name": "connect",
     "memberof": "src/service/connection.js~Connection",
@@ -9069,7 +9089,7 @@
     "examples": [
       " var connection = new Connection(beacon)\n connection.on('connect', (...args) => {\n   console.log('connected!')\n })\n connection.connect()"
     ],
-    "lineNumber": 464,
+    "lineNumber": 467,
     "emits": [
       {
         "types": [
@@ -9082,7 +9102,7 @@
     "return": null
   },
   {
-    "__docId__": 380,
+    "__docId__": 381,
     "kind": "method",
     "name": "disconnect",
     "memberof": "src/service/connection.js~Connection",
@@ -9095,12 +9115,12 @@
     "examples": [
       " connection.on('disconnect', (...args) => {\n   console.log('disconnected!')\n })\n connection.disconnect()"
     ],
-    "lineNumber": 492,
+    "lineNumber": 495,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 381,
+    "__docId__": 382,
     "kind": "method",
     "name": "_encodeToArrayBuffer",
     "memberof": "src/service/connection.js~Connection",
@@ -9110,7 +9130,7 @@
     "longname": "src/service/connection.js~Connection#_encodeToArrayBuffer",
     "access": "private",
     "description": " 비콘에 전달할 데이터를 버퍼 형태로 인코딩한다.",
-    "lineNumber": 521,
+    "lineNumber": 524,
     "params": [
       {
         "nullable": null,
@@ -9155,7 +9175,7 @@
     "ignore": true
   },
   {
-    "__docId__": 382,
+    "__docId__": 383,
     "kind": "method",
     "name": "_getHex",
     "memberof": "src/service/connection.js~Connection",
@@ -9165,7 +9185,7 @@
     "longname": "src/service/connection.js~Connection#_getHex",
     "access": "private",
     "description": " 전달 받은 값이 숫자가 아닐 경우 hexString으로 변경한다.",
-    "lineNumber": 564,
+    "lineNumber": 567,
     "params": [
       {
         "nullable": null,
@@ -9191,7 +9211,7 @@
     "ignore": true
   },
   {
-    "__docId__": 383,
+    "__docId__": 384,
     "kind": "method",
     "name": "_parseResponse",
     "memberof": "src/service/connection.js~Connection",
@@ -9201,7 +9221,7 @@
     "longname": "src/service/connection.js~Connection#_parseResponse",
     "access": "private",
     "description": " 비콘에서 notify로 받은 메세지를 파싱한다.",
-    "lineNumber": 578,
+    "lineNumber": 581,
     "params": [
       {
         "nullable": null,
@@ -9247,7 +9267,7 @@
     "ignore": true
   },
   {
-    "__docId__": 384,
+    "__docId__": 385,
     "kind": "method",
     "name": "_promiseResponseCallback",
     "memberof": "src/service/connection.js~Connection",
@@ -9257,7 +9277,7 @@
     "longname": "src/service/connection.js~Connection#_promiseResponseCallback",
     "access": "private",
     "description": " 전달받은 커맨드를 토대로 데이터를 가공하여 비콘에 write 요청을 한다.",
-    "lineNumber": 597,
+    "lineNumber": 600,
     "params": [
       {
         "nullable": null,
@@ -9325,7 +9345,7 @@
     "return": null
   },
   {
-    "__docId__": 385,
+    "__docId__": 386,
     "kind": "method",
     "name": "setPassword",
     "memberof": "src/service/connection.js~Connection",
@@ -9335,7 +9355,7 @@
     "longname": "src/service/connection.js~Connection#setPassword",
     "access": "public",
     "description": " 커넥션시 사용할 패스워드를 설정한다.",
-    "lineNumber": 625,
+    "lineNumber": 628,
     "params": [
       {
         "nullable": null,
@@ -9351,7 +9371,7 @@
     "return": null
   },
   {
-    "__docId__": 387,
+    "__docId__": 388,
     "kind": "method",
     "name": "isValidPassword",
     "memberof": "src/service/connection.js~Connection",
@@ -9361,7 +9381,7 @@
     "longname": "src/service/connection.js~Connection#isValidPassword",
     "access": "public",
     "description": " (Async)비콘 연결 패스워드를 확인한다.",
-    "lineNumber": 634,
+    "lineNumber": 637,
     "params": [
       {
         "nullable": null,
@@ -9384,7 +9404,7 @@
     }
   },
   {
-    "__docId__": 388,
+    "__docId__": 389,
     "kind": "method",
     "name": "changePassword",
     "memberof": "src/service/connection.js~Connection",
@@ -9394,7 +9414,7 @@
     "longname": "src/service/connection.js~Connection#changePassword",
     "access": "public",
     "description": " (Async)비콘 연결 패스워드를 변경한다.(6byte)\n 반드시 6자리로 입력해야 한다. 다를 경우 NO 응답",
-    "lineNumber": 644,
+    "lineNumber": 647,
     "params": [
       {
         "nullable": null,
@@ -9417,7 +9437,7 @@
     }
   },
   {
-    "__docId__": 389,
+    "__docId__": 390,
     "kind": "method",
     "name": "changeName",
     "memberof": "src/service/connection.js~Connection",
@@ -9427,7 +9447,7 @@
     "longname": "src/service/connection.js~Connection#changeName",
     "access": "public",
     "description": " (Async)비콘 이름을 변경한다.(8byte)\n 새로운 이름은 8바이트 이하로 입력한다.\n 9바이트 이상 입력할 경우 9번째 이후의 바이트는 무시된다.\n 31바이트 초과시 NO 응답",
-    "lineNumber": 658,
+    "lineNumber": 661,
     "params": [
       {
         "nullable": null,
@@ -9450,7 +9470,7 @@
     }
   },
   {
-    "__docId__": 390,
+    "__docId__": 391,
     "kind": "method",
     "name": "changeMode",
     "memberof": "src/service/connection.js~Connection",
@@ -9460,7 +9480,7 @@
     "longname": "src/service/connection.js~Connection#changeMode",
     "access": "public",
     "description": " (Async)비콘 모드를 변경한다. 센서를 부착중인 경우 센서 제거시 변경된 모드로 표시된다.(1byte)\n 0 : BuildThing\n 1 : iBeacon\n 2 : Eddystone-UID\n 3 : Eddystone-URL\n 4 : Eddystone-TLM",
-    "lineNumber": 674,
+    "lineNumber": 677,
     "params": [
       {
         "nullable": null,
@@ -9483,7 +9503,7 @@
     }
   },
   {
-    "__docId__": 391,
+    "__docId__": 392,
     "kind": "method",
     "name": "changeAdvertisingInterval",
     "memberof": "src/service/connection.js~Connection",
@@ -9493,7 +9513,7 @@
     "longname": "src/service/connection.js~Connection#changeAdvertisingInterval",
     "access": "public",
     "description": " (Async)비콘의 Advertising 주기를 변경한다.(1byte)\n 단위는 100ms로 1~102의 값을 입력 가능하다.\n 최솟값보다 작은 값을 입력할 경우 1, 최댓값보다 큰 값을 입력할 경우 102로 적용된다.",
-    "lineNumber": 687,
+    "lineNumber": 690,
     "params": [
       {
         "nullable": null,
@@ -9516,7 +9536,7 @@
     }
   },
   {
-    "__docId__": 392,
+    "__docId__": 393,
     "kind": "method",
     "name": "changeSensorInterval",
     "memberof": "src/service/connection.js~Connection",
@@ -9526,7 +9546,7 @@
     "longname": "src/service/connection.js~Connection#changeSensorInterval",
     "access": "public",
     "description": " (Async)비콘의 센서 갱신 주기를 변경한다.(1byte)\n 2~255의 값을 입력 가능하다.\n Advertising 주기의 배수로 적용을 권장한다.",
-    "lineNumber": 702,
+    "lineNumber": 705,
     "params": [
       {
         "nullable": null,
@@ -9549,7 +9569,7 @@
     }
   },
   {
-    "__docId__": 393,
+    "__docId__": 394,
     "kind": "method",
     "name": "changeMajor",
     "memberof": "src/service/connection.js~Connection",
@@ -9559,7 +9579,7 @@
     "longname": "src/service/connection.js~Connection#changeMajor",
     "access": "public",
     "description": " (Async)비콘의 Major 값을 변경한다.(2byte)\n 0~65535의 값을 입력 가능하다.",
-    "lineNumber": 716,
+    "lineNumber": 719,
     "params": [
       {
         "nullable": null,
@@ -9582,7 +9602,7 @@
     }
   },
   {
-    "__docId__": 394,
+    "__docId__": 395,
     "kind": "method",
     "name": "changeMinor",
     "memberof": "src/service/connection.js~Connection",
@@ -9592,7 +9612,7 @@
     "longname": "src/service/connection.js~Connection#changeMinor",
     "access": "public",
     "description": " (Async)비콘의 Minor 값을 변경한다.(2byte)\n 0~65535의 값을 입력 가능하다.",
-    "lineNumber": 731,
+    "lineNumber": 734,
     "params": [
       {
         "nullable": null,
@@ -9615,7 +9635,7 @@
     }
   },
   {
-    "__docId__": 395,
+    "__docId__": 396,
     "kind": "method",
     "name": "changeNameSpaceID",
     "memberof": "src/service/connection.js~Connection",
@@ -9625,7 +9645,7 @@
     "longname": "src/service/connection.js~Connection#changeNameSpaceID",
     "access": "public",
     "description": " (Async)Eddystone-UID 비콘 모드의 Namespace ID 값을 변경한다.(10byte)",
-    "lineNumber": 747,
+    "lineNumber": 750,
     "params": [
       {
         "nullable": null,
@@ -9648,7 +9668,7 @@
     }
   },
   {
-    "__docId__": 396,
+    "__docId__": 397,
     "kind": "method",
     "name": "changeInstanceID",
     "memberof": "src/service/connection.js~Connection",
@@ -9658,7 +9678,7 @@
     "longname": "src/service/connection.js~Connection#changeInstanceID",
     "access": "public",
     "description": " (Async)Eddystone-UID 비콘 모드의 Instance ID 값을 변경한다.(6byte)",
-    "lineNumber": 757,
+    "lineNumber": 760,
     "params": [
       {
         "nullable": null,
@@ -9681,7 +9701,7 @@
     }
   },
   {
-    "__docId__": 397,
+    "__docId__": 398,
     "kind": "method",
     "name": "changeSchemePrefix",
     "memberof": "src/service/connection.js~Connection",
@@ -9691,7 +9711,7 @@
     "longname": "src/service/connection.js~Connection#changeSchemePrefix",
     "access": "public",
     "description": " (Async)Eddystone-URL 비콘 모드의 Scheme Prefix 값을 변경한다.(2byte)",
-    "lineNumber": 770,
+    "lineNumber": 773,
     "params": [
       {
         "nullable": null,
@@ -9714,7 +9734,7 @@
     }
   },
   {
-    "__docId__": 398,
+    "__docId__": 399,
     "kind": "method",
     "name": "changeUrl",
     "memberof": "src/service/connection.js~Connection",
@@ -9724,7 +9744,7 @@
     "longname": "src/service/connection.js~Connection#changeUrl",
     "access": "public",
     "description": " (Async)Eddystone-URL 비콘 모드의 URL 값을 변경한다.(17byte)",
-    "lineNumber": 781,
+    "lineNumber": 784,
     "params": [
       {
         "nullable": null,
@@ -9747,7 +9767,7 @@
     }
   },
   {
-    "__docId__": 399,
+    "__docId__": 400,
     "kind": "method",
     "name": "changeTxPower",
     "memberof": "src/service/connection.js~Connection",
@@ -9757,7 +9777,7 @@
     "longname": "src/service/connection.js~Connection#changeTxPower",
     "access": "public",
     "description": " (Async)비콘의 Tx Power 값을 변경한다.(1byte)\n 1 : -20dBm\n 2 : -16dBm\n 3 : -12dBm\n 4 : -8dBm\n 5 : -4dBm\n 6 : 0dBm\n 7 : 4dBm",
-    "lineNumber": 798,
+    "lineNumber": 801,
     "params": [
       {
         "nullable": null,
@@ -9780,7 +9800,7 @@
     }
   },
   {
-    "__docId__": 400,
+    "__docId__": 401,
     "kind": "method",
     "name": "changeIOOutput",
     "memberof": "src/service/connection.js~Connection",
@@ -9790,7 +9810,7 @@
     "longname": "src/service/connection.js~Connection#changeIOOutput",
     "access": "public",
     "description": " (Async)비콘의 IO Module의 Output 값을 변경한다.(2byte)",
-    "lineNumber": 812,
+    "lineNumber": 815,
     "params": [
       {
         "nullable": null,
@@ -9823,7 +9843,29 @@
     }
   },
   {
-    "__docId__": 401,
+    "__docId__": 402,
+    "kind": "method",
+    "name": "rebootBeacon",
+    "memberof": "src/service/connection.js~Connection",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/connection.js~Connection#rebootBeacon",
+    "access": "public",
+    "description": " (Async)비콘을 Reboot 한다.",
+    "lineNumber": 829,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise<function(beacon: Beacon, data: Object), function(beacon: Beacon, data: Object, error: Error)"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 403,
     "kind": "file",
     "name": "src/service/filter/arma.js",
     "content": "",
@@ -9834,7 +9876,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 402,
+    "__docId__": 404,
     "kind": "variable",
     "name": "DEFAULT_ARMA_SPEED",
     "memberof": "src/service/filter/arma.js",
@@ -9855,7 +9897,7 @@
     "ignore": true
   },
   {
-    "__docId__": 403,
+    "__docId__": 405,
     "kind": "class",
     "name": "ArmaRssiFilter",
     "memberof": "src/service/filter/arma.js",
@@ -9874,7 +9916,7 @@
     ]
   },
   {
-    "__docId__": 404,
+    "__docId__": 406,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9888,7 +9930,7 @@
     "undocument": true
   },
   {
-    "__docId__": 405,
+    "__docId__": 407,
     "kind": "member",
     "name": "measurement",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9905,7 +9947,7 @@
     }
   },
   {
-    "__docId__": 406,
+    "__docId__": 408,
     "kind": "member",
     "name": "isInitialized",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9922,7 +9964,7 @@
     }
   },
   {
-    "__docId__": 407,
+    "__docId__": 409,
     "kind": "method",
     "name": "setDefaultArmaSpeed",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9945,7 +9987,7 @@
     "return": null
   },
   {
-    "__docId__": 408,
+    "__docId__": 410,
     "kind": "method",
     "name": "addMeasurement",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9968,7 +10010,7 @@
     "return": null
   },
   {
-    "__docId__": 412,
+    "__docId__": 414,
     "kind": "method",
     "name": "isMeasurementAvailable",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -9988,7 +10030,7 @@
     }
   },
   {
-    "__docId__": 413,
+    "__docId__": 415,
     "kind": "method",
     "name": "getMeasurementCount",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -10008,7 +10050,7 @@
     }
   },
   {
-    "__docId__": 414,
+    "__docId__": 416,
     "kind": "method",
     "name": "calculateRssi",
     "memberof": "src/service/filter/arma.js~ArmaRssiFilter",
@@ -10028,7 +10070,7 @@
     }
   },
   {
-    "__docId__": 415,
+    "__docId__": 417,
     "kind": "file",
     "name": "src/service/filter/base.js",
     "content": "",
@@ -10039,7 +10081,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 416,
+    "__docId__": 418,
     "kind": "class",
     "name": "Measurement",
     "memberof": "src/service/filter/base.js",
@@ -10054,7 +10096,7 @@
     "interface": false
   },
   {
-    "__docId__": 417,
+    "__docId__": 419,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10089,7 +10131,7 @@
     ]
   },
   {
-    "__docId__": 418,
+    "__docId__": 420,
     "kind": "member",
     "name": "rssi",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10108,7 +10150,7 @@
     }
   },
   {
-    "__docId__": 419,
+    "__docId__": 421,
     "kind": "member",
     "name": "timestamp",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10127,7 +10169,7 @@
     }
   },
   {
-    "__docId__": 420,
+    "__docId__": 422,
     "kind": "method",
     "name": "getRssi",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10149,7 +10191,7 @@
     "params": []
   },
   {
-    "__docId__": 421,
+    "__docId__": 423,
     "kind": "method",
     "name": "setRssi",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10175,7 +10217,7 @@
     "return": null
   },
   {
-    "__docId__": 423,
+    "__docId__": 425,
     "kind": "method",
     "name": "getTimeStamp",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10197,7 +10239,7 @@
     "params": []
   },
   {
-    "__docId__": 424,
+    "__docId__": 426,
     "kind": "method",
     "name": "setTimeStamp",
     "memberof": "src/service/filter/base.js~Measurement",
@@ -10223,7 +10265,7 @@
     "return": null
   },
   {
-    "__docId__": 426,
+    "__docId__": 428,
     "kind": "class",
     "name": "RssiFilter",
     "memberof": "src/service/filter/base.js",
@@ -10238,7 +10280,7 @@
     "interface": true
   },
   {
-    "__docId__": 427,
+    "__docId__": 429,
     "kind": "method",
     "name": "addMeasurement",
     "memberof": "src/service/filter/base.js~RssiFilter",
@@ -10264,7 +10306,7 @@
     "return": null
   },
   {
-    "__docId__": 428,
+    "__docId__": 430,
     "kind": "method",
     "name": "isMeasurementAvailable",
     "memberof": "src/service/filter/base.js~RssiFilter",
@@ -10286,7 +10328,7 @@
     "params": []
   },
   {
-    "__docId__": 429,
+    "__docId__": 431,
     "kind": "method",
     "name": "calculateRssi",
     "memberof": "src/service/filter/base.js~RssiFilter",
@@ -10308,7 +10350,7 @@
     "params": []
   },
   {
-    "__docId__": 430,
+    "__docId__": 432,
     "kind": "method",
     "name": "getMeasurementCount",
     "memberof": "src/service/filter/base.js~RssiFilter",
@@ -10330,7 +10372,7 @@
     "params": []
   },
   {
-    "__docId__": 431,
+    "__docId__": 433,
     "kind": "file",
     "name": "src/service/filter/kalman.js",
     "content": "",
@@ -10341,7 +10383,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 432,
+    "__docId__": 434,
     "kind": "variable",
     "name": "DEFAULT_SYSTEM_NOISE_VARIANCE",
     "memberof": "src/service/filter/kalman.js",
@@ -10362,7 +10404,7 @@
     "ignore": true
   },
   {
-    "__docId__": 433,
+    "__docId__": 435,
     "kind": "variable",
     "name": "DEFAULT_OBSERVE_NOISE_VARIANCE",
     "memberof": "src/service/filter/kalman.js",
@@ -10383,7 +10425,7 @@
     "ignore": true
   },
   {
-    "__docId__": 434,
+    "__docId__": 436,
     "kind": "class",
     "name": "KalmanRssiFilter",
     "memberof": "src/service/filter/kalman.js",
@@ -10402,7 +10444,7 @@
     ]
   },
   {
-    "__docId__": 435,
+    "__docId__": 437,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10416,7 +10458,7 @@
     "undocument": true
   },
   {
-    "__docId__": 436,
+    "__docId__": 438,
     "kind": "member",
     "name": "measurement",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10433,7 +10475,7 @@
     }
   },
   {
-    "__docId__": 437,
+    "__docId__": 439,
     "kind": "member",
     "name": "systemNoiseVariance",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10450,7 +10492,7 @@
     }
   },
   {
-    "__docId__": 438,
+    "__docId__": 440,
     "kind": "member",
     "name": "observeNoiseVariance",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10467,7 +10509,7 @@
     }
   },
   {
-    "__docId__": 439,
+    "__docId__": 441,
     "kind": "member",
     "name": "predictCovariance",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10484,7 +10526,7 @@
     }
   },
   {
-    "__docId__": 440,
+    "__docId__": 442,
     "kind": "method",
     "name": "addMeasurement",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10507,7 +10549,7 @@
     "return": null
   },
   {
-    "__docId__": 443,
+    "__docId__": 445,
     "kind": "method",
     "name": "isMeasurementAvailable",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10527,7 +10569,7 @@
     }
   },
   {
-    "__docId__": 444,
+    "__docId__": 446,
     "kind": "method",
     "name": "getMeasurementCount",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10547,7 +10589,7 @@
     }
   },
   {
-    "__docId__": 445,
+    "__docId__": 447,
     "kind": "method",
     "name": "calculateRssi",
     "memberof": "src/service/filter/kalman.js~KalmanRssiFilter",
@@ -10567,7 +10609,7 @@
     }
   },
   {
-    "__docId__": 446,
+    "__docId__": 448,
     "kind": "file",
     "name": "src/service/filter/running-average.js",
     "content": "",
@@ -10578,7 +10620,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 447,
+    "__docId__": 449,
     "kind": "variable",
     "name": "DEFAULT_EXPIRATION_TIME",
     "memberof": "src/service/filter/running-average.js",
@@ -10598,7 +10640,7 @@
     "ignore": true
   },
   {
-    "__docId__": 448,
+    "__docId__": 450,
     "kind": "class",
     "name": "RunningAverageRssiFilter",
     "memberof": "src/service/filter/running-average.js",
@@ -10619,7 +10661,7 @@
     ]
   },
   {
-    "__docId__": 449,
+    "__docId__": 451,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10644,7 +10686,7 @@
     ]
   },
   {
-    "__docId__": 450,
+    "__docId__": 452,
     "kind": "member",
     "name": "measurements",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10663,7 +10705,7 @@
     }
   },
   {
-    "__docId__": 451,
+    "__docId__": 453,
     "kind": "member",
     "name": "expirationTime",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10682,7 +10724,7 @@
     }
   },
   {
-    "__docId__": 452,
+    "__docId__": 454,
     "kind": "method",
     "name": "addMeasurement",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10708,7 +10750,7 @@
     "return": null
   },
   {
-    "__docId__": 453,
+    "__docId__": 455,
     "kind": "method",
     "name": "isMeasurementAvailable",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10730,7 +10772,7 @@
     "params": []
   },
   {
-    "__docId__": 454,
+    "__docId__": 456,
     "kind": "method",
     "name": "getMeasurementCount",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10752,7 +10794,7 @@
     "params": []
   },
   {
-    "__docId__": 455,
+    "__docId__": 457,
     "kind": "method",
     "name": "calculateRssi",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10774,7 +10816,7 @@
     "params": []
   },
   {
-    "__docId__": 456,
+    "__docId__": 458,
     "kind": "method",
     "name": "refreshMeasurements",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10789,7 +10831,7 @@
     "return": null
   },
   {
-    "__docId__": 458,
+    "__docId__": 460,
     "kind": "method",
     "name": "setExpirationTime",
     "memberof": "src/service/filter/running-average.js~RunningAverageRssiFilter",
@@ -10815,7 +10857,7 @@
     "return": null
   },
   {
-    "__docId__": 460,
+    "__docId__": 462,
     "kind": "file",
     "name": "src/service/manager.js",
     "content": "",
@@ -10826,7 +10868,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 461,
+    "__docId__": 463,
     "kind": "variable",
     "name": "DEFAULT_FOREGROUND_SCAN_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10846,7 +10888,7 @@
     "ignore": true
   },
   {
-    "__docId__": 462,
+    "__docId__": 464,
     "kind": "variable",
     "name": "DEFAULT_FOREGROUND_BETWEEN_SCAN_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10867,7 +10909,7 @@
     "ignore": true
   },
   {
-    "__docId__": 463,
+    "__docId__": 465,
     "kind": "variable",
     "name": "DEFAULT_BACKGROUND_SCAN_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10888,7 +10930,7 @@
     "ignore": true
   },
   {
-    "__docId__": 464,
+    "__docId__": 466,
     "kind": "variable",
     "name": "DEFAULT_BACKGROUND_BETWEEN_SCAN_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10909,7 +10951,7 @@
     "ignore": true
   },
   {
-    "__docId__": 465,
+    "__docId__": 467,
     "kind": "variable",
     "name": "DEFAULT_FOREGROUND_REGION_EXIT_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10930,7 +10972,7 @@
     "ignore": true
   },
   {
-    "__docId__": 466,
+    "__docId__": 468,
     "kind": "variable",
     "name": "DEFAULT_BACKGROUND_REGION_EXIT_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10951,7 +10993,7 @@
     "ignore": true
   },
   {
-    "__docId__": 467,
+    "__docId__": 469,
     "kind": "variable",
     "name": "DEFAULT_BEACON_UNDISCOVER_PERIOD",
     "memberof": "src/service/manager.js",
@@ -10972,7 +11014,7 @@
     "ignore": true
   },
   {
-    "__docId__": 468,
+    "__docId__": 470,
     "kind": "class",
     "name": "Manager",
     "memberof": "src/service/manager.js",
@@ -10993,7 +11035,7 @@
     ]
   },
   {
-    "__docId__": 469,
+    "__docId__": 471,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/manager.js~Manager",
@@ -11006,7 +11048,7 @@
     "lineNumber": 76
   },
   {
-    "__docId__": 470,
+    "__docId__": 472,
     "kind": "member",
     "name": "_ble",
     "memberof": "src/service/manager.js~Manager",
@@ -11026,7 +11068,7 @@
     "ignore": true
   },
   {
-    "__docId__": 471,
+    "__docId__": 473,
     "kind": "member",
     "name": "_scanner",
     "memberof": "src/service/manager.js~Manager",
@@ -11046,7 +11088,7 @@
     "ignore": true
   },
   {
-    "__docId__": 472,
+    "__docId__": 474,
     "kind": "member",
     "name": "_monitoring",
     "memberof": "src/service/manager.js~Manager",
@@ -11066,7 +11108,7 @@
     "ignore": true
   },
   {
-    "__docId__": 473,
+    "__docId__": 475,
     "kind": "member",
     "name": "_ranging",
     "memberof": "src/service/manager.js~Manager",
@@ -11086,7 +11128,7 @@
     "ignore": true
   },
   {
-    "__docId__": 474,
+    "__docId__": 476,
     "kind": "member",
     "name": "platform",
     "memberof": "src/service/manager.js~Manager",
@@ -11127,7 +11169,7 @@
     }
   },
   {
-    "__docId__": 475,
+    "__docId__": 477,
     "kind": "member",
     "name": "_platformDistribute",
     "memberof": "src/service/manager.js~Manager",
@@ -11145,7 +11187,7 @@
     }
   },
   {
-    "__docId__": 476,
+    "__docId__": 478,
     "kind": "member",
     "name": "foregroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11164,7 +11206,7 @@
     }
   },
   {
-    "__docId__": 477,
+    "__docId__": 479,
     "kind": "member",
     "name": "foregroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11183,7 +11225,7 @@
     }
   },
   {
-    "__docId__": 478,
+    "__docId__": 480,
     "kind": "member",
     "name": "backgroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11202,7 +11244,7 @@
     }
   },
   {
-    "__docId__": 479,
+    "__docId__": 481,
     "kind": "member",
     "name": "backgroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11221,7 +11263,7 @@
     }
   },
   {
-    "__docId__": 480,
+    "__docId__": 482,
     "kind": "member",
     "name": "regionExitPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11238,7 +11280,7 @@
     }
   },
   {
-    "__docId__": 481,
+    "__docId__": 483,
     "kind": "member",
     "name": "beaconUnDiscoverPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11257,7 +11299,7 @@
     }
   },
   {
-    "__docId__": 482,
+    "__docId__": 484,
     "kind": "method",
     "name": "_attachScanCallback",
     "memberof": "src/service/manager.js~Manager",
@@ -11273,7 +11315,7 @@
     "return": null
   },
   {
-    "__docId__": 483,
+    "__docId__": 485,
     "kind": "method",
     "name": "_wrapCallback",
     "memberof": "src/service/manager.js~Manager",
@@ -11315,7 +11357,7 @@
     "return": null
   },
   {
-    "__docId__": 484,
+    "__docId__": 486,
     "kind": "method",
     "name": "_checkBackgroundMode",
     "memberof": "src/service/manager.js~Manager",
@@ -11331,7 +11373,7 @@
     "return": null
   },
   {
-    "__docId__": 485,
+    "__docId__": 487,
     "kind": "method",
     "name": "_onPause",
     "memberof": "src/service/manager.js~Manager",
@@ -11347,7 +11389,7 @@
     "return": null
   },
   {
-    "__docId__": 486,
+    "__docId__": 488,
     "kind": "method",
     "name": "_onResume",
     "memberof": "src/service/manager.js~Manager",
@@ -11363,7 +11405,7 @@
     "return": null
   },
   {
-    "__docId__": 487,
+    "__docId__": 489,
     "kind": "method",
     "name": "setBackgroundMode",
     "memberof": "src/service/manager.js~Manager",
@@ -11403,7 +11445,7 @@
     "return": null
   },
   {
-    "__docId__": 488,
+    "__docId__": 490,
     "kind": "method",
     "name": "setForegroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11432,7 +11474,7 @@
     "return": null
   },
   {
-    "__docId__": 490,
+    "__docId__": 492,
     "kind": "method",
     "name": "setForegroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11461,7 +11503,7 @@
     "return": null
   },
   {
-    "__docId__": 492,
+    "__docId__": 494,
     "kind": "method",
     "name": "setBackgroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11490,7 +11532,7 @@
     "return": null
   },
   {
-    "__docId__": 494,
+    "__docId__": 496,
     "kind": "method",
     "name": "setBackgroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11519,7 +11561,7 @@
     "return": null
   },
   {
-    "__docId__": 496,
+    "__docId__": 498,
     "kind": "method",
     "name": "setRegionExitPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11545,7 +11587,7 @@
     "return": null
   },
   {
-    "__docId__": 498,
+    "__docId__": 500,
     "kind": "method",
     "name": "setBeaconUnDiscoverPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11571,7 +11613,7 @@
     "return": null
   },
   {
-    "__docId__": 500,
+    "__docId__": 502,
     "kind": "method",
     "name": "getScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11593,7 +11635,7 @@
     "params": []
   },
   {
-    "__docId__": 501,
+    "__docId__": 503,
     "kind": "method",
     "name": "getBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11615,7 +11657,7 @@
     "params": []
   },
   {
-    "__docId__": 502,
+    "__docId__": 504,
     "kind": "method",
     "name": "getRegionExitPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11637,7 +11679,7 @@
     "params": []
   },
   {
-    "__docId__": 503,
+    "__docId__": 505,
     "kind": "method",
     "name": "getBeaconUnDiscoverPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11659,7 +11701,7 @@
     "params": []
   },
   {
-    "__docId__": 504,
+    "__docId__": 506,
     "kind": "method",
     "name": "updateScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11674,7 +11716,7 @@
     "return": null
   },
   {
-    "__docId__": 505,
+    "__docId__": 507,
     "kind": "method",
     "name": "setDistanceCalculator",
     "memberof": "src/service/manager.js~Manager",
@@ -11700,7 +11742,7 @@
     "return": null
   },
   {
-    "__docId__": 506,
+    "__docId__": 508,
     "kind": "method",
     "name": "getDistanceCalculator",
     "memberof": "src/service/manager.js~Manager",
@@ -11722,7 +11764,7 @@
     "params": []
   },
   {
-    "__docId__": 507,
+    "__docId__": 509,
     "kind": "method",
     "name": "setBeaconRssiFilter",
     "memberof": "src/service/manager.js~Manager",
@@ -11748,7 +11790,7 @@
     "return": null
   },
   {
-    "__docId__": 508,
+    "__docId__": 510,
     "kind": "method",
     "name": "getBeaconRssiFilter",
     "memberof": "src/service/manager.js~Manager",
@@ -11770,7 +11812,7 @@
     "params": []
   },
   {
-    "__docId__": 509,
+    "__docId__": 511,
     "kind": "method",
     "name": "setMaxTrackingAge",
     "memberof": "src/service/manager.js~Manager",
@@ -11796,7 +11838,7 @@
     "return": null
   },
   {
-    "__docId__": 510,
+    "__docId__": 512,
     "kind": "method",
     "name": "getMaxTrackingAge",
     "memberof": "src/service/manager.js~Manager",
@@ -11818,7 +11860,7 @@
     "params": []
   },
   {
-    "__docId__": 511,
+    "__docId__": 513,
     "kind": "method",
     "name": "setUseTrackingCache",
     "memberof": "src/service/manager.js~Manager",
@@ -11844,7 +11886,7 @@
     "return": null
   },
   {
-    "__docId__": 512,
+    "__docId__": 514,
     "kind": "method",
     "name": "isBLEAvailable",
     "memberof": "src/service/manager.js~Manager",
@@ -11867,7 +11909,7 @@
     "params": []
   },
   {
-    "__docId__": 513,
+    "__docId__": 515,
     "kind": "method",
     "name": "_onScanCycleEnd",
     "memberof": "src/service/manager.js~Manager",
@@ -11883,7 +11925,7 @@
     "return": null
   },
   {
-    "__docId__": 514,
+    "__docId__": 516,
     "kind": "method",
     "name": "_onDiscover",
     "memberof": "src/service/manager.js~Manager",
@@ -11910,7 +11952,7 @@
     "return": null
   },
   {
-    "__docId__": 515,
+    "__docId__": 517,
     "kind": "method",
     "name": "_onUnDiscover",
     "memberof": "src/service/manager.js~Manager",
@@ -11937,7 +11979,7 @@
     "return": null
   },
   {
-    "__docId__": 516,
+    "__docId__": 518,
     "kind": "method",
     "name": "startScan",
     "memberof": "src/service/manager.js~Manager",
@@ -11955,7 +11997,7 @@
     "return": null
   },
   {
-    "__docId__": 517,
+    "__docId__": 519,
     "kind": "method",
     "name": "stopScan",
     "memberof": "src/service/manager.js~Manager",
@@ -11973,7 +12015,7 @@
     "return": null
   },
   {
-    "__docId__": 518,
+    "__docId__": 520,
     "kind": "method",
     "name": "startMonitoring",
     "memberof": "src/service/manager.js~Manager",
@@ -12002,7 +12044,7 @@
     "return": null
   },
   {
-    "__docId__": 519,
+    "__docId__": 521,
     "kind": "method",
     "name": "startMonitoringAll",
     "memberof": "src/service/manager.js~Manager",
@@ -12031,7 +12073,7 @@
     "return": null
   },
   {
-    "__docId__": 520,
+    "__docId__": 522,
     "kind": "method",
     "name": "stopMonitoring",
     "memberof": "src/service/manager.js~Manager",
@@ -12060,7 +12102,7 @@
     "return": null
   },
   {
-    "__docId__": 521,
+    "__docId__": 523,
     "kind": "method",
     "name": "stopMonitoringAll",
     "memberof": "src/service/manager.js~Manager",
@@ -12089,7 +12131,7 @@
     "return": null
   },
   {
-    "__docId__": 522,
+    "__docId__": 524,
     "kind": "method",
     "name": "startRanging",
     "memberof": "src/service/manager.js~Manager",
@@ -12118,7 +12160,7 @@
     "return": null
   },
   {
-    "__docId__": 523,
+    "__docId__": 525,
     "kind": "method",
     "name": "startRangingAll",
     "memberof": "src/service/manager.js~Manager",
@@ -12147,7 +12189,7 @@
     "return": null
   },
   {
-    "__docId__": 524,
+    "__docId__": 526,
     "kind": "method",
     "name": "stopRanging",
     "memberof": "src/service/manager.js~Manager",
@@ -12176,7 +12218,7 @@
     "return": null
   },
   {
-    "__docId__": 525,
+    "__docId__": 527,
     "kind": "method",
     "name": "stopRangingAll",
     "memberof": "src/service/manager.js~Manager",
@@ -12205,7 +12247,7 @@
     "return": null
   },
   {
-    "__docId__": 526,
+    "__docId__": 528,
     "kind": "file",
     "name": "src/service/monitoring.js",
     "content": "",
@@ -12216,7 +12258,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 527,
+    "__docId__": 529,
     "kind": "class",
     "name": "RegionMonitoringState",
     "memberof": "src/service/monitoring.js",
@@ -12231,7 +12273,7 @@
     "interface": false
   },
   {
-    "__docId__": 528,
+    "__docId__": 530,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12256,7 +12298,7 @@
     ]
   },
   {
-    "__docId__": 529,
+    "__docId__": 531,
     "kind": "member",
     "name": "isInside",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12275,7 +12317,7 @@
     }
   },
   {
-    "__docId__": 530,
+    "__docId__": 532,
     "kind": "member",
     "name": "lastSeenTime",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12294,7 +12336,7 @@
     }
   },
   {
-    "__docId__": 531,
+    "__docId__": 533,
     "kind": "method",
     "name": "setRegionExitPeriod",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12317,7 +12359,7 @@
     "return": null
   },
   {
-    "__docId__": 532,
+    "__docId__": 534,
     "kind": "method",
     "name": "getRegionExitPeriod",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12337,7 +12379,7 @@
     }
   },
   {
-    "__docId__": 533,
+    "__docId__": 535,
     "kind": "method",
     "name": "markInside",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12359,7 +12401,7 @@
     "params": []
   },
   {
-    "__docId__": 536,
+    "__docId__": 538,
     "kind": "method",
     "name": "markOutside",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12374,7 +12416,7 @@
     "return": null
   },
   {
-    "__docId__": 539,
+    "__docId__": 541,
     "kind": "method",
     "name": "markOutsideIfExpired",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12396,7 +12438,7 @@
     "params": []
   },
   {
-    "__docId__": 540,
+    "__docId__": 542,
     "kind": "method",
     "name": "isInsideRegion",
     "memberof": "src/service/monitoring.js~RegionMonitoringState",
@@ -12418,7 +12460,7 @@
     "params": []
   },
   {
-    "__docId__": 541,
+    "__docId__": 543,
     "kind": "class",
     "name": "MonitoringData",
     "memberof": "src/service/monitoring.js",
@@ -12433,7 +12475,7 @@
     "interface": false
   },
   {
-    "__docId__": 542,
+    "__docId__": 544,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/monitoring.js~MonitoringData",
@@ -12468,7 +12510,7 @@
     ]
   },
   {
-    "__docId__": 543,
+    "__docId__": 545,
     "kind": "member",
     "name": "isInside",
     "memberof": "src/service/monitoring.js~MonitoringData",
@@ -12487,7 +12529,7 @@
     }
   },
   {
-    "__docId__": 544,
+    "__docId__": 546,
     "kind": "member",
     "name": "region",
     "memberof": "src/service/monitoring.js~MonitoringData",
@@ -12506,7 +12548,7 @@
     }
   },
   {
-    "__docId__": 545,
+    "__docId__": 547,
     "kind": "method",
     "name": "isInsideRegion",
     "memberof": "src/service/monitoring.js~MonitoringData",
@@ -12528,7 +12570,7 @@
     "params": []
   },
   {
-    "__docId__": 546,
+    "__docId__": 548,
     "kind": "method",
     "name": "getRegion",
     "memberof": "src/service/monitoring.js~MonitoringData",
@@ -12550,7 +12592,7 @@
     "params": []
   },
   {
-    "__docId__": 547,
+    "__docId__": 549,
     "kind": "class",
     "name": "Monitoring",
     "memberof": "src/service/monitoring.js",
@@ -12568,7 +12610,7 @@
     ]
   },
   {
-    "__docId__": 548,
+    "__docId__": 550,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12593,7 +12635,7 @@
     ]
   },
   {
-    "__docId__": 549,
+    "__docId__": 551,
     "kind": "member",
     "name": "_manager",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12613,7 +12655,7 @@
     "ignore": true
   },
   {
-    "__docId__": 550,
+    "__docId__": 552,
     "kind": "member",
     "name": "regionStateMap",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12632,7 +12674,7 @@
     }
   },
   {
-    "__docId__": 551,
+    "__docId__": 553,
     "kind": "method",
     "name": "getRegions",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12654,7 +12696,7 @@
     "params": []
   },
   {
-    "__docId__": 552,
+    "__docId__": 554,
     "kind": "method",
     "name": "getRegionMonitoringStateMap",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12676,7 +12718,7 @@
     "params": []
   },
   {
-    "__docId__": 553,
+    "__docId__": 555,
     "kind": "method",
     "name": "getMatchedRegions",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12709,7 +12751,7 @@
     }
   },
   {
-    "__docId__": 554,
+    "__docId__": 556,
     "kind": "method",
     "name": "addRegion",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12742,7 +12784,7 @@
     }
   },
   {
-    "__docId__": 555,
+    "__docId__": 557,
     "kind": "method",
     "name": "removeRegion",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12775,7 +12817,7 @@
     }
   },
   {
-    "__docId__": 556,
+    "__docId__": 558,
     "kind": "method",
     "name": "clear",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12790,7 +12832,7 @@
     "return": null
   },
   {
-    "__docId__": 557,
+    "__docId__": 559,
     "kind": "method",
     "name": "updateState",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12826,7 +12868,7 @@
     "return": null
   },
   {
-    "__docId__": 558,
+    "__docId__": 560,
     "kind": "method",
     "name": "updateInsideRegion",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12852,7 +12894,7 @@
     "return": null
   },
   {
-    "__docId__": 559,
+    "__docId__": 561,
     "kind": "method",
     "name": "updateOutsideRegion",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12867,7 +12909,7 @@
     "return": null
   },
   {
-    "__docId__": 560,
+    "__docId__": 562,
     "kind": "method",
     "name": "_emitUpdateState",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12918,7 +12960,7 @@
     "return": null
   },
   {
-    "__docId__": 561,
+    "__docId__": 563,
     "kind": "method",
     "name": "getRegionSize",
     "memberof": "src/service/monitoring.js~Monitoring",
@@ -12940,7 +12982,7 @@
     "params": []
   },
   {
-    "__docId__": 562,
+    "__docId__": 564,
     "kind": "file",
     "name": "src/service/ranging.js",
     "content": "",
@@ -12951,7 +12993,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 563,
+    "__docId__": 565,
     "kind": "variable",
     "name": "DEFAULT_MAX_TRACKING_AGE",
     "memberof": "src/service/ranging.js",
@@ -12971,7 +13013,7 @@
     "ignore": true
   },
   {
-    "__docId__": 564,
+    "__docId__": 566,
     "kind": "variable",
     "name": "DEFAULT_EXPIRATION_TIME",
     "memberof": "src/service/ranging.js",
@@ -12991,7 +13033,7 @@
     "ignore": true
   },
   {
-    "__docId__": 565,
+    "__docId__": 567,
     "kind": "class",
     "name": "RangingData",
     "memberof": "src/service/ranging.js",
@@ -13007,7 +13049,7 @@
     "ignore": true
   },
   {
-    "__docId__": 566,
+    "__docId__": 568,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13042,7 +13084,7 @@
     ]
   },
   {
-    "__docId__": 567,
+    "__docId__": 569,
     "kind": "member",
     "name": "beacons",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13061,7 +13103,7 @@
     }
   },
   {
-    "__docId__": 568,
+    "__docId__": 570,
     "kind": "member",
     "name": "region",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13080,7 +13122,7 @@
     }
   },
   {
-    "__docId__": 569,
+    "__docId__": 571,
     "kind": "method",
     "name": "getBeacons",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13102,7 +13144,7 @@
     "params": []
   },
   {
-    "__docId__": 570,
+    "__docId__": 572,
     "kind": "method",
     "name": "getRegion",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13124,7 +13166,7 @@
     "params": []
   },
   {
-    "__docId__": 571,
+    "__docId__": 573,
     "kind": "class",
     "name": "RangedBeacon",
     "memberof": "src/service/ranging.js",
@@ -13139,7 +13181,7 @@
     "interface": false
   },
   {
-    "__docId__": 572,
+    "__docId__": 574,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13164,7 +13206,7 @@
     ]
   },
   {
-    "__docId__": 573,
+    "__docId__": 575,
     "kind": "member",
     "name": "beacon",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13183,7 +13225,7 @@
     }
   },
   {
-    "__docId__": 574,
+    "__docId__": 576,
     "kind": "member",
     "name": "tracked",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13202,7 +13244,7 @@
     }
   },
   {
-    "__docId__": 575,
+    "__docId__": 577,
     "kind": "member",
     "name": "lastTrackedTime",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13221,7 +13263,7 @@
     }
   },
   {
-    "__docId__": 576,
+    "__docId__": 578,
     "kind": "member",
     "name": "packetCount",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13240,7 +13282,7 @@
     }
   },
   {
-    "__docId__": 577,
+    "__docId__": 579,
     "kind": "member",
     "name": "filter",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13259,7 +13301,7 @@
     }
   },
   {
-    "__docId__": 578,
+    "__docId__": 580,
     "kind": "method",
     "name": "setRssiFilter",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13285,7 +13327,7 @@
     "return": null
   },
   {
-    "__docId__": 579,
+    "__docId__": 581,
     "kind": "method",
     "name": "getRssiFilter",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13307,7 +13349,7 @@
     "params": []
   },
   {
-    "__docId__": 580,
+    "__docId__": 582,
     "kind": "method",
     "name": "setExpirationTime",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13333,7 +13375,7 @@
     "return": null
   },
   {
-    "__docId__": 581,
+    "__docId__": 583,
     "kind": "method",
     "name": "getExpirationTime",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13355,7 +13397,7 @@
     "params": []
   },
   {
-    "__docId__": 582,
+    "__docId__": 584,
     "kind": "method",
     "name": "setMaxTrackingAge",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13381,7 +13423,7 @@
     "return": null
   },
   {
-    "__docId__": 583,
+    "__docId__": 585,
     "kind": "method",
     "name": "getMaxTrackingAge",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13403,7 +13445,7 @@
     "params": []
   },
   {
-    "__docId__": 584,
+    "__docId__": 586,
     "kind": "method",
     "name": "setTrackingCache",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13429,7 +13471,7 @@
     "return": null
   },
   {
-    "__docId__": 585,
+    "__docId__": 587,
     "kind": "method",
     "name": "getTrackingCache",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13451,7 +13493,7 @@
     "params": []
   },
   {
-    "__docId__": 586,
+    "__docId__": 588,
     "kind": "method",
     "name": "getBeacon",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13473,7 +13515,7 @@
     "params": []
   },
   {
-    "__docId__": 587,
+    "__docId__": 589,
     "kind": "method",
     "name": "updateBeacon",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13499,7 +13541,7 @@
     "return": null
   },
   {
-    "__docId__": 590,
+    "__docId__": 592,
     "kind": "method",
     "name": "isTracked",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13521,7 +13563,7 @@
     "params": []
   },
   {
-    "__docId__": 591,
+    "__docId__": 593,
     "kind": "method",
     "name": "setTracked",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13547,7 +13589,7 @@
     "return": null
   },
   {
-    "__docId__": 593,
+    "__docId__": 595,
     "kind": "method",
     "name": "commitMeasurements",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13562,7 +13604,7 @@
     "return": null
   },
   {
-    "__docId__": 595,
+    "__docId__": 597,
     "kind": "method",
     "name": "addMeasurement",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13588,7 +13630,7 @@
     "return": null
   },
   {
-    "__docId__": 598,
+    "__docId__": 600,
     "kind": "method",
     "name": "isMeasurementAvailable",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13610,7 +13652,7 @@
     "params": []
   },
   {
-    "__docId__": 599,
+    "__docId__": 601,
     "kind": "method",
     "name": "getTrackingAge",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13632,7 +13674,7 @@
     "params": []
   },
   {
-    "__docId__": 600,
+    "__docId__": 602,
     "kind": "method",
     "name": "isExpired",
     "memberof": "src/service/ranging.js~RangedBeacon",
@@ -13654,7 +13696,7 @@
     "params": []
   },
   {
-    "__docId__": 601,
+    "__docId__": 603,
     "kind": "class",
     "name": "RegionRangeState",
     "memberof": "src/service/ranging.js",
@@ -13669,7 +13711,7 @@
     "interface": false
   },
   {
-    "__docId__": 602,
+    "__docId__": 604,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/ranging.js~RegionRangeState",
@@ -13682,7 +13724,7 @@
     "lineNumber": 193
   },
   {
-    "__docId__": 603,
+    "__docId__": 605,
     "kind": "member",
     "name": "rangedBeaconsMap",
     "memberof": "src/service/ranging.js~RegionRangeState",
@@ -13701,7 +13743,7 @@
     }
   },
   {
-    "__docId__": 604,
+    "__docId__": 606,
     "kind": "method",
     "name": "addBeacon",
     "memberof": "src/service/ranging.js~RegionRangeState",
@@ -13727,7 +13769,7 @@
     "return": null
   },
   {
-    "__docId__": 605,
+    "__docId__": 607,
     "kind": "method",
     "name": "getRangedBeacons",
     "memberof": "src/service/ranging.js~RegionRangeState",
@@ -13749,7 +13791,7 @@
     "params": []
   },
   {
-    "__docId__": 607,
+    "__docId__": 609,
     "kind": "class",
     "name": "Ranging",
     "memberof": "src/service/ranging.js",
@@ -13767,7 +13809,7 @@
     ]
   },
   {
-    "__docId__": 608,
+    "__docId__": 610,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13792,7 +13834,7 @@
     ]
   },
   {
-    "__docId__": 609,
+    "__docId__": 611,
     "kind": "member",
     "name": "_manager",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13812,7 +13854,7 @@
     "ignore": true
   },
   {
-    "__docId__": 610,
+    "__docId__": 612,
     "kind": "member",
     "name": "regionStateMap",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13831,7 +13873,7 @@
     }
   },
   {
-    "__docId__": 611,
+    "__docId__": 613,
     "kind": "method",
     "name": "getRangedRegionState",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13853,7 +13895,7 @@
     "params": []
   },
   {
-    "__docId__": 612,
+    "__docId__": 614,
     "kind": "method",
     "name": "getRegions",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13875,7 +13917,7 @@
     "params": []
   },
   {
-    "__docId__": 613,
+    "__docId__": 615,
     "kind": "method",
     "name": "addRegion",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13908,7 +13950,7 @@
     }
   },
   {
-    "__docId__": 614,
+    "__docId__": 616,
     "kind": "method",
     "name": "removeRegion",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13941,7 +13983,7 @@
     }
   },
   {
-    "__docId__": 615,
+    "__docId__": 617,
     "kind": "method",
     "name": "clear",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13956,7 +13998,7 @@
     "return": null
   },
   {
-    "__docId__": 616,
+    "__docId__": 618,
     "kind": "method",
     "name": "getMatchedRegions",
     "memberof": "src/service/ranging.js~Ranging",
@@ -13989,7 +14031,7 @@
     }
   },
   {
-    "__docId__": 617,
+    "__docId__": 619,
     "kind": "method",
     "name": "setRangedRegionState",
     "memberof": "src/service/ranging.js~Ranging",
@@ -14015,7 +14057,7 @@
     "return": null
   },
   {
-    "__docId__": 619,
+    "__docId__": 621,
     "kind": "method",
     "name": "updateRangeState",
     "memberof": "src/service/ranging.js~Ranging",
@@ -14041,7 +14083,7 @@
     "return": null
   },
   {
-    "__docId__": 620,
+    "__docId__": 622,
     "kind": "method",
     "name": "emitRangeBeacons",
     "memberof": "src/service/ranging.js~Ranging",
@@ -14064,7 +14106,7 @@
     "return": null
   },
   {
-    "__docId__": 621,
+    "__docId__": 623,
     "kind": "method",
     "name": "getRegionSize",
     "memberof": "src/service/ranging.js~Ranging",
@@ -14086,7 +14128,7 @@
     "params": []
   },
   {
-    "__docId__": 622,
+    "__docId__": 624,
     "kind": "file",
     "name": "src/service/region.js",
     "content": "",
@@ -14097,7 +14139,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 623,
+    "__docId__": 625,
     "kind": "class",
     "name": "Region",
     "memberof": "src/service/region.js",
@@ -14115,7 +14157,7 @@
     "interface": false
   },
   {
-    "__docId__": 624,
+    "__docId__": 626,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/region.js~Region",
@@ -14190,7 +14232,7 @@
     ]
   },
   {
-    "__docId__": 625,
+    "__docId__": 627,
     "kind": "member",
     "name": "id",
     "memberof": "src/service/region.js~Region",
@@ -14209,7 +14251,7 @@
     }
   },
   {
-    "__docId__": 626,
+    "__docId__": 628,
     "kind": "member",
     "name": "major",
     "memberof": "src/service/region.js~Region",
@@ -14228,7 +14270,7 @@
     }
   },
   {
-    "__docId__": 627,
+    "__docId__": 629,
     "kind": "member",
     "name": "minor",
     "memberof": "src/service/region.js~Region",
@@ -14247,7 +14289,7 @@
     }
   },
   {
-    "__docId__": 628,
+    "__docId__": 630,
     "kind": "member",
     "name": "uuid",
     "memberof": "src/service/region.js~Region",
@@ -14266,7 +14308,7 @@
     }
   },
   {
-    "__docId__": 629,
+    "__docId__": 631,
     "kind": "member",
     "name": "namespaceId",
     "memberof": "src/service/region.js~Region",
@@ -14285,7 +14327,7 @@
     }
   },
   {
-    "__docId__": 630,
+    "__docId__": 632,
     "kind": "member",
     "name": "beacons",
     "memberof": "src/service/region.js~Region",
@@ -14302,7 +14344,7 @@
     }
   },
   {
-    "__docId__": 631,
+    "__docId__": 633,
     "kind": "method",
     "name": "isMatchedBeacon",
     "memberof": "src/service/region.js~Region",
@@ -14335,7 +14377,7 @@
     }
   },
   {
-    "__docId__": 632,
+    "__docId__": 634,
     "kind": "method",
     "name": "isEqual",
     "memberof": "src/service/region.js~Region",
@@ -14368,7 +14410,7 @@
     }
   },
   {
-    "__docId__": 633,
+    "__docId__": 635,
     "kind": "method",
     "name": "setBeacons",
     "memberof": "src/service/region.js~Region",
@@ -14395,7 +14437,7 @@
     }
   },
   {
-    "__docId__": 635,
+    "__docId__": 637,
     "kind": "method",
     "name": "addBeacons",
     "memberof": "src/service/region.js~Region",
@@ -14418,7 +14460,7 @@
     "return": null
   },
   {
-    "__docId__": 636,
+    "__docId__": 638,
     "kind": "method",
     "name": "removeBeacons",
     "memberof": "src/service/region.js~Region",
@@ -14441,7 +14483,7 @@
     "return": null
   },
   {
-    "__docId__": 637,
+    "__docId__": 639,
     "kind": "method",
     "name": "getBeacons",
     "memberof": "src/service/region.js~Region",
@@ -14461,7 +14503,7 @@
     }
   },
   {
-    "__docId__": 638,
+    "__docId__": 640,
     "kind": "method",
     "name": "toString",
     "memberof": "src/service/region.js~Region",
@@ -14483,7 +14525,7 @@
     "params": []
   },
   {
-    "__docId__": 639,
+    "__docId__": 641,
     "kind": "file",
     "name": "src/service/scanner.js",
     "content": "",
@@ -14494,7 +14536,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 640,
+    "__docId__": 642,
     "kind": "variable",
     "name": "DEVICE_INFORMATION_SERVICE_UUID",
     "memberof": "src/service/scanner.js",
@@ -14514,7 +14556,7 @@
     "ignore": true
   },
   {
-    "__docId__": 641,
+    "__docId__": 643,
     "kind": "variable",
     "name": "EDDYSTONE_SERVICE_UUID",
     "memberof": "src/service/scanner.js",
@@ -14534,7 +14576,7 @@
     "ignore": true
   },
   {
-    "__docId__": 642,
+    "__docId__": 644,
     "kind": "variable",
     "name": "BUILDTHING_SERVICE_UUID",
     "memberof": "src/service/scanner.js",
@@ -14554,7 +14596,7 @@
     "ignore": true
   },
   {
-    "__docId__": 643,
+    "__docId__": 645,
     "kind": "variable",
     "name": "BUILDTHING_DEVICE_INFO_SERVICE_UUIDS",
     "memberof": "src/service/scanner.js",
@@ -14574,7 +14616,7 @@
     "ignore": true
   },
   {
-    "__docId__": 644,
+    "__docId__": 646,
     "kind": "variable",
     "name": "ADVERTISEMENT_SERVICE_UUIDS",
     "memberof": "src/service/scanner.js",
@@ -14594,7 +14636,7 @@
     "ignore": true
   },
   {
-    "__docId__": 645,
+    "__docId__": 647,
     "kind": "class",
     "name": "Scanner",
     "memberof": "src/service/scanner.js",
@@ -14612,7 +14654,7 @@
     ]
   },
   {
-    "__docId__": 646,
+    "__docId__": 648,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14637,7 +14679,7 @@
     ]
   },
   {
-    "__docId__": 647,
+    "__docId__": 649,
     "kind": "member",
     "name": "_manager",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14657,7 +14699,7 @@
     "ignore": true
   },
   {
-    "__docId__": 648,
+    "__docId__": 650,
     "kind": "member",
     "name": "_ble",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14677,7 +14719,7 @@
     "ignore": true
   },
   {
-    "__docId__": 649,
+    "__docId__": 651,
     "kind": "member",
     "name": "isScanning",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14696,7 +14738,7 @@
     }
   },
   {
-    "__docId__": 650,
+    "__docId__": 652,
     "kind": "member",
     "name": "_hasActiveCycle",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14716,7 +14758,7 @@
     "ignore": true
   },
   {
-    "__docId__": 651,
+    "__docId__": 653,
     "kind": "member",
     "name": "_scanCycleIntervalId",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14736,7 +14778,7 @@
     "ignore": true
   },
   {
-    "__docId__": 652,
+    "__docId__": 654,
     "kind": "member",
     "name": "_scanTargetServiceUUID",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14756,7 +14798,7 @@
     "ignore": true
   },
   {
-    "__docId__": 653,
+    "__docId__": 655,
     "kind": "member",
     "name": "parser",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14775,7 +14817,7 @@
     }
   },
   {
-    "__docId__": 654,
+    "__docId__": 656,
     "kind": "member",
     "name": "_discoveredBeaconIdsDuringOneScanCycle",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14795,7 +14837,7 @@
     "ignore": true
   },
   {
-    "__docId__": 655,
+    "__docId__": 657,
     "kind": "member",
     "name": "_discoveredBeaconStateMap",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14815,7 +14857,7 @@
     "ignore": true
   },
   {
-    "__docId__": 656,
+    "__docId__": 658,
     "kind": "method",
     "name": "wrapCallback",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14831,7 +14873,7 @@
     "return": null
   },
   {
-    "__docId__": 657,
+    "__docId__": 659,
     "kind": "method",
     "name": "_enableBackgroundModeUsingCordovaPlugin",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14854,7 +14896,7 @@
     "return": null
   },
   {
-    "__docId__": 658,
+    "__docId__": 660,
     "kind": "method",
     "name": "setScanPeriod",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14890,7 +14932,7 @@
     "return": null
   },
   {
-    "__docId__": 659,
+    "__docId__": 661,
     "kind": "method",
     "name": "startScan",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14913,7 +14955,7 @@
     "return": null
   },
   {
-    "__docId__": 660,
+    "__docId__": 662,
     "kind": "method",
     "name": "stopScan",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14936,7 +14978,7 @@
     "return": null
   },
   {
-    "__docId__": 661,
+    "__docId__": 663,
     "kind": "method",
     "name": "_startScanCycle",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14960,7 +15002,7 @@
     "return": null
   },
   {
-    "__docId__": 662,
+    "__docId__": 664,
     "kind": "method",
     "name": "_setScanTargetServiceUUID",
     "memberof": "src/service/scanner.js~Scanner",
@@ -14976,7 +15018,7 @@
     "return": null
   },
   {
-    "__docId__": 663,
+    "__docId__": 665,
     "kind": "method",
     "name": "_stopScanCycle",
     "memberof": "src/service/scanner.js~Scanner",
@@ -15000,7 +15042,7 @@
     "return": null
   },
   {
-    "__docId__": 664,
+    "__docId__": 666,
     "kind": "method",
     "name": "_updateDiscoveredBeaconStateMap",
     "memberof": "src/service/scanner.js~Scanner",
@@ -15027,7 +15069,7 @@
     "return": null
   },
   {
-    "__docId__": 665,
+    "__docId__": 667,
     "kind": "method",
     "name": "_updateUnDiscoveredBeaconStateMap",
     "memberof": "src/service/scanner.js~Scanner",
