@@ -2,8 +2,8 @@
 
 [![BuildThing beacon](https://buildit.kr/dist/img/img-buildthing-beacon.ade36617.png)](https://buildit.kr/products/beacon-and-sdk)
 
-BuildThing™ beacon SDK는 Javascript 기반으로 구현된 Cross Platform SDK 입니다.
-[Cordova](https://cordova.apache.org/) 및 [Electron](https://electronjs.org/) 기반의 어플리케이션에서 동작하며, iOS/Android/Windows/MacOS에서 배포 가능합니다.
+BuildThing™ beacon SDK는 Javascript로 구현된 Cross Platform SDK 입니다.
+[Cordova](https://cordova.apache.org/) 및 [Node.js](https://nodejs.org/ko/) 기반으로 동작하며, [Cordova](https://cordova.apache.org/) 환경의 iOS/Android, [Electron](https://electronjs.org/) 환경의 Windows/MacOS/Linux 어플리케이션 배포가 가능합니다.
 SDK에서 제공하는 주요 기능들은 다음과 같습니다.
 
   - BuildThing™ beacon의 스캔 및 Advertising Packet 수신
@@ -101,9 +101,9 @@ var app = {
        this.receivedEvent('deviceready');
        // sdk test code
        this.bleManager = new Manager()
-       this.bleManager._ble.on('stateChange', function (state) {
+       this.bleManager.on('stateChange', function (state) {
          console.log(state)
-         if(state === 'on' || state === 'turningOn') this.bleManager.startScan()
+         if(state === 'poweredOn') this.bleManager.startScan()
        }.bind(this))
    },
    ...
@@ -212,11 +212,11 @@ $ npm install --global --production windows-build-tools
 Bluetooth 4.0 USB 어댑터를 위하여 [Zadig Tool](https://zadig.akeo.ie/)을 통해 [WinUSB](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/index) 드라이버를 설치합니다.
 WinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴얼](https://buildit.kr/dist/assets/BuildThing_beacon_Admin_App_User_Manual_v1.0_KR.pdf) 내 **Windows 지원 블루투스 장치 및 실행 가이드**를 참고합니다.
 
-지원 Windows 블루투스 장치는 아래와 같습니다.
+Windows 환경에서 기본적으로 지원하는 블루투스 장치는 아래와 같습니다.
 
 | 장치 이름 | USB VID | USB PID |
 | ------ | ------ | ------ |
-| Qualcomm Athreos QCA61x4 | 0CF3 | E300 |
+| Qualcomm Atheros QCA61x4 | 0CF3 | E300 |
 | Broadcom BCM20702A0 | 0A5C | 21E8 |
 | Broadcom BCM20702A0 | 19FF | 0239 |
 | CSR(Cambridge Silicon Radio) | 0A12 | 0001 |
@@ -229,8 +229,50 @@ WinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴�
 | Broadcom BCM2045A0 | 0A5C | 6412 |
 | Belkin BCM20702A0 | 050D | 065A |
 
+위 목록에 존재하지 않는 블루투스 장치의 경우, 블루투스 장치의 USB VID, USB PID를 확인한 후에 해당 값을 아래의 예시와 같이 실행 환경에서 환경변수를 추가하여 사용합니다.
+```sh
+set BLUETOOTH_HCI_SOCKET_USB_VID=0x8087
+set BLUETOOTH_HCI_SOCKET_USB_PID=0x0aaa
+```
+
 ##### MacOS
 - [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)를 설치합니다.
+
+##### Linux (Ubuntu/Debian/Raspbian)
+###### 권장 Ubuntu 버전
+- SDK의 권장 리눅스 버전은 Ubuntu 18.04 입니다.
+###### 의존 패키지 설치
+- libbluetooth-dev 패키지 등을 다음 커맨드를 통해 설치합니다.
+```sh
+$sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev
+```
+- 추가적으로 리소스 접근 권한 문제 때문에 root/sudo 커맨드로 app 을 동작 시커나,
+다음 커맨드로 node binary 에 권한을 주어서 app 을 실행 시켜야 합니다.
+```sh
+$sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
+```
+
+#### Node.js
+buildthing-beacon-sdk 1.1.4 버전 이상부터 지원합니다.
+##### Node.js : 예제
+```
+const buildthing = require('buildthing-beacon-sdk')
+const Manager = buildthing.Manager
+
+const bleManager = new Manager()
+
+bleManager.on('stateChange', (state) => {
+  if (state === 'poweredOn') main()
+})
+
+bleManager.on('discover', (beacon) => {
+  console.log(beacon)
+})
+
+function main() {
+  bleManager.startScan()
+}
+```
 
 #### Electron
 ##### 설치
@@ -288,8 +330,8 @@ window.addEventListener("load", function(event) {
     console.log(beacon)
   })
 
-  bleManager._ble.on('stateChange', function (state) {
-    if(state[0] === 'poweredOn') bleManager.startScan()
+  bleManager.on('stateChange', function (state) {
+    if(state === 'poweredOn') bleManager.startScan()
   })
 
   window.bleManager = bleManager
@@ -326,8 +368,8 @@ Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://gith
           console.log(beacon)
         })
 
-        bleManager._ble.on('stateChange', function (state) {
-          if(state[0] === 'poweredOn') bleManager.startScan()
+        bleManager.on('stateChange', function (state) {
+          if(state === 'poweredOn') bleManager.startScan()
         })
 
         window.bleManager = bleManager
@@ -363,8 +405,8 @@ export default class Home extends Component<Props> {
          console.log(beacon)
        })
 
-       bleManager._ble.on('stateChange', (state) => {
-         if(state[0] === 'poweredOn') bleManager.startScan()
+       bleManager.on('stateChange', (state) => {
+         if(state === 'poweredOn') bleManager.startScan()
        })
 
        window.bleManager = bleManager
@@ -393,13 +435,23 @@ module.exports = BuildThingBLE
 ##### MacOS
 ```
 // for MacOS (No Webpack Configuration)
-var BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')
+var BuildThingBLE = require('./dist/buildthing.ble.darwin.js')
 module.exports = BuildThingBLE
 ```
 ##### Windows
 ```
 // for Windows (No Webpack Configuration)
-var BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')
+// for Windows - Node.js
+// var BuildThingBLE = require('./dist/buildthing.ble.win32.node.js')
+// for Windows - Electron
+var BuildThingBLE = require('./dist/buildthing.ble.win32.electron.js')
+module.exports = BuildThingBLE
+```
+##### Linux
+```
+// for Linux (No Webpack Configuration)
+// for Linux - Node.js
+var BuildThingBLE = require('./dist/buildthing.ble.linux.node.js')
 module.exports = BuildThingBLE
 ```
 #### Webpack 사용
@@ -412,8 +464,10 @@ const NODE_MODULE_PATH = '/node_modules/buildthing-beacon-sdk/dist/'
 
 //Target Platform
 const CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'
-//const MACOS_BUNDLE = 'buildthing.ble.electron.darwin.js'
-//const WINDOWS_BUNDLE = 'buildthing.ble.electron.win32.js'
+//const MACOS_BUNDLE = 'buildthing.ble.darwin.js'
+//const WINDOWS_NODE_BUNDLE = 'buildthing.ble.win32.node.js'
+//const WINDOWS_ElECTRON_BUNDLE = 'buildthing.ble.win32.electron.js'
+//const LINUX_NODE_BUNDLE = 'buildthing.ble.linux.node.js'
 
 //.. Webpack Config Object
     resolve: {
