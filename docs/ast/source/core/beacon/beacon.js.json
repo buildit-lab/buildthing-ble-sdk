@@ -1303,7 +1303,7 @@
               "leadingComments": [
                 {
                   "type": "CommentBlock",
-                  "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mdoe 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
+                  "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mode 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
                   "start": 2520,
                   "end": 2912,
                   "loc": {
@@ -8186,7 +8186,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mdoe 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
+                    "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mode 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
                     "start": 2520,
                     "end": 2912,
                     "loc": {
@@ -14070,7 +14070,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mdoe 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
+      "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mode 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
       "start": 2520,
       "end": 2912,
       "loc": {
@@ -14983,7 +14983,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mdoe 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
+      "value": "*\n   * 기본 비콘 생성자\n   *\n   * @param {Object} data 초기화 정보 객체\n   * @param {string} data.id 비콘 식별 id\n   * @param {string} data.mode 비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)\n   * @param {string} data.name 비콘 이름\n   * @param {string} data.address 비콘 맥 어드레스\n   * @param {number} data.rssi 비콘 수신 세기를 나태내는 rssi 값\n   * @param {number} data.firmwareVersion 비콘 펌웨어 버전 값\n   ",
       "start": 2520,
       "end": 2912,
       "loc": {

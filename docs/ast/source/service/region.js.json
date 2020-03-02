@@ -2777,9 +2777,9 @@
                                         "line": 64,
                                         "column": 60
                                       },
-                                      "identifierName": "major"
+                                      "identifierName": "minor"
                                     },
-                                    "name": "major"
+                                    "name": "minor"
                                   },
                                   "computed": false
                                 },
@@ -10571,9 +10571,9 @@
                                           "line": 64,
                                           "column": 60
                                         },
-                                        "identifierName": "major"
+                                        "identifierName": "minor"
                                       },
-                                      "name": "major"
+                                      "name": "minor"
                                     },
                                     "computed": false
                                   },
@@ -20255,7 +20255,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "major",
+      "value": "minor",
       "start": 1888,
       "end": 1893,
       "loc": {

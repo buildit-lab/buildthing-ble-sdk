@@ -1266,7 +1266,7 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "data.mdoe",
+        "name": "data.mode",
         "description": "비콘 모드 (BuildThing, iBeacon, EddyStoneTLM, EddyStoneUID, EddyStoneURL)"
       },
       {
@@ -3180,8 +3180,8 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "실제",
-        "description": "값"
+        "name": "value",
+        "description": "실제 값"
       },
       {
         "nullable": null,
@@ -3190,8 +3190,8 @@
         ],
         "spread": false,
         "optional": false,
-        "name": "단위",
-        "description": ""
+        "name": "unit",
+        "description": "단위"
       }
     ],
     "type": {
@@ -6057,14 +6057,14 @@
   {
     "__docId__": 263,
     "kind": "method",
-    "name": "_getValidServiceArrayBufferOfElectron",
+    "name": "_getValidServiceArrayBufferOfNode",
     "memberof": "src/core/beacon-parser.js~BeaconParser",
     "generator": false,
     "async": false,
     "static": false,
-    "longname": "src/core/beacon-parser.js~BeaconParser#_getValidServiceArrayBufferOfElectron",
+    "longname": "src/core/beacon-parser.js~BeaconParser#_getValidServiceArrayBufferOfNode",
     "access": "private",
-    "description": "플랫폼이 electron 인 경우, peripheral 의 advertisingData 로부터 유효한 서비스들의 arrayBuffer 값을 가져오는 함수",
+    "description": "플랫폼이 Node 인 경우, peripheral 의 advertisingData 로부터 유효한 서비스들의 arrayBuffer 값을 가져오는 함수",
     "lineNumber": 578,
     "params": [
       {
@@ -6189,7 +6189,7 @@
         "spread": false,
         "optional": false,
         "name": "type",
-        "description": "현재 플랫폼 타입 (electron 또는 cordova)"
+        "description": "현재 플랫폼 타입 (electron | cordova | node)"
       },
       {
         "nullable": null,
@@ -6199,7 +6199,7 @@
         "spread": false,
         "optional": false,
         "name": "os",
-        "description": "현재 플랫폼 운영체제 (win32 또는 darwin)"
+        "description": "현재 플랫폼 운영체제 (win32 | darwin | linux)"
       }
     ],
     "type": {
@@ -6225,7 +6225,7 @@
     "export": false,
     "importPath": "buildthing-beacon-sdk/src/core/ble-resolver.js",
     "importStyle": null,
-    "description": "electron / macOS 인경우 외부 라이브러리인 noble 에서 advertising data 와 scan response data 를 각각 따로 주어, 이를 같이 받아 넘겨 줄수 있게 오버라이딩 되는 함수",
+    "description": "운영체제가 macOS 인경우 외부 라이브러리인 noble 에서 advertising data 와 scan response data 를 각각 따로 주어, 이를 같이 받아 넘겨 줄수 있게 오버라이딩 되는 함수",
     "lineNumber": 20,
     "params": [
       {
@@ -6374,7 +6374,7 @@
         "spread": false,
         "optional": false,
         "name": "type",
-        "description": "현재 플랫폼 타입 (electron 또는 cordova)"
+        "description": "현재 플랫폼 타입 (electron | cordova | node)"
       },
       {
         "nullable": null,
@@ -6384,7 +6384,7 @@
         "spread": false,
         "optional": false,
         "name": "os",
-        "description": "현재 플랫폼 운영체제 (win32 또는 darwin)"
+        "description": "현재 플랫폼 운영체제 (win32 | darwin | linux)"
       }
     ],
     "type": {
@@ -6423,7 +6423,7 @@
     "longname": "src/core/ble.js~BLE#isEnabled",
     "access": "public",
     "description": "현재 ble 라이브러리가 이용가능한지 여부를 가져오는 함수",
-    "lineNumber": 86,
+    "lineNumber": 83,
     "return": {
       "nullable": null,
       "types": [
@@ -6446,7 +6446,7 @@
     "longname": "src/core/ble.js~BLE#_isEnabledCordova",
     "access": "private",
     "description": "모바일인 경우, 현재 ble 라이브러리가 이용가능한지 여부를 가져오는 함수",
-    "lineNumber": 102,
+    "lineNumber": 100,
     "return": {
       "nullable": null,
       "types": [
@@ -6469,7 +6469,7 @@
     "longname": "src/core/ble.js~BLE#startScan",
     "access": "public",
     "description": "의존 라이브러리 스캔 함수에 옵션과, 콜백 함수등을 설정하여 스캔을 시작 하는 함수",
-    "lineNumber": 122,
+    "lineNumber": 120,
     "params": [
       {
         "nullable": null,
@@ -6505,7 +6505,7 @@
     "longname": "src/core/ble.js~BLE#stopScan",
     "access": "public",
     "description": "의존 라이브러리 스캔 정지 함수에 콜백 함수등을 설정하여 스캔을 정지 시키는 함수",
-    "lineNumber": 149,
+    "lineNumber": 147,
     "params": [],
     "return": null
   },
@@ -6520,7 +6520,7 @@
     "longname": "src/core/ble.js~BLE#showBluetoothSettings",
     "access": "public",
     "description": "현재 플랫폼이 안드로이드인 경우, bluetooth 설정을 확인하는 함수",
-    "lineNumber": 167,
+    "lineNumber": 165,
     "params": [],
     "return": null
   },
@@ -6535,7 +6535,7 @@
     "longname": "src/core/ble.js~BLE#enable",
     "access": "public",
     "description": "현재 플랫폼이 안드로이드인 경우, ble 라이브러를 이용가능한지 확인 하는 함수",
-    "lineNumber": 183,
+    "lineNumber": 181,
     "params": [],
     "return": null
   },
@@ -6876,7 +6876,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "hex 값을 hexString 으로 변환하는 함수",
-    "lineNumber": 47,
+    "lineNumber": 55,
     "params": [
       {
         "nullable": null,
@@ -6913,7 +6913,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "hex 값을 hexString 으로 변환하는 함수",
-    "lineNumber": 63,
+    "lineNumber": 71,
     "params": [
       {
         "nullable": null,
@@ -6950,7 +6950,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "스트링 값을 아스키 코드로 변환하는 함수",
-    "lineNumber": 77,
+    "lineNumber": 85,
     "params": [
       {
         "nullable": null,
@@ -6987,7 +6987,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "스트링 값을 hex 값으로 변환 하는 함수.",
-    "lineNumber": 87,
+    "lineNumber": 95,
     "params": [
       {
         "nullable": null,
@@ -7024,7 +7024,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "arrayBuffer 에서 hex string (실제 전달값) 으로 변환하는 함수",
-    "lineNumber": 102,
+    "lineNumber": 110,
     "params": [
       {
         "nullable": null,
@@ -7061,7 +7061,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "입력 한 수를 base62 로 인코딩 한 값을 리턴 하는 함수",
-    "lineNumber": 112,
+    "lineNumber": 120,
     "params": [
       {
         "nullable": null,
@@ -7098,7 +7098,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": " base62 로 인코딩한 값을 디코딩 한값읋 리턴하는 함수",
-    "lineNumber": 132,
+    "lineNumber": 140,
     "params": [
       {
         "nullable": null,
@@ -7135,7 +7135,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "major, minor 값을 받아 instanceId 으로 변환하는 함수",
-    "lineNumber": 157,
+    "lineNumber": 165,
     "params": [
       {
         "nullable": null,
@@ -7182,7 +7182,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "instanceId 을 받아 major, minor 값의 오브젝트로 값을 환하는 함수",
-    "lineNumber": 170,
+    "lineNumber": 178,
     "params": [
       {
         "nullable": null,
@@ -7241,7 +7241,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": "Accelerometer 센서 모션타입 정보 를 가리키는 위치의 hex 값으로부터 모션정보 (Tap, Double Tap, Free Fall) 를 가져오는 함수",
-    "lineNumber": 184,
+    "lineNumber": 192,
     "params": [
       {
         "nullable": null,
@@ -7278,7 +7278,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 199,
+    "lineNumber": 207,
     "undocument": true,
     "params": [
       {
@@ -7309,7 +7309,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 209,
+    "lineNumber": 217,
     "undocument": true,
     "params": [
       {
@@ -7346,7 +7346,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 223,
+    "lineNumber": 231,
     "undocument": true,
     "params": [
       {
@@ -7375,7 +7375,7 @@
     "importPath": "buildthing-beacon-sdk/src/core/util.js",
     "importStyle": "Util",
     "description": "",
-    "lineNumber": 244,
+    "lineNumber": 252,
     "properties": [
       {
         "nullable": null,
@@ -8311,7 +8311,7 @@
     "static": false,
     "longname": "src/service/connection.js~Connection#_type",
     "access": "private",
-    "description": " 현재 작동중인 기기 정보(cordova / electron)",
+    "description": " 현재 작동중인 기기 정보(cordova | electron | node)",
     "lineNumber": 98,
     "type": {
       "nullable": null,
@@ -8610,7 +8610,7 @@
     "longname": "src/service/connection.js~Connection#isConnectedBeacon",
     "access": "public",
     "description": " 현재 비콘의 연결 상태를 반환한다.",
-    "lineNumber": 189,
+    "lineNumber": 190,
     "return": {
       "nullable": null,
       "types": [
@@ -8632,7 +8632,7 @@
     "longname": "src/service/connection.js~Connection#wrapConnectionCallback",
     "access": "public",
     "description": " 타입별로 커넥션 시 발생하는 콜백을 연결한다.\n 현재는 Cordova만 연결, Noble은 Peripheral에서 커넥션 콜백을 직접 관리한다.",
-    "lineNumber": 196,
+    "lineNumber": 197,
     "params": [],
     "return": null
   },
@@ -8647,7 +8647,7 @@
     "longname": "src/service/connection.js~Connection#_nobleConnectCallback",
     "access": "private",
     "description": " Noble에서 비콘 커넥션 성공시 콜백을 호출한다.",
-    "lineNumber": 246,
+    "lineNumber": 247,
     "params": [
       {
         "nullable": null,
@@ -8698,7 +8698,7 @@
     "longname": "src/service/connection.js~Connection#_nobleDisconnectCallback",
     "access": "private",
     "description": " Noble에서 비콘 커넥션 해제 성공시 콜백을 호출한다.",
-    "lineNumber": 282,
+    "lineNumber": 283,
     "params": [
       {
         "nullable": null,
@@ -8749,7 +8749,7 @@
     "longname": "src/service/connection.js~Connection#wrapRWCallback",
     "access": "public",
     "description": " 커넥션 후 read, write, notify, stopNotify 콜백을 등록한다.\n 현재는 Cordova에서만 콜백을 등록한다.",
-    "lineNumber": 300,
+    "lineNumber": 301,
     "params": [
       {
         "nullable": null,
@@ -8775,7 +8775,7 @@
     "longname": "src/service/connection.js~Connection#_nobleReadCallback",
     "access": "private",
     "description": " Noble에서 read시 발생하는 콜백 등록 함수",
-    "lineNumber": 339,
+    "lineNumber": 341,
     "params": [
       {
         "nullable": null,
@@ -8830,7 +8830,7 @@
     "longname": "src/service/connection.js~Connection#_nobleWriteCallback",
     "access": "private",
     "description": " Noble에서 write시 발생하는 콜백 등록 함수",
-    "lineNumber": 357,
+    "lineNumber": 359,
     "params": [
       {
         "nullable": null,
@@ -8881,7 +8881,7 @@
     "longname": "src/service/connection.js~Connection#_nobleNotifyCallback",
     "access": "private",
     "description": " Noble에서 notify시 발생하는 콜백 등록 함수",
-    "lineNumber": 375,
+    "lineNumber": 377,
     "params": [
       {
         "nullable": null,
@@ -8942,7 +8942,7 @@
     "longname": "src/service/connection.js~Connection#_getWriteCharacteristic",
     "access": "private",
     "description": " Characteristics에서 Write를 제공하는 Characteristic을 반환한다.",
-    "lineNumber": 385,
+    "lineNumber": 387,
     "return": {
       "nullable": null,
       "types": [
@@ -8965,7 +8965,7 @@
     "longname": "src/service/connection.js~Connection#_getNotifyCharacteristic",
     "access": "private",
     "description": " Characteristics에서 Notify를 제공하는 Characteristic을 반환한다.",
-    "lineNumber": 392,
+    "lineNumber": 394,
     "return": {
       "nullable": null,
       "types": [
@@ -8988,7 +8988,7 @@
     "longname": "src/service/connection.js~Connection#_findCharacteristic",
     "access": "private",
     "description": " Characteristics에서 characteristicUUID에 해당하는 Characteristic을 반환한다.",
-    "lineNumber": 400,
+    "lineNumber": 402,
     "params": [
       {
         "nullable": null,
@@ -9022,7 +9022,7 @@
     "longname": "src/service/connection.js~Connection#write",
     "access": "public",
     "description": " 현재 연결된 비콘의 Write Characteristic을 통해 데이터를 입력한다.",
-    "lineNumber": 412,
+    "lineNumber": 414,
     "params": [
       {
         "nullable": null,
@@ -9060,7 +9060,7 @@
     "longname": "src/service/connection.js~Connection#read",
     "access": "public",
     "description": " 비콘의 특정 Characteristic Service에서 값을 읽는 함수",
-    "lineNumber": 441,
+    "lineNumber": 443,
     "params": [
       {
         "nullable": null,
@@ -9089,7 +9089,7 @@
     "examples": [
       " var connection = new Connection(beacon)\n connection.on('connect', (...args) => {\n   console.log('connected!')\n })\n connection.connect()"
     ],
-    "lineNumber": 467,
+    "lineNumber": 469,
     "emits": [
       {
         "types": [
@@ -9115,7 +9115,7 @@
     "examples": [
       " connection.on('disconnect', (...args) => {\n   console.log('disconnected!')\n })\n connection.disconnect()"
     ],
-    "lineNumber": 495,
+    "lineNumber": 497,
     "params": [],
     "return": null
   },
@@ -9130,7 +9130,7 @@
     "longname": "src/service/connection.js~Connection#_encodeToArrayBuffer",
     "access": "private",
     "description": " 비콘에 전달할 데이터를 버퍼 형태로 인코딩한다.",
-    "lineNumber": 524,
+    "lineNumber": 526,
     "params": [
       {
         "nullable": null,
@@ -9185,7 +9185,7 @@
     "longname": "src/service/connection.js~Connection#_getHex",
     "access": "private",
     "description": " 전달 받은 값이 숫자가 아닐 경우 hexString으로 변경한다.",
-    "lineNumber": 567,
+    "lineNumber": 569,
     "params": [
       {
         "nullable": null,
@@ -9221,7 +9221,7 @@
     "longname": "src/service/connection.js~Connection#_parseResponse",
     "access": "private",
     "description": " 비콘에서 notify로 받은 메세지를 파싱한다.",
-    "lineNumber": 581,
+    "lineNumber": 583,
     "params": [
       {
         "nullable": null,
@@ -9277,7 +9277,7 @@
     "longname": "src/service/connection.js~Connection#_promiseResponseCallback",
     "access": "private",
     "description": " 전달받은 커맨드를 토대로 데이터를 가공하여 비콘에 write 요청을 한다.",
-    "lineNumber": 600,
+    "lineNumber": 602,
     "params": [
       {
         "nullable": null,
@@ -9355,7 +9355,7 @@
     "longname": "src/service/connection.js~Connection#setPassword",
     "access": "public",
     "description": " 커넥션시 사용할 패스워드를 설정한다.",
-    "lineNumber": 628,
+    "lineNumber": 630,
     "params": [
       {
         "nullable": null,
@@ -9381,7 +9381,7 @@
     "longname": "src/service/connection.js~Connection#isValidPassword",
     "access": "public",
     "description": " (Async)비콘 연결 패스워드를 확인한다.",
-    "lineNumber": 637,
+    "lineNumber": 639,
     "params": [
       {
         "nullable": null,
@@ -9414,7 +9414,7 @@
     "longname": "src/service/connection.js~Connection#changePassword",
     "access": "public",
     "description": " (Async)비콘 연결 패스워드를 변경한다.(6byte)\n 반드시 6자리로 입력해야 한다. 다를 경우 NO 응답",
-    "lineNumber": 647,
+    "lineNumber": 649,
     "params": [
       {
         "nullable": null,
@@ -9447,7 +9447,7 @@
     "longname": "src/service/connection.js~Connection#changeName",
     "access": "public",
     "description": " (Async)비콘 이름을 변경한다.(8byte)\n 새로운 이름은 8바이트 이하로 입력한다.\n 9바이트 이상 입력할 경우 9번째 이후의 바이트는 무시된다.\n 31바이트 초과시 NO 응답",
-    "lineNumber": 661,
+    "lineNumber": 663,
     "params": [
       {
         "nullable": null,
@@ -9480,7 +9480,7 @@
     "longname": "src/service/connection.js~Connection#changeMode",
     "access": "public",
     "description": " (Async)비콘 모드를 변경한다. 센서를 부착중인 경우 센서 제거시 변경된 모드로 표시된다.(1byte)\n 0 : BuildThing\n 1 : iBeacon\n 2 : Eddystone-UID\n 3 : Eddystone-URL\n 4 : Eddystone-TLM",
-    "lineNumber": 677,
+    "lineNumber": 679,
     "params": [
       {
         "nullable": null,
@@ -9513,7 +9513,7 @@
     "longname": "src/service/connection.js~Connection#changeAdvertisingInterval",
     "access": "public",
     "description": " (Async)비콘의 Advertising 주기를 변경한다.(1byte)\n 단위는 100ms로 1~102의 값을 입력 가능하다.\n 최솟값보다 작은 값을 입력할 경우 1, 최댓값보다 큰 값을 입력할 경우 102로 적용된다.",
-    "lineNumber": 690,
+    "lineNumber": 692,
     "params": [
       {
         "nullable": null,
@@ -9546,7 +9546,7 @@
     "longname": "src/service/connection.js~Connection#changeSensorInterval",
     "access": "public",
     "description": " (Async)비콘의 센서 갱신 주기를 변경한다.(1byte)\n 2~255의 값을 입력 가능하다.\n Advertising 주기의 배수로 적용을 권장한다.",
-    "lineNumber": 705,
+    "lineNumber": 707,
     "params": [
       {
         "nullable": null,
@@ -9579,7 +9579,7 @@
     "longname": "src/service/connection.js~Connection#changeMajor",
     "access": "public",
     "description": " (Async)비콘의 Major 값을 변경한다.(2byte)\n 0~65535의 값을 입력 가능하다.",
-    "lineNumber": 719,
+    "lineNumber": 721,
     "params": [
       {
         "nullable": null,
@@ -9612,7 +9612,7 @@
     "longname": "src/service/connection.js~Connection#changeMinor",
     "access": "public",
     "description": " (Async)비콘의 Minor 값을 변경한다.(2byte)\n 0~65535의 값을 입력 가능하다.",
-    "lineNumber": 734,
+    "lineNumber": 736,
     "params": [
       {
         "nullable": null,
@@ -9645,7 +9645,7 @@
     "longname": "src/service/connection.js~Connection#changeNameSpaceID",
     "access": "public",
     "description": " (Async)Eddystone-UID 비콘 모드의 Namespace ID 값을 변경한다.(10byte)",
-    "lineNumber": 750,
+    "lineNumber": 752,
     "params": [
       {
         "nullable": null,
@@ -9678,7 +9678,7 @@
     "longname": "src/service/connection.js~Connection#changeInstanceID",
     "access": "public",
     "description": " (Async)Eddystone-UID 비콘 모드의 Instance ID 값을 변경한다.(6byte)",
-    "lineNumber": 760,
+    "lineNumber": 762,
     "params": [
       {
         "nullable": null,
@@ -9711,7 +9711,7 @@
     "longname": "src/service/connection.js~Connection#changeSchemePrefix",
     "access": "public",
     "description": " (Async)Eddystone-URL 비콘 모드의 Scheme Prefix 값을 변경한다.(2byte)",
-    "lineNumber": 773,
+    "lineNumber": 775,
     "params": [
       {
         "nullable": null,
@@ -9744,7 +9744,7 @@
     "longname": "src/service/connection.js~Connection#changeUrl",
     "access": "public",
     "description": " (Async)Eddystone-URL 비콘 모드의 URL 값을 변경한다.(17byte)",
-    "lineNumber": 784,
+    "lineNumber": 786,
     "params": [
       {
         "nullable": null,
@@ -9777,7 +9777,7 @@
     "longname": "src/service/connection.js~Connection#changeTxPower",
     "access": "public",
     "description": " (Async)비콘의 Tx Power 값을 변경한다.(1byte)\n 1 : -20dBm\n 2 : -16dBm\n 3 : -12dBm\n 4 : -8dBm\n 5 : -4dBm\n 6 : 0dBm\n 7 : 4dBm",
-    "lineNumber": 801,
+    "lineNumber": 803,
     "params": [
       {
         "nullable": null,
@@ -9810,7 +9810,7 @@
     "longname": "src/service/connection.js~Connection#changeIOOutput",
     "access": "public",
     "description": " (Async)비콘의 IO Module의 Output 값을 변경한다.(2byte)",
-    "lineNumber": 815,
+    "lineNumber": 817,
     "params": [
       {
         "nullable": null,
@@ -9853,7 +9853,7 @@
     "longname": "src/service/connection.js~Connection#rebootBeacon",
     "access": "public",
     "description": " (Async)비콘을 Reboot 한다.",
-    "lineNumber": 829,
+    "lineNumber": 831,
     "return": {
       "nullable": null,
       "types": [
@@ -11026,9 +11026,9 @@
     "importStyle": "Manager",
     "description": "Scanner, Ranging, Monitoring의 설정 값 및 인스턴스 생성 등을 관리한다.\n\n사용자(개발자)로부터 Beacon SDK를 사용하는 Interface를 제공한다. (API 및 Event Callback 등)\n\n의존 라이브러리 기반으로 기본적인 Bluetooth 설정 기능을 제공한다.",
     "examples": [
-      "// 매니저 생성 및 스캔 시간 설정\nvar bleManager = new Manager()\nbleManager.setForegroundScanPeriod(2000)\nbleManager.setForegroundBetweenScanPeriod(2000)\nbleManager.updateScanPeriod()\n// 스캔, 모니터링, 레인징 관련 이벤트 콜백 함수 등록.\nbleManager.on('discover', function (beacon) {...}) // 스캔 발견 시, 이벤트 콜백 함수 등록\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.on('ranged', function (rangingData) {...}) // 레인징 리전 범위 안에 있는 경우, 이벤트 콜백 함수 등록\n\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}) // 모니터링, 레인징 하고자 하는 리전 생성\nbleManager.startScan() //스캔 시작\nbleManager.startMonitoring(region) // 리전 모니터링 시작\nbleManager.startRanging(region) // 리전 레인징 시작"
+      "// 매니저 생성 및 스캔 시간 설정.\nvar bleManager = new Manager()\nbleManager.setForegroundScanPeriod(2000)\nbleManager.setForegroundBetweenScanPeriod(2000)\nbleManager.updateScanPeriod()\n\n// 스캔, 모니터링, 레인징 관련 이벤트 콜백 함수 등록.\n// 현재 ble 장치에 상태 변경 이벤트 콜백 함수 등록 (state: 'poweredOn'|'poweredOff'|'unknown'|'resetting'|'unsupported'|'unauthorized'|'turningOn'|'turningOff')\nbleManager.on('stateChange', function (state) {...})\n// 비콘 스캔중 비콘 발견 이벤트 콜백 함수 등록 (beacon: BuildThingBeacon|iBeacon|EddystoneTLM|EddystoneUID|EddystoneURL)\nbleManager.on('discover', function (beacon) {...})\n// 모니터링 상태 업데이트 이벤트 콜백 함수 등록 (monitoringData: MonitoringData)\nbleManager.on('update', function (monitoringData) {...})\n// 모니터링 리전에 진입 이벤트 콜백 함수 등록 (region: Region, beacon: BuildThingBeacon|iBeacon|EddystoneTLM|EddystoneUID|EddystoneURL)\nbleManager.on('enter', function (region, beacon) {...})\n// 모니터링 리전에 이탈 이벤트 콜백 함수 등록 (region: Region)\nbleManager.on('exit', function (region) {...})\n// 레인징 리전에 레인징값 변경 이벤트 콜백 함수 등록 (rangingData: RangingData)\nbleManager.on('ranged', function (rangingData) {...})\n\n// 모니터링, 레인징 관련 리전 생성 및 비콘 스캔, 모니터링, 레인징 서비스 시작.\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108, 'beacons':['E1:3F:B2:12:30:D4'] })\nbleManager.startScan()\nbleManager.startMonitoring(region)\nbleManager.startRanging(region)"
     ],
-    "lineNumber": 72,
+    "lineNumber": 81,
     "interface": false,
     "extends": [
       "src/core/event-emitter.js~EventEmitter"
@@ -11045,7 +11045,7 @@
     "longname": "src/service/manager.js~Manager#constructor",
     "access": "public",
     "description": "Scanner,  Ranging, Monitoring 인스턴스 생성 및 초기화",
-    "lineNumber": 76
+    "lineNumber": 85
   },
   {
     "__docId__": 472,
@@ -11056,7 +11056,7 @@
     "longname": "src/service/manager.js~Manager#_ble",
     "access": "private",
     "description": "매니저가 관리하는 BLE 클래스 인스턴스",
-    "lineNumber": 82,
+    "lineNumber": 91,
     "type": {
       "nullable": null,
       "types": [
@@ -11076,7 +11076,7 @@
     "longname": "src/service/manager.js~Manager#_scanner",
     "access": "private",
     "description": "매니저가 관리하는 Scanner 클래스 인스턴스",
-    "lineNumber": 88,
+    "lineNumber": 97,
     "type": {
       "nullable": null,
       "types": [
@@ -11096,7 +11096,7 @@
     "longname": "src/service/manager.js~Manager#_monitoring",
     "access": "private",
     "description": "매니저가 관리하는 Monitoring 클래스 인스턴스",
-    "lineNumber": 94,
+    "lineNumber": 103,
     "type": {
       "nullable": null,
       "types": [
@@ -11116,7 +11116,7 @@
     "longname": "src/service/manager.js~Manager#_ranging",
     "access": "private",
     "description": "매니저가 관리하는 Ranging 클래스 인스턴스",
-    "lineNumber": 100,
+    "lineNumber": 109,
     "type": {
       "nullable": null,
       "types": [
@@ -11136,7 +11136,7 @@
     "longname": "src/service/manager.js~Manager#platform",
     "access": "public",
     "description": "현재 플랫폼 정보",
-    "lineNumber": 116,
+    "lineNumber": 125,
     "properties": [
       {
         "nullable": null,
@@ -11146,7 +11146,7 @@
         "spread": false,
         "optional": false,
         "name": "type",
-        "description": "현재 플랫폼 타입 (electron 또는 cordova)"
+        "description": "현재 플랫폼 타입 (electron | cordova | node)"
       },
       {
         "nullable": null,
@@ -11156,7 +11156,7 @@
         "spread": false,
         "optional": false,
         "name": "os",
-        "description": "현재 플랫폼 운영체제 (win32 또는 darwin)"
+        "description": "현재 플랫폼 운영체제 (win32 | darwin | linux)"
       }
     ],
     "type": {
@@ -11177,7 +11177,7 @@
     "longname": "src/service/manager.js~Manager#_platformDistribute",
     "access": "private",
     "description": null,
-    "lineNumber": 118,
+    "lineNumber": 127,
     "undocument": true,
     "ignore": true,
     "type": {
@@ -11195,7 +11195,7 @@
     "longname": "src/service/manager.js~Manager#foregroundScanPeriod",
     "access": "public",
     "description": "플랫폼에서 포그라운드 경우, 스캔 사이클 지속 시간 (단위: 1ms)",
-    "lineNumber": 123,
+    "lineNumber": 132,
     "type": {
       "nullable": null,
       "types": [
@@ -11214,7 +11214,7 @@
     "longname": "src/service/manager.js~Manager#foregroundBetweenScanPeriod",
     "access": "public",
     "description": "플랫폼에서 포그라운드 경우, 스캔 사이클 간격 시간 (단위: 1ms)",
-    "lineNumber": 129,
+    "lineNumber": 138,
     "type": {
       "nullable": null,
       "types": [
@@ -11233,7 +11233,7 @@
     "longname": "src/service/manager.js~Manager#backgroundScanPeriod",
     "access": "public",
     "description": "플랫폼에서 백그라운드 경우, 스캔 사이클 지속 시간 (단위: 1ms)",
-    "lineNumber": 135,
+    "lineNumber": 144,
     "type": {
       "nullable": null,
       "types": [
@@ -11252,7 +11252,7 @@
     "longname": "src/service/manager.js~Manager#backgroundBetweenScanPeriod",
     "access": "public",
     "description": "플랫폼에서 백그라운드 경우, 스캔 사이클 간격 시간 (단위: 1ms)",
-    "lineNumber": 141,
+    "lineNumber": 150,
     "type": {
       "nullable": null,
       "types": [
@@ -11271,7 +11271,7 @@
     "longname": "src/service/manager.js~Manager#regionExitPeriod",
     "access": "public",
     "description": null,
-    "lineNumber": 148,
+    "lineNumber": 157,
     "undocument": true,
     "type": {
       "types": [
@@ -11288,7 +11288,7 @@
     "longname": "src/service/manager.js~Manager#beaconUnDiscoverPeriod",
     "access": "public",
     "description": "스캐닝 시, 스캔이 되지않아 비콘이 더 이상 발견되지 않음을 판별하는 기준 시간 (단위: 1ms)",
-    "lineNumber": 154,
+    "lineNumber": 163,
     "type": {
       "nullable": null,
       "types": [
@@ -11301,22 +11301,6 @@
   {
     "__docId__": 484,
     "kind": "method",
-    "name": "_attachScanCallback",
-    "memberof": "src/service/manager.js~Manager",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/manager.js~Manager#_attachScanCallback",
-    "access": "private",
-    "description": "스캐너 관련 이벤트에 이벤트 콜백함수 등록 하는 함수",
-    "lineNumber": 164,
-    "ignore": true,
-    "params": [],
-    "return": null
-  },
-  {
-    "__docId__": 485,
-    "kind": "method",
     "name": "_wrapCallback",
     "memberof": "src/service/manager.js~Manager",
     "generator": false,
@@ -11325,8 +11309,26 @@
     "longname": "src/service/manager.js~Manager#_wrapCallback",
     "access": "private",
     "description": "모니터링, 레인징 관련 이벤트에 이벤트 콜백 함수 등록 하는 함수",
-    "lineNumber": 178,
+    "lineNumber": 179,
     "emits": [
+      {
+        "types": [
+          "stateChange"
+        ],
+        "description": "이벤트와 state 를 ble가 상태변경이 있을 때, emit 한다."
+      },
+      {
+        "types": [
+          "discover"
+        ],
+        "description": "이벤트와 특정 beacon 을 scanner가 비콘을 발견했을 때, emit 한다."
+      },
+      {
+        "types": [
+          "unDiscover"
+        ],
+        "description": "이벤트와 특정 beacon 을 scanner가 특정 비콘이 더 이상 발견되지 않을 때, emit 한다."
+      },
       {
         "types": [
           "update"
@@ -11337,19 +11339,19 @@
         "types": [
           "enter"
         ],
-        "description": "이벤트와 해당 region 을 해당 리전 안으로 들어왔을때 emit 한다."
+        "description": "이벤트와 특정 region, beacon 을 특정 리전으로 진입 했을 때, emit 한다."
       },
       {
         "types": [
           "exit"
         ],
-        "description": "이벤트와 해당 region 을 해당 리전 밖으로 나갔을때 emit 한다."
+        "description": "이벤트와 특정 region 을 특정 리전애서 이탈 헀을 때, emit 한다."
       },
       {
         "types": [
           "ranged"
         ],
-        "description": "이벤트과 해당 rangingData 등을 범위안에 ranging 시작한 비콘이 있을때  emit 한다."
+        "description": "이벤트과 해당 rangingData 등을 범위안에 ranging 시작한 비콘이 있을 때, emit 한다."
       }
     ],
     "ignore": true,
@@ -11357,7 +11359,7 @@
     "return": null
   },
   {
-    "__docId__": 486,
+    "__docId__": 485,
     "kind": "method",
     "name": "_checkBackgroundMode",
     "memberof": "src/service/manager.js~Manager",
@@ -11367,13 +11369,13 @@
     "longname": "src/service/manager.js~Manager#_checkBackgroundMode",
     "access": "private",
     "description": "백그라운드 모드 인지 확인할 수 있는 이벤트에 이벤트 콜백 함수 등록하는 함수",
-    "lineNumber": 192,
+    "lineNumber": 198,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 487,
+    "__docId__": 486,
     "kind": "method",
     "name": "_onPause",
     "memberof": "src/service/manager.js~Manager",
@@ -11383,13 +11385,13 @@
     "longname": "src/service/manager.js~Manager#_onPause",
     "access": "private",
     "description": "포그라운드에서 백그라운드 모드로 변경되는 경우, manager 의 backgroundMode 상태를 true 로 바꾸는 함수",
-    "lineNumber": 201,
+    "lineNumber": 207,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 488,
+    "__docId__": 487,
     "kind": "method",
     "name": "_onResume",
     "memberof": "src/service/manager.js~Manager",
@@ -11399,13 +11401,13 @@
     "longname": "src/service/manager.js~Manager#_onResume",
     "access": "private",
     "description": "백그라운드에서 포그라운드 모드로 변경되는 경우, manager 의 backgroundMode 상태를 false 로 바꾸는 함수",
-    "lineNumber": 210,
+    "lineNumber": 216,
     "ignore": true,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 489,
+    "__docId__": 488,
     "kind": "method",
     "name": "setBackgroundMode",
     "memberof": "src/service/manager.js~Manager",
@@ -11415,7 +11417,7 @@
     "longname": "src/service/manager.js~Manager#setBackgroundMode",
     "access": "public",
     "description": "매니저의 백그라운드 모드 상태를 설정하는 함수",
-    "lineNumber": 224,
+    "lineNumber": 230,
     "params": [
       {
         "nullable": null,
@@ -11445,7 +11447,7 @@
     "return": null
   },
   {
-    "__docId__": 490,
+    "__docId__": 489,
     "kind": "method",
     "name": "setForegroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11458,7 +11460,7 @@
     "examples": [
       "var bleManager = new Manager()\n...\nbleManager.setForegroundScanPeriod(2000) // 스캔 사이클 지속 시간을 설정\nbleManager.updateScanPeriod() // 스캐너에 해당 스캔 시간 업데이트\n..."
     ],
-    "lineNumber": 252,
+    "lineNumber": 258,
     "params": [
       {
         "nullable": null,
@@ -11474,7 +11476,7 @@
     "return": null
   },
   {
-    "__docId__": 492,
+    "__docId__": 491,
     "kind": "method",
     "name": "setForegroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11487,7 +11489,7 @@
     "examples": [
       "var bleManager = new Manager()\n...\nbleManager.setForegroundBetweenScanPeriod(2000) // 스캔 사이클 간격 시간을 설정\nbleManager.updateScanPeriod() // 스캐너에 해당 스캔 시간 업데이트\n..."
     ],
-    "lineNumber": 267,
+    "lineNumber": 273,
     "params": [
       {
         "nullable": null,
@@ -11503,7 +11505,7 @@
     "return": null
   },
   {
-    "__docId__": 494,
+    "__docId__": 493,
     "kind": "method",
     "name": "setBackgroundScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11516,7 +11518,7 @@
     "examples": [
       "var bleManager = new Manager()\n...\nbleManager.setBackgroundScanPeriod(2000) // 백그라운드 스캔 사이클 지속 시간을 설정\nbleManager.updateScanPeriod() // 스캐너에 해당 스캔 시간 업데이트\n..."
     ],
-    "lineNumber": 282,
+    "lineNumber": 288,
     "params": [
       {
         "nullable": null,
@@ -11532,7 +11534,7 @@
     "return": null
   },
   {
-    "__docId__": 496,
+    "__docId__": 495,
     "kind": "method",
     "name": "setBackgroundBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11545,7 +11547,7 @@
     "examples": [
       "var bleManager = new Manager()\n...\nbleManager.setBackgroundBetweenScanPeriod(2000) // 백그라운드 스캔 사이클 간격 시간을 설정\nbleManager.updateScanPeriod() // 스캐너에 해당 스캔 시간 업데이트\n..."
     ],
-    "lineNumber": 297,
+    "lineNumber": 303,
     "params": [
       {
         "nullable": null,
@@ -11561,7 +11563,7 @@
     "return": null
   },
   {
-    "__docId__": 498,
+    "__docId__": 497,
     "kind": "method",
     "name": "setRegionExitPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11571,7 +11573,7 @@
     "longname": "src/service/manager.js~Manager#setRegionExitPeriod",
     "access": "public",
     "description": "모니터링 시, 스캔이 되지않아 리전에서 나갔다고 판별하는 기준 시간을 설정하는 함수",
-    "lineNumber": 306,
+    "lineNumber": 312,
     "params": [
       {
         "nullable": null,
@@ -11587,7 +11589,7 @@
     "return": null
   },
   {
-    "__docId__": 500,
+    "__docId__": 499,
     "kind": "method",
     "name": "setBeaconUnDiscoverPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11597,7 +11599,7 @@
     "longname": "src/service/manager.js~Manager#setBeaconUnDiscoverPeriod",
     "access": "public",
     "description": "스캐닝 시, 스캔이 되지않아 비콘이 더 이상 발견되지 않음을 판별하는 기준 시간을 설정하는 함수",
-    "lineNumber": 315,
+    "lineNumber": 321,
     "params": [
       {
         "nullable": null,
@@ -11613,7 +11615,7 @@
     "return": null
   },
   {
-    "__docId__": 502,
+    "__docId__": 501,
     "kind": "method",
     "name": "getScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11623,7 +11625,7 @@
     "longname": "src/service/manager.js~Manager#getScanPeriod",
     "access": "public",
     "description": "스캔 사이클 지속 시간을 가져오는 함수",
-    "lineNumber": 324,
+    "lineNumber": 330,
     "return": {
       "nullable": null,
       "types": [
@@ -11635,7 +11637,7 @@
     "params": []
   },
   {
-    "__docId__": 503,
+    "__docId__": 502,
     "kind": "method",
     "name": "getBetweenScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11645,7 +11647,7 @@
     "longname": "src/service/manager.js~Manager#getBetweenScanPeriod",
     "access": "public",
     "description": " 스캔 사이클 간격 시간을 가져오는 함수",
-    "lineNumber": 334,
+    "lineNumber": 340,
     "return": {
       "nullable": null,
       "types": [
@@ -11657,7 +11659,7 @@
     "params": []
   },
   {
-    "__docId__": 504,
+    "__docId__": 503,
     "kind": "method",
     "name": "getRegionExitPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11667,7 +11669,7 @@
     "longname": "src/service/manager.js~Manager#getRegionExitPeriod",
     "access": "public",
     "description": "모니터링 시, 스캔이 되지않아 리전에서 나갔다고 판별하는 기준 시간을 가져오는 함수",
-    "lineNumber": 344,
+    "lineNumber": 350,
     "return": {
       "nullable": null,
       "types": [
@@ -11679,7 +11681,7 @@
     "params": []
   },
   {
-    "__docId__": 505,
+    "__docId__": 504,
     "kind": "method",
     "name": "getBeaconUnDiscoverPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11689,7 +11691,7 @@
     "longname": "src/service/manager.js~Manager#getBeaconUnDiscoverPeriod",
     "access": "public",
     "description": "스캐닝 시, 스캔이 되지않아 비콘이 더 이상 발견되지 않음을 판별하는 기준 시간을 가져오는 함수",
-    "lineNumber": 353,
+    "lineNumber": 359,
     "return": {
       "nullable": null,
       "types": [
@@ -11701,7 +11703,7 @@
     "params": []
   },
   {
-    "__docId__": 506,
+    "__docId__": 505,
     "kind": "method",
     "name": "updateScanPeriod",
     "memberof": "src/service/manager.js~Manager",
@@ -11711,12 +11713,12 @@
     "longname": "src/service/manager.js~Manager#updateScanPeriod",
     "access": "public",
     "description": "스캐너의 스캔 사이클 지속 시간을 업데이트 하는 함수",
-    "lineNumber": 360,
+    "lineNumber": 366,
     "params": [],
     "return": null
   },
   {
-    "__docId__": 507,
+    "__docId__": 506,
     "kind": "method",
     "name": "setDistanceCalculator",
     "memberof": "src/service/manager.js~Manager",
@@ -11726,7 +11728,7 @@
     "longname": "src/service/manager.js~Manager#setDistanceCalculator",
     "access": "public",
     "description": "비콘 생성시, 비콘에서 사용할 distanceCalculator 를 설정하는 함수",
-    "lineNumber": 369,
+    "lineNumber": 375,
     "params": [
       {
         "nullable": null,
@@ -11742,7 +11744,7 @@
     "return": null
   },
   {
-    "__docId__": 508,
+    "__docId__": 507,
     "kind": "method",
     "name": "getDistanceCalculator",
     "memberof": "src/service/manager.js~Manager",
@@ -11752,7 +11754,7 @@
     "longname": "src/service/manager.js~Manager#getDistanceCalculator",
     "access": "public",
     "description": "비콘 생성시, 비콘에서 사용할 distanceCalculator 를 가져오는 함수",
-    "lineNumber": 378,
+    "lineNumber": 384,
     "return": {
       "nullable": null,
       "types": [
@@ -11764,7 +11766,7 @@
     "params": []
   },
   {
-    "__docId__": 509,
+    "__docId__": 508,
     "kind": "method",
     "name": "setBeaconRssiFilter",
     "memberof": "src/service/manager.js~Manager",
@@ -11774,7 +11776,7 @@
     "longname": "src/service/manager.js~Manager#setBeaconRssiFilter",
     "access": "public",
     "description": "ranging 시에, 비콘의 rssi 값 재측정에 사용하는 rssiFilter 를 설정하는 함수",
-    "lineNumber": 387,
+    "lineNumber": 393,
     "params": [
       {
         "nullable": null,
@@ -11790,7 +11792,7 @@
     "return": null
   },
   {
-    "__docId__": 510,
+    "__docId__": 509,
     "kind": "method",
     "name": "getBeaconRssiFilter",
     "memberof": "src/service/manager.js~Manager",
@@ -11800,7 +11802,7 @@
     "longname": "src/service/manager.js~Manager#getBeaconRssiFilter",
     "access": "public",
     "description": "ranging 시에, 비콘의 rssi 값 재측정에 사용하는 rssiFilter 를 가져오는 함수",
-    "lineNumber": 396,
+    "lineNumber": 402,
     "return": {
       "nullable": null,
       "types": [
@@ -11812,7 +11814,7 @@
     "params": []
   },
   {
-    "__docId__": 511,
+    "__docId__": 510,
     "kind": "method",
     "name": "setMaxTrackingAge",
     "memberof": "src/service/manager.js~Manager",
@@ -11822,7 +11824,7 @@
     "longname": "src/service/manager.js~Manager#setMaxTrackingAge",
     "access": "public",
     "description": " ranging 시에 비콘 트랙킹 만료시간을 설정하는 함수",
-    "lineNumber": 405,
+    "lineNumber": 411,
     "params": [
       {
         "nullable": null,
@@ -11838,7 +11840,7 @@
     "return": null
   },
   {
-    "__docId__": 512,
+    "__docId__": 511,
     "kind": "method",
     "name": "getMaxTrackingAge",
     "memberof": "src/service/manager.js~Manager",
@@ -11848,7 +11850,7 @@
     "longname": "src/service/manager.js~Manager#getMaxTrackingAge",
     "access": "public",
     "description": "ranging 시에 비콘 트랙킹 만료 시간을 가져오는 함수",
-    "lineNumber": 414,
+    "lineNumber": 420,
     "return": {
       "nullable": null,
       "types": [
@@ -11860,7 +11862,7 @@
     "params": []
   },
   {
-    "__docId__": 513,
+    "__docId__": 512,
     "kind": "method",
     "name": "setUseTrackingCache",
     "memberof": "src/service/manager.js~Manager",
@@ -11870,7 +11872,7 @@
     "longname": "src/service/manager.js~Manager#setUseTrackingCache",
     "access": "public",
     "description": "ranging 시에 비콘 트랙킹을 할때 캐시를 사용 할 것인지 여부를 설정하는 함수",
-    "lineNumber": 423,
+    "lineNumber": 429,
     "params": [
       {
         "nullable": null,
@@ -11886,7 +11888,7 @@
     "return": null
   },
   {
-    "__docId__": 514,
+    "__docId__": 513,
     "kind": "method",
     "name": "isBLEAvailable",
     "memberof": "src/service/manager.js~Manager",
@@ -11896,7 +11898,7 @@
     "longname": "src/service/manager.js~Manager#isBLEAvailable",
     "access": "public",
     "description": "현재 ble 라이브러리가 이용가능한지 여부를 가져오는 함수",
-    "lineNumber": 432,
+    "lineNumber": 438,
     "return": {
       "nullable": null,
       "types": [
@@ -11909,6 +11911,29 @@
     "params": []
   },
   {
+    "__docId__": 514,
+    "kind": "method",
+    "name": "_onBleStateChange",
+    "memberof": "src/service/manager.js~Manager",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/manager.js~Manager#_onBleStateChange",
+    "access": "private",
+    "description": "현재 사용중인 ble 장치에 상태가 변경되었을 때, 변경된 ble 장치 상태를 전달하는 콜백 함수",
+    "lineNumber": 446,
+    "ignore": true,
+    "params": [
+      {
+        "name": "state",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null
+  },
+  {
     "__docId__": 515,
     "kind": "method",
     "name": "_onScanCycleEnd",
@@ -11919,7 +11944,7 @@
     "longname": "src/service/manager.js~Manager#_onScanCycleEnd",
     "access": "private",
     "description": "스캐너의 한 스캔 사이클 끝났을때, 모니터링과 레인징 상태를 업데이트 하는 콜백함수",
-    "lineNumber": 440,
+    "lineNumber": 472,
     "ignore": true,
     "params": [],
     "return": null
@@ -11935,7 +11960,7 @@
     "longname": "src/service/manager.js~Manager#_onDiscover",
     "access": "private",
     "description": "스캐너가 스캔중에 비콘을 발견 했을때, 모니터링과 레인징 상태를 업데이트 하는 콜백함수",
-    "lineNumber": 453,
+    "lineNumber": 485,
     "params": [
       {
         "nullable": null,
@@ -11962,7 +11987,7 @@
     "longname": "src/service/manager.js~Manager#_onUnDiscover",
     "access": "private",
     "description": "스캐너가 스캔중에 이전에 발견했던 비콘을 발견하지 못했을때, 상태를 업데이트 하는 콜백함수",
-    "lineNumber": 470,
+    "lineNumber": 502,
     "params": [
       {
         "nullable": null,
@@ -11992,7 +12017,7 @@
     "examples": [
       "var bleManager = new Manager()\nbleManager.on('discover', function (beacon) {...}) // 스캔 발견 시, 이벤트 콜백 함수 등록\nbleManager.startScan() //스캔 시작"
     ],
-    "lineNumber": 482,
+    "lineNumber": 514,
     "params": [],
     "return": null
   },
@@ -12010,7 +12035,7 @@
     "examples": [
       "var bleManager = new Manager()\nbleManager.on('discover', function (beacon) {...}) // 스캔 발견 시, 이벤트 콜백 함수 등록\nbleManager.startScan() //스캔 시작.\n...\nbleManager.stopScan() //스캔 정지."
     ],
-    "lineNumber": 498,
+    "lineNumber": 530,
     "params": [],
     "return": null
   },
@@ -12028,7 +12053,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}) // 모니터링 하고자 하는 리전 생성\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.startMonitoring(region) // 리전 모니터링 시작"
     ],
-    "lineNumber": 517,
+    "lineNumber": 549,
     "params": [
       {
         "nullable": null,
@@ -12057,7 +12082,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar regions = [\n new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}), // 모니터링 하고자 하는 리전 생성\n new Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\n new Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.startMonitoringAll(regions) // 리전 모니터링 시작"
     ],
-    "lineNumber": 542,
+    "lineNumber": 574,
     "params": [
       {
         "nullable": null,
@@ -12086,7 +12111,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}) // 모니터링 하고자 하는 리전 생성\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.startMonitoring(region) // 리전 모니터링 시작\n...\nbleManager.stopMonitoring(region) // 리전 모니터링 정지"
     ],
-    "lineNumber": 566,
+    "lineNumber": 598,
     "params": [
       {
         "nullable": null,
@@ -12115,7 +12140,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar regions = [\n new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}), // 모니터링 하고자 하는 리전 생성\n new Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\n new Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.startMonitoringAll(regions) // 리전 모니터링 시작\n...\nvar stopRegions = [\nnew Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\nnew Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.stopMonitoringAll(stopRegions) // 리전 모니터링 정지"
     ],
-    "lineNumber": 599,
+    "lineNumber": 631,
     "params": [
       {
         "nullable": null,
@@ -12144,7 +12169,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}) // 모니터링 하고자 하는 리전 생성\nbleManager.on('ranged', function (rangingData) {...}) // 레인징 리전 범위 안에 있는 경우, 이벤트 콜백 함수 등록\nbleManager.startRanging(region) // 리전 레인징 시작"
     ],
-    "lineNumber": 622,
+    "lineNumber": 654,
     "params": [
       {
         "nullable": null,
@@ -12173,7 +12198,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar regions = [\n new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}), // 모니터링 하고자 하는 리전 생성\n new Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\n new Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.on('ranged', function (rangingData) {...}) // 레인징 리전 범위 안에 있는 경우, 이벤트 콜백 함수 등록\nbleManager.startRangingAll(regions) // 리전 레인징 시작"
     ],
-    "lineNumber": 644,
+    "lineNumber": 676,
     "params": [
       {
         "nullable": null,
@@ -12202,7 +12227,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar region = new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}) // 모니터링 하고자 하는 리전 생성\nbleManager.on('ranged', function (rangingData) {...}) // 레인징 리전 범위 안에 있는 경우, 이벤트 콜백 함수 등록\nbleManager.startRanging(region) // 해당 리전 레인징 시작\n...\nbleManager.stopRanging(region) // 해당 리전 레인징 정지"
     ],
-    "lineNumber": 665,
+    "lineNumber": 697,
     "params": [
       {
         "nullable": null,
@@ -12231,7 +12256,7 @@
     "examples": [
       "var bleManager = new Manager()\nvar regions = [\n new Region({'id': 'asdfg1234', 'major': 12594, 'minor': 13108}), // 모니터링 하고자 하는 리전 생성\n new Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\n new Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.on('update', function (monitoringData) {...}) // 모니터링 상태 업데이트 시, 이벤트 콜백 함수 등록\nbleManager.on('enter', function (region) {...}) // 모니터링 리전 안으로 들어온 경우, 이벤트 콜백 함수 등록\nbleManager.on('exit', function (region) {...}) // 모니터링 리전 밖으로 나간 경우, 이벤트 콜백 함수 등록\nbleManager.startRangingAll(regions) // 리전 모니터링 시작\n...\nvar stopRegions = [\nnew Region({'id': 'qwert2345', 'major': 12345, 'minor': 23456}),\nnew Region({'id': 'zxcvb6789', 'major': 23456, 'minor': 12345})\n]\nbleManager.stopRangingAll(stopRegions) // 리전 모니터링 정지"
     ],
-    "lineNumber": 697,
+    "lineNumber": 729,
     "params": [
       {
         "nullable": null,
@@ -13035,21 +13060,982 @@
   {
     "__docId__": 567,
     "kind": "class",
+    "name": "RangedBeacon",
+    "memberof": "src/service/ranging.js",
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon",
+    "access": "public",
+    "export": true,
+    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
+    "importStyle": "{RangedBeacon}",
+    "description": " Ranging된 Beacon의 트래킹 정보를 관리한다.",
+    "lineNumber": 17,
+    "interface": false
+  },
+  {
+    "__docId__": 568,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 21,
+    "params": [
+      {
+        "nullable": false,
+        "types": [
+          "Beacon"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beacon",
+        "description": "트래킹 정보를 관리할 비콘 객체"
+      }
+    ]
+  },
+  {
+    "__docId__": 569,
+    "kind": "member",
+    "name": "beacon",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#beacon",
+    "access": "public",
+    "description": " 트래킹 정보를 관리할 비콘 객체",
+    "lineNumber": 26,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Beacon"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 570,
+    "kind": "member",
+    "name": "tracked",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#tracked",
+    "access": "public",
+    "description": " 트래킹 정보",
+    "lineNumber": 31,
+    "type": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 571,
+    "kind": "member",
+    "name": "lastTrackedTime",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#lastTrackedTime",
+    "access": "public",
+    "description": " 마지막으로 트래킹된 시간, Date 객체의 getTime()값",
+    "lineNumber": 36,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 572,
+    "kind": "member",
+    "name": "packetCount",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#packetCount",
+    "access": "public",
+    "description": " 트래킹된 횟수",
+    "lineNumber": 41,
+    "type": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 573,
+    "kind": "member",
+    "name": "filter",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#filter",
+    "access": "public",
+    "description": " Rssi 필터",
+    "lineNumber": 46,
+    "type": {
+      "nullable": null,
+      "types": [
+        "RssiFilter"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 574,
+    "kind": "method",
+    "name": "setRssiFilter",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.setRssiFilter",
+    "access": "public",
+    "description": " Ranging시 사용할 Rssi 필터를 지정한다.",
+    "lineNumber": 53,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "RssiFilter"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "RssiFilter",
+        "description": "RssiFilter를 구현한 필터 객체"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 575,
+    "kind": "method",
+    "name": "getRssiFilter",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.getRssiFilter",
+    "access": "public",
+    "description": " 현재 사용중인 Rssi 필터를 반환한다.",
+    "lineNumber": 60,
+    "return": {
+      "nullable": null,
+      "types": [
+        "RssiFilter"
+      ],
+      "spread": false,
+      "description": "현재 설정된 RssiFilter 객체"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 576,
+    "kind": "method",
+    "name": "setExpirationTime",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.setExpirationTime",
+    "access": "public",
+    "description": " 현재 사용중인 Rssi 필터의 expirationTime을 설정한다.(기본값 : 5000)",
+    "lineNumber": 67,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "time",
+        "description": "expirationTime(단위 : ms)"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 577,
+    "kind": "method",
+    "name": "getExpirationTime",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.getExpirationTime",
+    "access": "public",
+    "description": " 현재 사용중인 Rssi 필터의 expirationTime을 반환한다.",
+    "lineNumber": 76,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "expirationTime(단위 : ms)"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 578,
+    "kind": "method",
+    "name": "setMaxTrackingAge",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.setMaxTrackingAge",
+    "access": "public",
+    "description": " Ranging시 비콘 트래킹 기한을 설정한다.(기본값 : 20000)",
+    "lineNumber": 83,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "maxTrackingAge",
+        "description": "최대 트래킹 시간(단위 : ms)"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 579,
+    "kind": "method",
+    "name": "getMaxTrackingAge",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.getMaxTrackingAge",
+    "access": "public",
+    "description": " 현재 비콘 트래킹 기한을 반환한다.",
+    "lineNumber": 90,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "최대 트래킹 시간(단위 : ms)"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 580,
+    "kind": "method",
+    "name": "setTrackingCache",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.setTrackingCache",
+    "access": "public",
+    "description": " 트래킹 캐쉬 사용 여부를 설정한다.",
+    "lineNumber": 97,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isTrackingCache",
+        "description": "트래킹 사용 여부(true시 사용)"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 581,
+    "kind": "method",
+    "name": "getTrackingCache",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/service/ranging.js~RangedBeacon.getTrackingCache",
+    "access": "public",
+    "description": " 트래킹 캐쉬 사용 여부를 반환한다.",
+    "lineNumber": 104,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "트래킹 사용 여부"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 582,
+    "kind": "method",
+    "name": "getBeacon",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#getBeacon",
+    "access": "public",
+    "description": " 현재 Ranging 중인 비콘을 반환한다.",
+    "lineNumber": 111,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Beacon"
+      ],
+      "spread": false,
+      "description": "현재 Ranging 중인 비콘"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 583,
+    "kind": "method",
+    "name": "updateBeacon",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#updateBeacon",
+    "access": "public",
+    "description": " 비콘의 정보와 트래킹 횟수, Rssi 값을 갱신한다.",
+    "lineNumber": 118,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Beacon"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beacon",
+        "description": "갱신할 비콘 객체"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 586,
+    "kind": "method",
+    "name": "isTracked",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#isTracked",
+    "access": "public",
+    "description": " 트래킹 여부를 반환한다.",
+    "lineNumber": 127,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "현재 비콘의 트래킹 여부"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 587,
+    "kind": "method",
+    "name": "setTracked",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#setTracked",
+    "access": "public",
+    "description": " 트래킹 여부를 설정한다.",
+    "lineNumber": 134,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "isTracked",
+        "description": "트래킹 여부"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 589,
+    "kind": "method",
+    "name": "commitMeasurements",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#commitMeasurements",
+    "access": "public",
+    "description": " 비콘의 측정값(Rssi, 거리)를 계산한다.",
+    "lineNumber": 140,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 591,
+    "kind": "method",
+    "name": "addMeasurement",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#addMeasurement",
+    "access": "public",
+    "description": " 측정된 Rssi값을 저장한다.",
+    "lineNumber": 154,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "rssi",
+        "description": "측정된 Rssi값"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 594,
+    "kind": "method",
+    "name": "isMeasurementAvailable",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#isMeasurementAvailable",
+    "access": "public",
+    "description": " 필터에서 측정된 값에 대하여 사용 가능 여부를 반환한다.",
+    "lineNumber": 166,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "필터에서 측정값 사용 가능 여부"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 595,
+    "kind": "method",
+    "name": "getTrackingAge",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#getTrackingAge",
+    "access": "public",
+    "description": " 마지막으로 트래킹 된 이후 경과된 시간을 반환한다.",
+    "lineNumber": 174,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "Date객체의 getTime() 값"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 596,
+    "kind": "method",
+    "name": "isExpired",
+    "memberof": "src/service/ranging.js~RangedBeacon",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RangedBeacon#isExpired",
+    "access": "public",
+    "description": " 트래킹 시간 초과 여부를 반환한다.",
+    "lineNumber": 181,
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "트래킹 시간 초과 여부"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 597,
+    "kind": "class",
+    "name": "RegionRangeState",
+    "memberof": "src/service/ranging.js",
+    "static": true,
+    "longname": "src/service/ranging.js~RegionRangeState",
+    "access": "public",
+    "export": true,
+    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
+    "importStyle": "{RegionRangeState}",
+    "description": " 특정 Region에서 Ranging된 비콘(RangedBeacon)들을 관리한다.",
+    "lineNumber": 189,
+    "interface": false
+  },
+  {
+    "__docId__": 598,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/service/ranging.js~RegionRangeState",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RegionRangeState#constructor",
+    "access": "public",
+    "description": " 비콘 목록을 초기화 한다.",
+    "lineNumber": 193
+  },
+  {
+    "__docId__": 599,
+    "kind": "member",
+    "name": "rangedBeaconsMap",
+    "memberof": "src/service/ranging.js~RegionRangeState",
+    "static": false,
+    "longname": "src/service/ranging.js~RegionRangeState#rangedBeaconsMap",
+    "access": "public",
+    "description": " 키 : 비콘의 맥 어드레스, 값 : 해당 비콘을 포함하는 RangedBeacon 인스턴스",
+    "lineNumber": 199,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map<string, RangedBeacon>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 600,
+    "kind": "method",
+    "name": "addBeacon",
+    "memberof": "src/service/ranging.js~RegionRangeState",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RegionRangeState#addBeacon",
+    "access": "public",
+    "description": " RangedBeacon을 추가한다. 이미 존재하는 비콘일 경우 비콘 정보를 업데이트 한다.",
+    "lineNumber": 205,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Beacon"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beacon",
+        "description": "추가할 비콘"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 601,
+    "kind": "method",
+    "name": "getRangedBeacons",
+    "memberof": "src/service/ranging.js~RegionRangeState",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~RegionRangeState#getRangedBeacons",
+    "access": "public",
+    "description": " 현재 Ranging된 비콘의 목록을 반환한다.",
+    "lineNumber": 216,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Beacon[]"
+      ],
+      "spread": false,
+      "description": "트래킹된 비콘 목록"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 603,
+    "kind": "class",
+    "name": "Ranging",
+    "memberof": "src/service/ranging.js",
+    "static": true,
+    "longname": "src/service/ranging.js~Ranging",
+    "access": "public",
+    "export": true,
+    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
+    "importStyle": "{Ranging}",
+    "description": "비콘과의 거리를 계산하고 업데이트를 하는 레인징 서비스를 담당하는 클래스",
+    "lineNumber": 285,
+    "interface": false,
+    "extends": [
+      "src/core/event-emitter.js~EventEmitter"
+    ]
+  },
+  {
+    "__docId__": 604,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#constructor",
+    "access": "public",
+    "description": "레인징 관련 초기값 설정",
+    "lineNumber": 291,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Manager"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "manager",
+        "description": "레인징을 사용하는 매니저 인스턴스"
+      }
+    ]
+  },
+  {
+    "__docId__": 605,
+    "kind": "member",
+    "name": "_manager",
+    "memberof": "src/service/ranging.js~Ranging",
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#_manager",
+    "access": "private",
+    "description": "레인징을 사용하는 매니저 인스 턴스",
+    "lineNumber": 297,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Manager"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 606,
+    "kind": "member",
+    "name": "regionStateMap",
+    "memberof": "src/service/ranging.js~Ranging",
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#regionStateMap",
+    "access": "public",
+    "description": "리전 상태들이 저장되어있는 Map (Key : Region Id, Value : RegionRangeState)",
+    "lineNumber": 302,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Map<Region#id, RegionRangeState>"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 607,
+    "kind": "method",
+    "name": "getRangedRegionState",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#getRangedRegionState",
+    "access": "public",
+    "description": "현재 레인징 하고 있는 리전과 리전 레인징 상태를 map 형태로 가져오는 함수",
+    "lineNumber": 310,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Map<Region#id, RegionRangeState>"
+      ],
+      "spread": false,
+      "description": "현재 모니터링 하고 있는 리전과 리전 모니터링 상태"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 608,
+    "kind": "method",
+    "name": "getRegions",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#getRegions",
+    "access": "public",
+    "description": "현재 레인징 하고 있는 리전을 배열 형태로 가져오는 함수",
+    "lineNumber": 319,
+    "return": {
+      "nullable": null,
+      "types": [
+        "Region[]"
+      ],
+      "spread": false,
+      "description": "현재 레인징 하고 있는 리전을 배열"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 609,
+    "kind": "method",
+    "name": "addRegion",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#addRegion",
+    "access": "public",
+    "description": "레인징 하는 새로운 리전을 추가하는 함수",
+    "lineNumber": 333,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Region"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "region",
+        "description": "추가하려는 리전"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "RegionRangeState"
+      ],
+      "spread": false,
+      "description": "새로운 리전의 regionRangeState 값."
+    }
+  },
+  {
+    "__docId__": 610,
+    "kind": "method",
+    "name": "removeRegion",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#removeRegion",
+    "access": "public",
+    "description": " 레인  하는 리전에서 기존 리전을 제거 하는 함수",
+    "lineNumber": 356,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Region"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "region",
+        "description": "제거 하려는 리전"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "boolean"
+      ],
+      "spread": false,
+      "description": "제거 했을경우 true, 존재하지 않으면 false"
+    }
+  },
+  {
+    "__docId__": 611,
+    "kind": "method",
+    "name": "clear",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#clear",
+    "access": "public",
+    "description": "레인징 하는 모든 리전을 제거 하는 함수",
+    "lineNumber": 365,
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 612,
+    "kind": "method",
+    "name": "getMatchedRegions",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#getMatchedRegions",
+    "access": "public",
+    "description": "레인징 하고있는 리전중에 스캔된 비콘과 맞는 리전이 있는지 확인해서 해당 리전들을 배열 형태로 리턴하는 함수",
+    "lineNumber": 376,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Beacon"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beacon",
+        "description": "스캔된 비콘"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Region[]"
+      ],
+      "spread": false,
+      "description": "해당 비콘이 있는 리전 배열"
+    }
+  },
+  {
+    "__docId__": 613,
+    "kind": "method",
+    "name": "setRangedRegionState",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#setRangedRegionState",
+    "access": "public",
+    "description": "레인징 하는 리전 상태값을 전달받은 값으로 초기화 하는 함수",
+    "lineNumber": 395,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Map<Region#id, RegionRangeState>"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "regionStateMap",
+        "description": "레인징 하는 리전 상태"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 615,
+    "kind": "method",
+    "name": "updateRangeState",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#updateRangeState",
+    "access": "public",
+    "description": "레인징 하고있는 리전들의 상태를 업데이트 하는 함수",
+    "lineNumber": 405,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Beacon"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "beacon",
+        "description": "발견된 비콘"
+      }
+    ],
+    "return": null
+  },
+  {
+    "__docId__": 616,
+    "kind": "method",
+    "name": "emitRangeBeacons",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#emitRangeBeacons",
+    "access": "public",
+    "description": "레인징 상태를 ranged 이벤트에 해당 리전을 넘겨주는 함수",
+    "lineNumber": 423,
+    "emits": [
+      {
+        "types": [
+          "ranged"
+        ],
+        "description": "이벤트와 해당 rangingData 을 emit 한다."
+      }
+    ],
+    "params": [],
+    "return": null
+  },
+  {
+    "__docId__": 617,
+    "kind": "method",
+    "name": "getRegionSize",
+    "memberof": "src/service/ranging.js~Ranging",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/service/ranging.js~Ranging#getRegionSize",
+    "access": "public",
+    "description": "레인징 하고있는 리전의 수 를 가져오는 함수",
+    "lineNumber": 438,
+    "return": {
+      "nullable": null,
+      "types": [
+        "number"
+      ],
+      "spread": false,
+      "description": "레인징 하고있는 리전의 수"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 618,
+    "kind": "class",
     "name": "RangingData",
     "memberof": "src/service/ranging.js",
     "static": true,
     "longname": "src/service/ranging.js~RangingData",
     "access": "public",
-    "export": false,
+    "export": true,
     "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
-    "importStyle": null,
+    "importStyle": "{RangingData}",
     "description": "  Region과 Ranging된 비콘들을 저장하는 객체",
     "lineNumber": 254,
-    "interface": false,
-    "ignore": true
+    "interface": false
   },
   {
-    "__docId__": 568,
+    "__docId__": 619,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13084,7 +14070,7 @@
     ]
   },
   {
-    "__docId__": 569,
+    "__docId__": 620,
     "kind": "member",
     "name": "beacons",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13103,7 +14089,7 @@
     }
   },
   {
-    "__docId__": 570,
+    "__docId__": 621,
     "kind": "member",
     "name": "region",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13122,7 +14108,7 @@
     }
   },
   {
-    "__docId__": 571,
+    "__docId__": 622,
     "kind": "method",
     "name": "getBeacons",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13144,7 +14130,7 @@
     "params": []
   },
   {
-    "__docId__": 572,
+    "__docId__": 623,
     "kind": "method",
     "name": "getRegion",
     "memberof": "src/service/ranging.js~RangingData",
@@ -13162,968 +14148,6 @@
       ],
       "spread": false,
       "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 573,
-    "kind": "class",
-    "name": "RangedBeacon",
-    "memberof": "src/service/ranging.js",
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon",
-    "access": "public",
-    "export": true,
-    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
-    "importStyle": "{RangedBeacon}",
-    "description": " Ranging된 Beacon의 트래킹 정보를 관리한다.",
-    "lineNumber": 17,
-    "interface": false
-  },
-  {
-    "__docId__": 574,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#constructor",
-    "access": "public",
-    "description": "",
-    "lineNumber": 21,
-    "params": [
-      {
-        "nullable": false,
-        "types": [
-          "Beacon"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "beacon",
-        "description": "트래킹 정보를 관리할 비콘 객체"
-      }
-    ]
-  },
-  {
-    "__docId__": 575,
-    "kind": "member",
-    "name": "beacon",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#beacon",
-    "access": "public",
-    "description": " 트래킹 정보를 관리할 비콘 객체",
-    "lineNumber": 26,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Beacon"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 576,
-    "kind": "member",
-    "name": "tracked",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#tracked",
-    "access": "public",
-    "description": " 트래킹 정보",
-    "lineNumber": 31,
-    "type": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 577,
-    "kind": "member",
-    "name": "lastTrackedTime",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#lastTrackedTime",
-    "access": "public",
-    "description": " 마지막으로 트래킹된 시간, Date 객체의 getTime()값",
-    "lineNumber": 36,
-    "type": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 578,
-    "kind": "member",
-    "name": "packetCount",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#packetCount",
-    "access": "public",
-    "description": " 트래킹된 횟수",
-    "lineNumber": 41,
-    "type": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 579,
-    "kind": "member",
-    "name": "filter",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#filter",
-    "access": "public",
-    "description": " Rssi 필터",
-    "lineNumber": 46,
-    "type": {
-      "nullable": null,
-      "types": [
-        "RssiFilter"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 580,
-    "kind": "method",
-    "name": "setRssiFilter",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.setRssiFilter",
-    "access": "public",
-    "description": " Ranging시 사용할 Rssi 필터를 지정한다.",
-    "lineNumber": 53,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "RssiFilter"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "RssiFilter",
-        "description": "RssiFilter를 구현한 필터 객체"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 581,
-    "kind": "method",
-    "name": "getRssiFilter",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.getRssiFilter",
-    "access": "public",
-    "description": " 현재 사용중인 Rssi 필터를 반환한다.",
-    "lineNumber": 60,
-    "return": {
-      "nullable": null,
-      "types": [
-        "RssiFilter"
-      ],
-      "spread": false,
-      "description": "현재 설정된 RssiFilter 객체"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 582,
-    "kind": "method",
-    "name": "setExpirationTime",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.setExpirationTime",
-    "access": "public",
-    "description": " 현재 사용중인 Rssi 필터의 expirationTime을 설정한다.(기본값 : 5000)",
-    "lineNumber": 67,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "time",
-        "description": "expirationTime(단위 : ms)"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 583,
-    "kind": "method",
-    "name": "getExpirationTime",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.getExpirationTime",
-    "access": "public",
-    "description": " 현재 사용중인 Rssi 필터의 expirationTime을 반환한다.",
-    "lineNumber": 76,
-    "return": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": "expirationTime(단위 : ms)"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 584,
-    "kind": "method",
-    "name": "setMaxTrackingAge",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.setMaxTrackingAge",
-    "access": "public",
-    "description": " Ranging시 비콘 트래킹 기한을 설정한다.(기본값 : 20000)",
-    "lineNumber": 83,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "maxTrackingAge",
-        "description": "최대 트래킹 시간(단위 : ms)"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 585,
-    "kind": "method",
-    "name": "getMaxTrackingAge",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.getMaxTrackingAge",
-    "access": "public",
-    "description": " 현재 비콘 트래킹 기한을 반환한다.",
-    "lineNumber": 90,
-    "return": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": "최대 트래킹 시간(단위 : ms)"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 586,
-    "kind": "method",
-    "name": "setTrackingCache",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.setTrackingCache",
-    "access": "public",
-    "description": " 트래킹 캐쉬 사용 여부를 설정한다.",
-    "lineNumber": 97,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "boolean"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "isTrackingCache",
-        "description": "트래킹 사용 여부(true시 사용)"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 587,
-    "kind": "method",
-    "name": "getTrackingCache",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/service/ranging.js~RangedBeacon.getTrackingCache",
-    "access": "public",
-    "description": " 트래킹 캐쉬 사용 여부를 반환한다.",
-    "lineNumber": 104,
-    "return": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": "트래킹 사용 여부"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 588,
-    "kind": "method",
-    "name": "getBeacon",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#getBeacon",
-    "access": "public",
-    "description": " 현재 Ranging 중인 비콘을 반환한다.",
-    "lineNumber": 111,
-    "return": {
-      "nullable": null,
-      "types": [
-        "Beacon"
-      ],
-      "spread": false,
-      "description": "현재 Ranging 중인 비콘"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 589,
-    "kind": "method",
-    "name": "updateBeacon",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#updateBeacon",
-    "access": "public",
-    "description": " 비콘의 정보와 트래킹 횟수, Rssi 값을 갱신한다.",
-    "lineNumber": 118,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Beacon"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "beacon",
-        "description": "갱신할 비콘 객체"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 592,
-    "kind": "method",
-    "name": "isTracked",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#isTracked",
-    "access": "public",
-    "description": " 트래킹 여부를 반환한다.",
-    "lineNumber": 127,
-    "return": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": "현재 비콘의 트래킹 여부"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 593,
-    "kind": "method",
-    "name": "setTracked",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#setTracked",
-    "access": "public",
-    "description": " 트래킹 여부를 설정한다.",
-    "lineNumber": 134,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "boolean"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "isTracked",
-        "description": "트래킹 여부"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 595,
-    "kind": "method",
-    "name": "commitMeasurements",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#commitMeasurements",
-    "access": "public",
-    "description": " 비콘의 측정값(Rssi, 거리)를 계산한다.",
-    "lineNumber": 140,
-    "params": [],
-    "return": null
-  },
-  {
-    "__docId__": 597,
-    "kind": "method",
-    "name": "addMeasurement",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#addMeasurement",
-    "access": "public",
-    "description": " 측정된 Rssi값을 저장한다.",
-    "lineNumber": 154,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "rssi",
-        "description": "측정된 Rssi값"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 600,
-    "kind": "method",
-    "name": "isMeasurementAvailable",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#isMeasurementAvailable",
-    "access": "public",
-    "description": " 필터에서 측정된 값에 대하여 사용 가능 여부를 반환한다.",
-    "lineNumber": 166,
-    "return": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": "필터에서 측정값 사용 가능 여부"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 601,
-    "kind": "method",
-    "name": "getTrackingAge",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#getTrackingAge",
-    "access": "public",
-    "description": " 마지막으로 트래킹 된 이후 경과된 시간을 반환한다.",
-    "lineNumber": 174,
-    "return": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": "Date객체의 getTime() 값"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 602,
-    "kind": "method",
-    "name": "isExpired",
-    "memberof": "src/service/ranging.js~RangedBeacon",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RangedBeacon#isExpired",
-    "access": "public",
-    "description": " 트래킹 시간 초과 여부를 반환한다.",
-    "lineNumber": 181,
-    "return": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": "트래킹 시간 초과 여부"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 603,
-    "kind": "class",
-    "name": "RegionRangeState",
-    "memberof": "src/service/ranging.js",
-    "static": true,
-    "longname": "src/service/ranging.js~RegionRangeState",
-    "access": "public",
-    "export": true,
-    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
-    "importStyle": "{RegionRangeState}",
-    "description": " 특정 Region에서 Ranging된 비콘(RangedBeacon)들을 관리한다.",
-    "lineNumber": 189,
-    "interface": false
-  },
-  {
-    "__docId__": 604,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/service/ranging.js~RegionRangeState",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RegionRangeState#constructor",
-    "access": "public",
-    "description": " 비콘 목록을 초기화 한다.",
-    "lineNumber": 193
-  },
-  {
-    "__docId__": 605,
-    "kind": "member",
-    "name": "rangedBeaconsMap",
-    "memberof": "src/service/ranging.js~RegionRangeState",
-    "static": false,
-    "longname": "src/service/ranging.js~RegionRangeState#rangedBeaconsMap",
-    "access": "public",
-    "description": " 키 : 비콘의 맥 어드레스, 값 : 해당 비콘을 포함하는 RangedBeacon 인스턴스",
-    "lineNumber": 199,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Map<string, RangedBeacon>"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 606,
-    "kind": "method",
-    "name": "addBeacon",
-    "memberof": "src/service/ranging.js~RegionRangeState",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RegionRangeState#addBeacon",
-    "access": "public",
-    "description": " RangedBeacon을 추가한다. 이미 존재하는 비콘일 경우 비콘 정보를 업데이트 한다.",
-    "lineNumber": 205,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Beacon"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "beacon",
-        "description": "추가할 비콘"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 607,
-    "kind": "method",
-    "name": "getRangedBeacons",
-    "memberof": "src/service/ranging.js~RegionRangeState",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~RegionRangeState#getRangedBeacons",
-    "access": "public",
-    "description": " 현재 Ranging된 비콘의 목록을 반환한다.",
-    "lineNumber": 216,
-    "return": {
-      "nullable": null,
-      "types": [
-        "Beacon[]"
-      ],
-      "spread": false,
-      "description": "트래킹된 비콘 목록"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 609,
-    "kind": "class",
-    "name": "Ranging",
-    "memberof": "src/service/ranging.js",
-    "static": true,
-    "longname": "src/service/ranging.js~Ranging",
-    "access": "public",
-    "export": true,
-    "importPath": "buildthing-beacon-sdk/src/service/ranging.js",
-    "importStyle": "{Ranging}",
-    "description": "비콘과의 거리를 계산하고 업데이트를 하는 레인징 서비스를 담당하는 클래스",
-    "lineNumber": 285,
-    "interface": false,
-    "extends": [
-      "src/core/event-emitter.js~EventEmitter"
-    ]
-  },
-  {
-    "__docId__": 610,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#constructor",
-    "access": "public",
-    "description": "레인징 관련 초기값 설정",
-    "lineNumber": 291,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Manager"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "manager",
-        "description": "레인징을 사용하는 매니저 인스턴스"
-      }
-    ]
-  },
-  {
-    "__docId__": 611,
-    "kind": "member",
-    "name": "_manager",
-    "memberof": "src/service/ranging.js~Ranging",
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#_manager",
-    "access": "private",
-    "description": "레인징을 사용하는 매니저 인스 턴스",
-    "lineNumber": 297,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Manager"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "ignore": true
-  },
-  {
-    "__docId__": 612,
-    "kind": "member",
-    "name": "regionStateMap",
-    "memberof": "src/service/ranging.js~Ranging",
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#regionStateMap",
-    "access": "public",
-    "description": "리전 상태들이 저장되어있는 Map (Key : Region Id, Value : RegionRangeState)",
-    "lineNumber": 302,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Map<Region#id, RegionRangeState>"
-      ],
-      "spread": false,
-      "description": null
-    }
-  },
-  {
-    "__docId__": 613,
-    "kind": "method",
-    "name": "getRangedRegionState",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#getRangedRegionState",
-    "access": "public",
-    "description": "현재 레인징 하고 있는 리전과 리전 레인징 상태를 map 형태로 가져오는 함수",
-    "lineNumber": 310,
-    "return": {
-      "nullable": null,
-      "types": [
-        "Map<Region#id, RegionRangeState>"
-      ],
-      "spread": false,
-      "description": "현재 모니터링 하고 있는 리전과 리전 모니터링 상태"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 614,
-    "kind": "method",
-    "name": "getRegions",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#getRegions",
-    "access": "public",
-    "description": "현재 레인징 하고 있는 리전을 배열 형태로 가져오는 함수",
-    "lineNumber": 319,
-    "return": {
-      "nullable": null,
-      "types": [
-        "Region[]"
-      ],
-      "spread": false,
-      "description": "현재 레인징 하고 있는 리전을 배열"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 615,
-    "kind": "method",
-    "name": "addRegion",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#addRegion",
-    "access": "public",
-    "description": "레인징 하는 새로운 리전을 추가하는 함수",
-    "lineNumber": 333,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Region"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "region",
-        "description": "추가하려는 리전"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "RegionRangeState"
-      ],
-      "spread": false,
-      "description": "새로운 리전의 regionRangeState 값."
-    }
-  },
-  {
-    "__docId__": 616,
-    "kind": "method",
-    "name": "removeRegion",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#removeRegion",
-    "access": "public",
-    "description": " 레인  하는 리전에서 기존 리전을 제거 하는 함수",
-    "lineNumber": 356,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Region"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "region",
-        "description": "제거 하려는 리전"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "boolean"
-      ],
-      "spread": false,
-      "description": "제거 했을경우 true, 존재하지 않으면 false"
-    }
-  },
-  {
-    "__docId__": 617,
-    "kind": "method",
-    "name": "clear",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#clear",
-    "access": "public",
-    "description": "레인징 하는 모든 리전을 제거 하는 함수",
-    "lineNumber": 365,
-    "params": [],
-    "return": null
-  },
-  {
-    "__docId__": 618,
-    "kind": "method",
-    "name": "getMatchedRegions",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#getMatchedRegions",
-    "access": "public",
-    "description": "레인징 하고있는 리전중에 스캔된 비콘과 맞는 리전이 있는지 확인해서 해당 리전들을 배열 형태로 리턴하는 함수",
-    "lineNumber": 376,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Beacon"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "beacon",
-        "description": "스캔된 비콘"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "Region[]"
-      ],
-      "spread": false,
-      "description": "해당 비콘이 있는 리전 배열"
-    }
-  },
-  {
-    "__docId__": 619,
-    "kind": "method",
-    "name": "setRangedRegionState",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#setRangedRegionState",
-    "access": "public",
-    "description": "레인징 하는 리전 상태값을 전달받은 값으로 초기화 하는 함수",
-    "lineNumber": 395,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Map<Region#id, RegionRangeState>"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "regionStateMap",
-        "description": "레인징 하는 리전 상태"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 621,
-    "kind": "method",
-    "name": "updateRangeState",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#updateRangeState",
-    "access": "public",
-    "description": "레인징 하고있는 리전들의 상태를 업데이트 하는 함수",
-    "lineNumber": 405,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Beacon"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "beacon",
-        "description": "발견된 비콘"
-      }
-    ],
-    "return": null
-  },
-  {
-    "__docId__": 622,
-    "kind": "method",
-    "name": "emitRangeBeacons",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#emitRangeBeacons",
-    "access": "public",
-    "description": "레인징 상태를 ranged 이벤트에 해당 리전을 넘겨주는 함수",
-    "lineNumber": 423,
-    "emits": [
-      {
-        "types": [
-          "ranged"
-        ],
-        "description": "이벤트와 해당 rangingData 을 emit 한다."
-      }
-    ],
-    "params": [],
-    "return": null
-  },
-  {
-    "__docId__": 623,
-    "kind": "method",
-    "name": "getRegionSize",
-    "memberof": "src/service/ranging.js~Ranging",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/service/ranging.js~Ranging#getRegionSize",
-    "access": "public",
-    "description": "레인징 하고있는 리전의 수 를 가져오는 함수",
-    "lineNumber": 438,
-    "return": {
-      "nullable": null,
-      "types": [
-        "number"
-      ],
-      "spread": false,
-      "description": "레인징 하고있는 리전의 수"
     },
     "params": []
   },
@@ -15094,7 +15118,7 @@
   },
   {
     "kind": "index",
-    "content": "# BuildThing™ ️beacon SDK\n\n[![BuildThing beacon](https://buildit.kr/dist/img/img-buildthing-beacon.ade36617.png)](https://buildit.kr/products/beacon-and-sdk)\n\nBuildThing™ beacon SDK는 Javascript 기반으로 구현된 Cross Platform SDK 입니다.\n[Cordova](https://cordova.apache.org/) 및 [Electron](https://electronjs.org/) 기반의 어플리케이션에서 동작하며, iOS/Android/Windows/MacOS에서 배포 가능합니다.\nSDK에서 제공하는 주요 기능들은 다음과 같습니다.\n\n  - BuildThing™ beacon의 스캔 및 Advertising Packet 수신\n  - BuildThing™ beacon 연결 및 비콘 값 설정\n  - BuildThing™ beacon 영역의 진입/이탈 이벤트 수신 (Monitoring)\n  - BuildThing™ beacon 과의 거리 확인 (Ranging)\n\n## 목차\n* [설치](#설치)\n* [사용 가이드](#사용-가이드)\n* [API 문서](#API-문서)\n* [Scan Response](#Scan-Response)\n* [Advertising Packet](#Advertising-Packet)\n* [Connection Service](#Connection-Service)\n* [참고 사항](#Connection-Service)\n* [고객 문의](#고객-문의)\n\n## 설치\nBuildThing™ beacon SDK의 실행을 위해서는 [Node.js](https://nodejs.org/) 8.x를 필요로합니다.\n\n```sh\n$ npm install buildthing-beacon-sdk\n```\n\n## 사용 가이드\niOS/Android 등 Mobile 플랫폼은 Codrova 기반의 개발 환경(e.g : Ionic Framework, PhoneGap 등)에서 사용 가능하며, MacOS/Windows 등 Desktop 플랫폼은 Electron 기반의 개발 환경에서 사용 가능합니다.\n\n### Mobile\n#### 의존 Cordova Plugin 설치\nIonic Framework, Phonegap 등 Cordova 기반의 개발 환경은 아래와 같이 프로젝트 Root 디렉토리에서 Cordova CLI 를 통해 의존 Cordova 플러그인들을 설치 해야합니다.\n##### cordova-plugin-ble-central\nBLE 통신을 위한 플러그인 입니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-plugin-ble-central\n# PhoenGap\n$ phonegap cordova plugin add cordova-plugin-ble-central\n# Ionic Framework\n$ ionic cordova plugin add cordova-plugin-ble-central\n```\n##### cordova-plugin-background-mode\n백그라운드 모드 스캔을 지원하기 위한 플러그인 입니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-plugin-background-mode\n# PhoneGap\n$ phonegap cordova plugin add cordova-plugin-background-mode\n# Ionic Framework\n$ ionic cordova plugin add cordova-plugin-background-mode\n```\n##### cordova-custom-config\niOS는 백그라운드 모드 스캔을 사용하기 위해서 아래과 같이 cordova-custom-config 플러그인을 추가하고 config.xml에 UIBackgroundModes 관련 설정을 추가합니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-custom-config\n# PhoneGap\n$ phonegap cordova plugin add cordova-custom-config\n# Ionic Framework\n$ ionic cordova plugin add cordova-custom-config\n```\n###### config.xml\n```sh\n<platform name=\"ios\">\n  <allow-intent href=\"itms:*\" />\n  <allow-intent href=\"itms-apps:*\" />\n  <config-file parent=\"UIBackgroundModes\" target=\"*-Info.plist\">\n    <array>\n      <string>bluetooth-central</string>\n    </array>\n  </config-file>\n</platform>\n```\n#### Cordova / PhoneGap\n##### index.js\n아래와 같이 buildthing-beacon-sdk 모듈을 사용합니다. `deviceready 이벤트 함수 (cordova 정의 이벤트) 호출된 이후에 사용해야 정상적으로 동작합니다.`\n```\nconst { Manager } = require('buildthing-beacon-sdk')\n\nvar app = {\n   // Application Constructor\n   initialize: function() {\n     this.bleManager = null\n     this.bindEvents();\n   },\n   // Bind Event Listeners\n   //\n   // Bind any events that are required on startup. Common events are:\n   // 'load', 'deviceready', 'offline', and 'online'.\n   bindEvents: function() {\n       document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);\n   },\n   // deviceready Event Handler\n   //\n   onDeviceReady: function() {\n       this.receivedEvent('deviceready');\n       // sdk test code\n       this.bleManager = new Manager()\n       this.bleManager._ble.on('stateChange', function (state) {\n         console.log(state)\n         if(state === 'on' || state === 'turningOn') this.bleManager.startScan()\n       }.bind(this))\n   },\n   ...\n};\n\nwindow.app = app\n```\n\n##### Webpack 또는 Browserify\n`Cordova, PhoneGap CLI 로 생성한 프로젝트의 경우, 기본 번들러(Bundler)가 존재하지 않습니다.` 이에 따라, webpack, browserify 등의 번들러를 통하여 bundle.js를 생성하여 사용해야하므로 webpack 또는 browserify 등과 같은 JS 모듈 번들러를 설치합니다.\n```sh\n$ npm install -g webpack\n```\n또는\n```sh\n$ npm install -g browserify\n```\n###### Webpack\n아래와 같이 webpack.config.js 를 생성합니다.\n```\n// webpack.config.js\nmodule.exports = {\n  entry: ['./www/js/index'],\n  module: {...},\n  output: {\n\t\tchunkFilename: '[name].js',\n\t\tfilename: 'bundle.js',\n\t\tpath: path.resolve(__dirname, './www/dist/js')\n\t},\n  ...\n}\n```\n아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.\n```sh\n$ webpack\n```\n###### Browserify\n아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.\n```sh\n$ browserify ./www/js/index.js -o ./www/dist/js/bundle.js\n```\n##### index.html\n아래와 같이 index.html 에 번들링 된 bundle.js를 삽입 합니다.\n```\n<!-- www/index.html -->\n\n<html>\n<head>\n    ...\n</head>\n<body>\n    <div class=\"app\">\n        <h1>PhoneGap</h1>\n        <div id=\"deviceready\" class=\"blink\">\n            <p class=\"event listening\">Connecting to Device</p>\n            <p class=\"event received\">Device is Ready</p>\n        </div>\n    </div>\n    <script type=\"text/javascript\" src=\"cordova.js\"></script>\n    <!-- <script type=\"text/javascript\" src=\"js/index.js\"></script> -->\n    <script type=\"text/javascript\" src=\"dist/js/bundle.js\"></script>\n    <script type=\"text/javascript\">\n        app.initialize();\n    </script>\n</body>\n</html>\n```\n\n#### Ionic 4 (Cordova + AngularJS)\n##### Known Issues\n###### iOS 12.2 에서 cordova-plugin-ionic-webview 와 cordova-plugin-background-mode 플러그인 충돌\n Ionic Framework는 iOS에서 기본적으로 WKWebView를 사용하는데, 관련 플러그인과 buildthing-ble-sdk의 의존 플러그인인 cordova-plugin-background-mode 플러그인이 iOS 12.2 에서 충돌하는 이슈가 존재합니다. 2019년 5월 10일 기준, 아직 버그가 Fix 되지 않아 [연관 이슈](https://github.com/katzer/cordova-plugin-background-mode/issues/419#issuecomment-473851949)와 같이 플러그인의 iOS 코드를 수정해야만 정상 동작 합니다.\n\n##### Ionic 4 : 예제\nbuildthing-beacon-sdk 는 다른 Cordova 플러그인들과 마찬가지로 deviceready 이벤트 호출 이후에 사용가능합니다. 따라서 Ionic 4 내 Angular JS Component 에서 사용할 때에도 아래 코드와 같이 deviceready 이벤트 호출 이후에 사용합니다.\n```\n// home.page.ts\n\nimport { Platform } from '@ionic/angular';\nimport { Manager } from 'buildthing-beacon-sdk';\n\n@Component({\nselector: 'app-home',\ntemplateUrl: 'home.page.html',\nstyleUrls: ['home.page.scss'],\n})\nexport class HomePage {\npublic bleManager: Manager\n  constructor(public plt: Platform) {\n    // ionic 프레임워크 사용시, 다음과 같은 방법으로도 cordovad의 deviceready 이벤트 콜백 함수를 정의 및 등록 할 수 있습니다.\n    this.plt.ready().then((readySource) => {\n      this.bleManager = new Manager()\n      this.bleManager.on('discover', function(beacon) { console.log(beacon) })\n    });\n  }\n}\n```\n\n### Desktop\n#### 사전 준비\n##### Windows\nPowershell 또는 cmd.exe 에서 관리자 권한으로 실행 뒤 [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)를 설치합니다.\n```sh\n$ npm install --global --production windows-build-tools\n```\nBluetooth 4.0 USB 어댑터를 위하여 [Zadig Tool](https://zadig.akeo.ie/)을 통해 [WinUSB](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/index) 드라이버를 설치합니다.\nWinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴얼](https://buildit.kr/dist/assets/BuildThing_beacon_Admin_App_User_Manual_v1.0_KR.pdf) 내 **Windows 지원 블루투스 장치 및 실행 가이드**를 참고합니다.\n\n지원 Windows 블루투스 장치는 아래와 같습니다.\n\n| 장치 이름 | USB VID | USB PID |\n| ------ | ------ | ------ |\n| Qualcomm Athreos QCA61x4 | 0CF3 | E300 |\n| Broadcom BCM20702A0 | 0A5C | 21E8 |\n| Broadcom BCM20702A0 | 19FF | 0239 |\n| CSR(Cambridge Silicon Radio) | 0A12 | 0001 |\n| ASUS BT400 | 0B05 | 17CB |\n| Intel 6235 | 8087 | 07DA |\n| Intel 7260 | 8087 | 07DC |\n| Intel 7265 | 8087 | 0A2A |\n| Intel 8265 | 8087 | 0A2B |\n| Broadcom BCM20702A1 | 0489 | E07A |\n| Broadcom BCM2045A0 | 0A5C | 6412 |\n| Belkin BCM20702A0 | 050D | 065A |\n\n##### MacOS\n- [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)를 설치합니다.\n\n#### Electron\n##### 설치\n###### electron-packager\nElectron 에서 앱을 빌드/패키징 할때 사용하는 노드 모듈 입니다. 아래의 명령어로 Electron 프로젝트에 설치합니다.\n```sh\n$ npm install electron-packager --save-dev\n```\n자세한 설정 및 사용 방법은 [electron-packager](https://github.com/electron-userland/electron-packager) 에서 확인할 수 있습니다.\n\n###### package.json\nelectron-packager 로 빌드를 수행하는 경우, package.json 내 dependencies에 buildthing-beacon-sdk를 명시해야만합니다.\n```\n{\n  \"name\": \"electron-quick-start\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A minimal Electron application\",\n  \"main\": \"main.js\",\n  \"scripts\": {\n    \"start\": \"electron .\",\n    \"build\": \"electron-packager . --overwrite\"\n  },\n  \"repository\": \"https://github.com/electron/electron-quick-start\",\n  \"keywords\": [\n    \"Electron\",\n    \"quick\",\n    \"start\",\n    \"tutorial\",\n    \"demo\"\n  ],\n  \"author\": \"GitHub\",\n  \"license\": \"CC0-1.0\",\n  \"devDependencies\": {\n    \"electron\": \"^3.0.8\",\n    \"electron-packager\": \"^13.1.1\"\n  },\n  \"dependencies\": {\n    \"buildthing-beacon-sdk\": \"^1.0.0\"\n  }\n}\n```\n\n###### Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (Windows 환경 필수)\nElectron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.\n\n##### Electron : 예제\n아래와 같이 renderer.js(Renderer Process)에서 buildthing-beacon-sdk를 사용할 수 있습니다.\n```\nconst { Manager } = require('buildthing-beacon-sdk')\n\nwindow.addEventListener(\"load\", function(event) {\n  var bleManager = new Manager()\n\n  bleManager.on('discover', function(beacon) {\n    console.log(beacon)\n  })\n\n  bleManager._ble.on('stateChange', function (state) {\n    if(state[0] === 'poweredOn') bleManager.startScan()\n  })\n\n  window.bleManager = bleManager\n});\n\n```\n##### Electron-vue : 예제\nElectron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://github.com/SimulatedGREG/electron-vue) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.\n\n```\n// LandingPage.vue\n\n<template>\n  <div id=\"wrapper\">\n  ...\n    <main>\n      <div>hello buildthing Beacon</div>\n    </main>\n  </div>\n</template>\n\n<script>\n  import SystemInformation from './LandingPage/SystemInformation'\n  import { Manager } from 'buildthing-beacon-sdk'\n\n  export default {\n    name: 'landing-page',\n    components: { SystemInformation },\n    mounted () {\n      window.addEventListener(\"load\", function(event) {\n        var bleManager = new Manager()\n\n        bleManager.on('discover', function(beacon) {\n          console.log(beacon)\n        })\n\n        bleManager._ble.on('stateChange', function (state) {\n          if(state[0] === 'poweredOn') bleManager.startScan()\n        })\n\n        window.bleManager = bleManager\n      });\n    }\n  }\n</script>\n\n<style>\n ...\n</style>\n\n```\n\n##### Electron-react : 예제\nElectron 과 React 를 같이 사용 하는 경우, [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.\n```\nimport React, { Component } from 'react';\nimport { Manager } from 'buildthing-beacon-sdk';\nimport styles from './Home.css';\n\ntype Props = {};\n\nexport default class Home extends Component<Props> {\n  props: Props;\n\n  constructor(props) {\n    super(props);\n    window.addEventListener(\"load\", () => {\n       const bleManager = new Manager()\n\n       bleManager.on('discover', (beacon) => {\n         console.log(beacon)\n       })\n\n       bleManager._ble.on('stateChange', (state) => {\n         if(state[0] === 'poweredOn') bleManager.startScan()\n       })\n\n       window.bleManager = bleManager\n     });\n  }\n\n  render() {\n    return (\n      <div className={styles.container} data-tid=\"container\">\n        <h2>hello !! BuildThing Beacon</h2>\n      </div>\n    );\n  }\n}\n```\n\n### 공통 Webpack 설정\n#### Webpack 미사용\nWebpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.\n##### Mobile\n```\n// for Mobile (iOS, Android) (No Webpack Configuration)\nvar BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')\nmodule.exports = BuildThingBLE\n```\n##### MacOS\n```\n// for MacOS (No Webpack Configuration)\nvar BuildThingBLE = require('./dist/buildthing.ble.electron.darwin.js')\nmodule.exports = BuildThingBLE\n```\n##### Windows\n```\n// for Windows (No Webpack Configuration)\nvar BuildThingBLE = require('./dist/buildthing.ble.electron.win32.js')\nmodule.exports = BuildThingBLE\n```\n#### Webpack 사용\n아래와 같이 Webpack.config.js 파일에서 alias 를 설정하여 플랫폼 별로 다른 buildthing-ble-sdk bundle  파일을 참조하여 개발이 가능합니다.\n```\nconst path = require('path')\n// Set Root Path\nconst ROOT_PATH = path.resolve(__dirname, '../')\nconst NODE_MODULE_PATH = '/node_modules/buildthing-beacon-sdk/dist/'\n\n//Target Platform\nconst CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'\n//const MACOS_BUNDLE = 'buildthing.ble.electron.darwin.js'\n//const WINDOWS_BUNDLE = 'buildthing.ble.electron.win32.js'\n\n//.. Webpack Config Object\n    resolve: {\n        alias: {\n          'buildthing-beacon-sdk': ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE\n        }\n    }\n```\n\n## API 문서\n플랫폼 별 라이브러리 사용의 예제 코드는 아래와 같습니다.\n```\nimport { Manager } from 'buildthing-beacon-sdk'\nvar manager = new Manager()\nmanager.on('discover', function(beacon){...})\nmanager.startScan() //스캔 시작\nmanager.stopScan() //스캔 종료\n```\n상세한 API는 아래 문서를 참고해주시기 바랍니다.\n[API 문서 바로가기](https://buildit-lab.github.io/buildthing-beacon-sdk/)\n\n## Scan Response\nBuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.\n아래 Scan Response는 BuildThing, iBeacon, Eddystone 모드 모두 동일합니다.\n\n| 항목 | Service UUID | 수신 값 | 비고 |\n| ------ | ------ | ------ |------ |\n| Device Information & Firmware Version | 0x180A | 0x983006 또는 0x3006XX | 0x983006 : 펌웨어 v1.0, 0x3006XX : 펌웨어 vXX/10 (예 : 0x300611은 펌웨어 v1.1)\n| Mac Address | 0xADD0 | Mac Address | - |\n\n## Advertising Packet\nBuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertising Packet 을 지원합니다. Advertising Packet을 수신하기 위한 각 모드 별 UUID 및 Service UUID는 다음과 같습니다.\n\n| 비콘 모드 | UUID | Service UUID |\n| ------ | ------ | ------ |\n| BuildThing | - | 0xBCBC |\n| iBeacon | 0x0b2b0848-205f-11e9-ab14-820316983006 | - |\n| Eddystone | - | 0xFEAA |\n\n비콘 모드 별 수신되는 Advertising Packet Format은 아래와 같습니다.\n[![BuildThing beacon Advertising Packet Format](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)\n\n## Connection Service\n아래 Connection Service UUID를 통하여 BuildThing beacon Connection Service에 연결합니다.\n\n| 항목 | Service UUID |\n| ------ | ------ |\n| Connection Service | 6E400001-B5A3-F393-E0A9-E50E24DCCA9E |\n\nConnection이 완료되면 아래 2개의 Characteristic에 접근할 수 있습니다.\n\n| 항목 | Characteristic UUID | 속성 | 비고 |\n| ------ | ------ | ------ | ------ |\n| 비콘 값 설정 | 6E400002-B5A3-F393-E0A9-E50E24DCCA9E | Read, Write | 비콘 값 을 설정할 수 있습니다.\n| 비콘 값 설정 결과 | 6E400003-B5A3-F393-E0A9-E50E24DCCA9E | Notify | 비콘 값 설정 완료 후 Notify를 수신할 수 있습니다.\n\n비콘 값 설정 Characteristic에 값을 Write하여 비콘 값을 설정합니다.\n설정 시, 아래와 같은 전송 패킷 포맷으로 Write 합니다.\n**최초 Password 값은 000000** 입니다.\n\n[![BuildThing beacon Connection Service](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)\n\n## 참고 사항\n### 거리 계산 테스트\n비콘과 기기 간의 거리 계산에 대하여 테스트가 완료된 기기 모델은 아래와 같습니다.\n\n| 플랫폼 | 모델명 |\n| ------ | ------ |\n| iOS | iPhone8, iPhoneX, iPhoneXS, iPad 9.7 5세대 |\n| Android | Galaxy S8, Galaxy S9, Galaxy S10, Galaxy Note 9|\n\n## 고객 문의\nGithub Issue 외 기타 문의 사항은 web.dev@buildit.kr로 문의해주시기 바랍니다.\n",
+    "content": "# BuildThing™ ️beacon SDK\n\n[![BuildThing beacon](https://buildit.kr/dist/img/img-buildthing-beacon.ade36617.png)](https://buildit.kr/products/beacon-and-sdk)\n\nBuildThing™ beacon SDK는 Javascript로 구현된 Cross Platform SDK 입니다.\n[Cordova](https://cordova.apache.org/) 및 [Node.js](https://nodejs.org/ko/) 기반으로 동작하며, [Cordova](https://cordova.apache.org/) 환경의 iOS/Android, [Electron](https://electronjs.org/) 환경의 Windows/MacOS/Linux 어플리케이션 배포가 가능합니다.\nSDK에서 제공하는 주요 기능들은 다음과 같습니다.\n\n  - BuildThing™ beacon의 스캔 및 Advertising Packet 수신\n  - BuildThing™ beacon 연결 및 비콘 값 설정\n  - BuildThing™ beacon 영역의 진입/이탈 이벤트 수신 (Monitoring)\n  - BuildThing™ beacon 과의 거리 확인 (Ranging)\n\n## 목차\n* [설치](#설치)\n* [사용 가이드](#사용-가이드)\n* [API 문서](#API-문서)\n* [Scan Response](#Scan-Response)\n* [Advertising Packet](#Advertising-Packet)\n* [Connection Service](#Connection-Service)\n* [참고 사항](#Connection-Service)\n* [고객 문의](#고객-문의)\n\n## 설치\nBuildThing™ beacon SDK의 실행을 위해서는 [Node.js](https://nodejs.org/) 8.x를 필요로합니다.\n\n```sh\n$ npm install buildthing-beacon-sdk\n```\n\n## 사용 가이드\niOS/Android 등 Mobile 플랫폼은 Codrova 기반의 개발 환경(e.g : Ionic Framework, PhoneGap 등)에서 사용 가능하며, MacOS/Windows 등 Desktop 플랫폼은 Electron 기반의 개발 환경에서 사용 가능합니다.\n\n### Mobile\n#### 의존 Cordova Plugin 설치\nIonic Framework, Phonegap 등 Cordova 기반의 개발 환경은 아래와 같이 프로젝트 Root 디렉토리에서 Cordova CLI 를 통해 의존 Cordova 플러그인들을 설치 해야합니다.\n##### cordova-plugin-ble-central\nBLE 통신을 위한 플러그인 입니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-plugin-ble-central\n# PhoenGap\n$ phonegap cordova plugin add cordova-plugin-ble-central\n# Ionic Framework\n$ ionic cordova plugin add cordova-plugin-ble-central\n```\n##### cordova-plugin-background-mode\n백그라운드 모드 스캔을 지원하기 위한 플러그인 입니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-plugin-background-mode\n# PhoneGap\n$ phonegap cordova plugin add cordova-plugin-background-mode\n# Ionic Framework\n$ ionic cordova plugin add cordova-plugin-background-mode\n```\n##### cordova-custom-config\niOS는 백그라운드 모드 스캔을 사용하기 위해서 아래과 같이 cordova-custom-config 플러그인을 추가하고 config.xml에 UIBackgroundModes 관련 설정을 추가합니다.\n```sh\n# Cordova\n$ cordova plugin add cordova-custom-config\n# PhoneGap\n$ phonegap cordova plugin add cordova-custom-config\n# Ionic Framework\n$ ionic cordova plugin add cordova-custom-config\n```\n###### config.xml\n```sh\n<platform name=\"ios\">\n  <allow-intent href=\"itms:*\" />\n  <allow-intent href=\"itms-apps:*\" />\n  <config-file parent=\"UIBackgroundModes\" target=\"*-Info.plist\">\n    <array>\n      <string>bluetooth-central</string>\n    </array>\n  </config-file>\n</platform>\n```\n#### Cordova / PhoneGap\n##### index.js\n아래와 같이 buildthing-beacon-sdk 모듈을 사용합니다. `deviceready 이벤트 함수 (cordova 정의 이벤트) 호출된 이후에 사용해야 정상적으로 동작합니다.`\n```\nconst { Manager } = require('buildthing-beacon-sdk')\n\nvar app = {\n   // Application Constructor\n   initialize: function() {\n     this.bleManager = null\n     this.bindEvents();\n   },\n   // Bind Event Listeners\n   //\n   // Bind any events that are required on startup. Common events are:\n   // 'load', 'deviceready', 'offline', and 'online'.\n   bindEvents: function() {\n       document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);\n   },\n   // deviceready Event Handler\n   //\n   onDeviceReady: function() {\n       this.receivedEvent('deviceready');\n       // sdk test code\n       this.bleManager = new Manager()\n       this.bleManager.on('stateChange', function (state) {\n         console.log(state)\n         if(state === 'poweredOn') this.bleManager.startScan()\n       }.bind(this))\n   },\n   ...\n};\n\nwindow.app = app\n```\n\n##### Webpack 또는 Browserify\n`Cordova, PhoneGap CLI 로 생성한 프로젝트의 경우, 기본 번들러(Bundler)가 존재하지 않습니다.` 이에 따라, webpack, browserify 등의 번들러를 통하여 bundle.js를 생성하여 사용해야하므로 webpack 또는 browserify 등과 같은 JS 모듈 번들러를 설치합니다.\n```sh\n$ npm install -g webpack\n```\n또는\n```sh\n$ npm install -g browserify\n```\n###### Webpack\n아래와 같이 webpack.config.js 를 생성합니다.\n```\n// webpack.config.js\nmodule.exports = {\n  entry: ['./www/js/index'],\n  module: {...},\n  output: {\n\t\tchunkFilename: '[name].js',\n\t\tfilename: 'bundle.js',\n\t\tpath: path.resolve(__dirname, './www/dist/js')\n\t},\n  ...\n}\n```\n아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.\n```sh\n$ webpack\n```\n###### Browserify\n아래 명령어를 입력하여 JS 파일을 번들링하고 ./www/dist/js/bundle.js 파일을 생성합니다.\n```sh\n$ browserify ./www/js/index.js -o ./www/dist/js/bundle.js\n```\n##### index.html\n아래와 같이 index.html 에 번들링 된 bundle.js를 삽입 합니다.\n```\n<!-- www/index.html -->\n\n<html>\n<head>\n    ...\n</head>\n<body>\n    <div class=\"app\">\n        <h1>PhoneGap</h1>\n        <div id=\"deviceready\" class=\"blink\">\n            <p class=\"event listening\">Connecting to Device</p>\n            <p class=\"event received\">Device is Ready</p>\n        </div>\n    </div>\n    <script type=\"text/javascript\" src=\"cordova.js\"></script>\n    <!-- <script type=\"text/javascript\" src=\"js/index.js\"></script> -->\n    <script type=\"text/javascript\" src=\"dist/js/bundle.js\"></script>\n    <script type=\"text/javascript\">\n        app.initialize();\n    </script>\n</body>\n</html>\n```\n\n#### Ionic 4 (Cordova + AngularJS)\n##### Known Issues\n###### iOS 12.2 에서 cordova-plugin-ionic-webview 와 cordova-plugin-background-mode 플러그인 충돌\n Ionic Framework는 iOS에서 기본적으로 WKWebView를 사용하는데, 관련 플러그인과 buildthing-ble-sdk의 의존 플러그인인 cordova-plugin-background-mode 플러그인이 iOS 12.2 에서 충돌하는 이슈가 존재합니다. 2019년 5월 10일 기준, 아직 버그가 Fix 되지 않아 [연관 이슈](https://github.com/katzer/cordova-plugin-background-mode/issues/419#issuecomment-473851949)와 같이 플러그인의 iOS 코드를 수정해야만 정상 동작 합니다.\n\n##### Ionic 4 : 예제\nbuildthing-beacon-sdk 는 다른 Cordova 플러그인들과 마찬가지로 deviceready 이벤트 호출 이후에 사용가능합니다. 따라서 Ionic 4 내 Angular JS Component 에서 사용할 때에도 아래 코드와 같이 deviceready 이벤트 호출 이후에 사용합니다.\n```\n// home.page.ts\n\nimport { Platform } from '@ionic/angular';\nimport { Manager } from 'buildthing-beacon-sdk';\n\n@Component({\nselector: 'app-home',\ntemplateUrl: 'home.page.html',\nstyleUrls: ['home.page.scss'],\n})\nexport class HomePage {\npublic bleManager: Manager\n  constructor(public plt: Platform) {\n    // ionic 프레임워크 사용시, 다음과 같은 방법으로도 cordovad의 deviceready 이벤트 콜백 함수를 정의 및 등록 할 수 있습니다.\n    this.plt.ready().then((readySource) => {\n      this.bleManager = new Manager()\n      this.bleManager.on('discover', function(beacon) { console.log(beacon) })\n    });\n  }\n}\n```\n\n### Desktop\n#### 사전 준비\n##### Windows\nPowershell 또는 cmd.exe 에서 관리자 권한으로 실행 뒤 [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)를 설치합니다.\n```sh\n$ npm install --global --production windows-build-tools\n```\nBluetooth 4.0 USB 어댑터를 위하여 [Zadig Tool](https://zadig.akeo.ie/)을 통해 [WinUSB](https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/index) 드라이버를 설치합니다.\nWinUSB 드라이버 설치는 [BuildThing beacon 관리자 앱 사용자 매뉴얼](https://buildit.kr/dist/assets/BuildThing_beacon_Admin_App_User_Manual_v1.0_KR.pdf) 내 **Windows 지원 블루투스 장치 및 실행 가이드**를 참고합니다.\n\nWindows 환경에서 기본적으로 지원하는 블루투스 장치는 아래와 같습니다.\n\n| 장치 이름 | USB VID | USB PID |\n| ------ | ------ | ------ |\n| Qualcomm Atheros QCA61x4 | 0CF3 | E300 |\n| Broadcom BCM20702A0 | 0A5C | 21E8 |\n| Broadcom BCM20702A0 | 19FF | 0239 |\n| CSR(Cambridge Silicon Radio) | 0A12 | 0001 |\n| ASUS BT400 | 0B05 | 17CB |\n| Intel 6235 | 8087 | 07DA |\n| Intel 7260 | 8087 | 07DC |\n| Intel 7265 | 8087 | 0A2A |\n| Intel 8265 | 8087 | 0A2B |\n| Broadcom BCM20702A1 | 0489 | E07A |\n| Broadcom BCM2045A0 | 0A5C | 6412 |\n| Belkin BCM20702A0 | 050D | 065A |\n\n위 목록에 존재하지 않는 블루투스 장치의 경우, 블루투스 장치의 USB VID, USB PID를 확인한 후에 해당 값을 아래의 예시와 같이 실행 환경에서 환경변수를 추가하여 사용합니다.\n```sh\nset BLUETOOTH_HCI_SOCKET_USB_VID=0x8087\nset BLUETOOTH_HCI_SOCKET_USB_PID=0x0aaa\n```\n\n##### MacOS\n- [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)를 설치합니다.\n\n##### Linux (Ubuntu/Debian/Raspbian)\n###### 권장 Ubuntu 버전\n- SDK의 권장 리눅스 버전은 Ubuntu 18.04 입니다.\n###### 의존 패키지 설치\n- libbluetooth-dev 패키지 등을 다음 커맨드를 통해 설치합니다.\n```sh\n$sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev\n```\n- 추가적으로 리소스 접근 권한 문제 때문에 root/sudo 커맨드로 app 을 동작 시커나,\n다음 커맨드로 node binary 에 권한을 주어서 app 을 실행 시켜야 합니다.\n```sh\n$sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)\n```\n\n#### Node.js\nbuildthing-beacon-sdk 1.1.4 버전 이상부터 지원합니다.\n##### Node.js : 예제\n```\nconst buildthing = require('buildthing-beacon-sdk')\nconst Manager = buildthing.Manager\n\nconst bleManager = new Manager()\n\nbleManager.on('stateChange', (state) => {\n  if (state === 'poweredOn') main()\n})\n\nbleManager.on('discover', (beacon) => {\n  console.log(beacon)\n})\n\nfunction main() {\n  bleManager.startScan()\n}\n```\n\n#### Electron\n##### 설치\n###### electron-packager\nElectron 에서 앱을 빌드/패키징 할때 사용하는 노드 모듈 입니다. 아래의 명령어로 Electron 프로젝트에 설치합니다.\n```sh\n$ npm install electron-packager --save-dev\n```\n자세한 설정 및 사용 방법은 [electron-packager](https://github.com/electron-userland/electron-packager) 에서 확인할 수 있습니다.\n\n###### package.json\nelectron-packager 로 빌드를 수행하는 경우, package.json 내 dependencies에 buildthing-beacon-sdk를 명시해야만합니다.\n```\n{\n  \"name\": \"electron-quick-start\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A minimal Electron application\",\n  \"main\": \"main.js\",\n  \"scripts\": {\n    \"start\": \"electron .\",\n    \"build\": \"electron-packager . --overwrite\"\n  },\n  \"repository\": \"https://github.com/electron/electron-quick-start\",\n  \"keywords\": [\n    \"Electron\",\n    \"quick\",\n    \"start\",\n    \"tutorial\",\n    \"demo\"\n  ],\n  \"author\": \"GitHub\",\n  \"license\": \"CC0-1.0\",\n  \"devDependencies\": {\n    \"electron\": \"^3.0.8\",\n    \"electron-packager\": \"^13.1.1\"\n  },\n  \"dependencies\": {\n    \"buildthing-beacon-sdk\": \"^1.0.0\"\n  }\n}\n```\n\n###### Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (Windows 환경 필수)\nElectron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.\n\n##### Electron : 예제\n아래와 같이 renderer.js(Renderer Process)에서 buildthing-beacon-sdk를 사용할 수 있습니다.\n```\nconst { Manager } = require('buildthing-beacon-sdk')\n\nwindow.addEventListener(\"load\", function(event) {\n  var bleManager = new Manager()\n\n  bleManager.on('discover', function(beacon) {\n    console.log(beacon)\n  })\n\n  bleManager.on('stateChange', function (state) {\n    if(state === 'poweredOn') bleManager.startScan()\n  })\n\n  window.bleManager = bleManager\n});\n\n```\n##### Electron-vue : 예제\nElectron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://github.com/SimulatedGREG/electron-vue) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.\n\n```\n// LandingPage.vue\n\n<template>\n  <div id=\"wrapper\">\n  ...\n    <main>\n      <div>hello buildthing Beacon</div>\n    </main>\n  </div>\n</template>\n\n<script>\n  import SystemInformation from './LandingPage/SystemInformation'\n  import { Manager } from 'buildthing-beacon-sdk'\n\n  export default {\n    name: 'landing-page',\n    components: { SystemInformation },\n    mounted () {\n      window.addEventListener(\"load\", function(event) {\n        var bleManager = new Manager()\n\n        bleManager.on('discover', function(beacon) {\n          console.log(beacon)\n        })\n\n        bleManager.on('stateChange', function (state) {\n          if(state === 'poweredOn') bleManager.startScan()\n        })\n\n        window.bleManager = bleManager\n      });\n    }\n  }\n</script>\n\n<style>\n ...\n</style>\n\n```\n\n##### Electron-react : 예제\nElectron 과 React 를 같이 사용 하는 경우, [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.\n```\nimport React, { Component } from 'react';\nimport { Manager } from 'buildthing-beacon-sdk';\nimport styles from './Home.css';\n\ntype Props = {};\n\nexport default class Home extends Component<Props> {\n  props: Props;\n\n  constructor(props) {\n    super(props);\n    window.addEventListener(\"load\", () => {\n       const bleManager = new Manager()\n\n       bleManager.on('discover', (beacon) => {\n         console.log(beacon)\n       })\n\n       bleManager.on('stateChange', (state) => {\n         if(state === 'poweredOn') bleManager.startScan()\n       })\n\n       window.bleManager = bleManager\n     });\n  }\n\n  render() {\n    return (\n      <div className={styles.container} data-tid=\"container\">\n        <h2>hello !! BuildThing Beacon</h2>\n      </div>\n    );\n  }\n}\n```\n\n### 공통 Webpack 설정\n#### Webpack 미사용\nWebpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.\n##### Mobile\n```\n// for Mobile (iOS, Android) (No Webpack Configuration)\nvar BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')\nmodule.exports = BuildThingBLE\n```\n##### MacOS\n```\n// for MacOS (No Webpack Configuration)\nvar BuildThingBLE = require('./dist/buildthing.ble.darwin.js')\nmodule.exports = BuildThingBLE\n```\n##### Windows\n```\n// for Windows (No Webpack Configuration)\n// for Windows - Node.js\n// var BuildThingBLE = require('./dist/buildthing.ble.win32.node.js')\n// for Windows - Electron\nvar BuildThingBLE = require('./dist/buildthing.ble.win32.electron.js')\nmodule.exports = BuildThingBLE\n```\n##### Linux\n```\n// for Linux (No Webpack Configuration)\n// for Linux - Node.js\nvar BuildThingBLE = require('./dist/buildthing.ble.linux.node.js')\nmodule.exports = BuildThingBLE\n```\n#### Webpack 사용\n아래와 같이 Webpack.config.js 파일에서 alias 를 설정하여 플랫폼 별로 다른 buildthing-ble-sdk bundle  파일을 참조하여 개발이 가능합니다.\n```\nconst path = require('path')\n// Set Root Path\nconst ROOT_PATH = path.resolve(__dirname, '../')\nconst NODE_MODULE_PATH = '/node_modules/buildthing-beacon-sdk/dist/'\n\n//Target Platform\nconst CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'\n//const MACOS_BUNDLE = 'buildthing.ble.darwin.js'\n//const WINDOWS_NODE_BUNDLE = 'buildthing.ble.win32.node.js'\n//const WINDOWS_ElECTRON_BUNDLE = 'buildthing.ble.win32.electron.js'\n//const LINUX_NODE_BUNDLE = 'buildthing.ble.linux.node.js'\n\n//.. Webpack Config Object\n    resolve: {\n        alias: {\n          'buildthing-beacon-sdk': ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE\n        }\n    }\n```\n\n## API 문서\n플랫폼 별 라이브러리 사용의 예제 코드는 아래와 같습니다.\n```\nimport { Manager } from 'buildthing-beacon-sdk'\nvar manager = new Manager()\nmanager.on('discover', function(beacon){...})\nmanager.startScan() //스캔 시작\nmanager.stopScan() //스캔 종료\n```\n상세한 API는 아래 문서를 참고해주시기 바랍니다.\n[API 문서 바로가기](https://buildit-lab.github.io/buildthing-beacon-sdk/)\n\n## Scan Response\nBuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.\n아래 Scan Response는 BuildThing, iBeacon, Eddystone 모드 모두 동일합니다.\n\n| 항목 | Service UUID | 수신 값 | 비고 |\n| ------ | ------ | ------ |------ |\n| Device Information & Firmware Version | 0x180A | 0x983006 또는 0x3006XX | 0x983006 : 펌웨어 v1.0, 0x3006XX : 펌웨어 vXX/10 (예 : 0x300611은 펌웨어 v1.1)\n| Mac Address | 0xADD0 | Mac Address | - |\n\n## Advertising Packet\nBuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertising Packet 을 지원합니다. Advertising Packet을 수신하기 위한 각 모드 별 UUID 및 Service UUID는 다음과 같습니다.\n\n| 비콘 모드 | UUID | Service UUID |\n| ------ | ------ | ------ |\n| BuildThing | - | 0xBCBC |\n| iBeacon | 0x0b2b0848-205f-11e9-ab14-820316983006 | - |\n| Eddystone | - | 0xFEAA |\n\n비콘 모드 별 수신되는 Advertising Packet Format은 아래와 같습니다.\n[![BuildThing beacon Advertising Packet Format](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)\n\n## Connection Service\n아래 Connection Service UUID를 통하여 BuildThing beacon Connection Service에 연결합니다.\n\n| 항목 | Service UUID |\n| ------ | ------ |\n| Connection Service | 6E400001-B5A3-F393-E0A9-E50E24DCCA9E |\n\nConnection이 완료되면 아래 2개의 Characteristic에 접근할 수 있습니다.\n\n| 항목 | Characteristic UUID | 속성 | 비고 |\n| ------ | ------ | ------ | ------ |\n| 비콘 값 설정 | 6E400002-B5A3-F393-E0A9-E50E24DCCA9E | Read, Write | 비콘 값 을 설정할 수 있습니다.\n| 비콘 값 설정 결과 | 6E400003-B5A3-F393-E0A9-E50E24DCCA9E | Notify | 비콘 값 설정 완료 후 Notify를 수신할 수 있습니다.\n\n비콘 값 설정 Characteristic에 값을 Write하여 비콘 값을 설정합니다.\n설정 시, 아래와 같은 전송 패킷 포맷으로 Write 합니다.\n**최초 Password 값은 000000** 입니다.\n\n[![BuildThing beacon Connection Service](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)\n\n## 참고 사항\n### 거리 계산 테스트\n비콘과 기기 간의 거리 계산에 대하여 테스트가 완료된 기기 모델은 아래와 같습니다.\n\n| 플랫폼 | 모델명 |\n| ------ | ------ |\n| iOS | iPhone8, iPhoneX, iPhoneXS, iPad 9.7 5세대 |\n| Android | Galaxy S8, Galaxy S9, Galaxy S10, Galaxy Note 9|\n\n## 고객 문의\nGithub Issue 외 기타 문의 사항은 web.dev@buildit.kr로 문의해주시기 바랍니다.\n",
     "longname": "/Users/yeonbongkim/dev/buildthing-ble-sdk/README.md",
     "name": "./README.md",
     "static": true,
@@ -15102,7 +15126,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"buildthing-beacon-sdk\",\n  \"version\": \"0.0.1\",\n  \"description\": \"Buildit Inc. Buildthing Beacon Cross Platform SDK\",\n  \"main\": \"./index.js\",\n  \"scripts\": {\n    \"dev\": \"webpack --mode=development\",\n    \"prod\": \"webpack --mode=production\",\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"esdoc\": \"esdoc -c esdoc.json\"\n  },\n  \"keywords\": [\n    \"buildthing\",\n    \"ble\",\n    \"beacon\",\n    \"blutooth low energy\"\n  ],\n  \"author\": \"Buildit Inc.\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.2.2\",\n    \"@babel/plugin-transform-regenerator\": \"^7.0.0\",\n    \"@babel/preset-env\": \"^7.3.1\",\n    \"babel-eslint\": \"^10.0.1\",\n    \"babel-loader\": \"^8.0.5\",\n    \"babel-plugin-dynamic-import-webpack\": \"^1.1.0\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"cordova-plugin-ble-central\": \"^1.2.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"native-ext-loader\": \"^2.3.0\",\n    \"node-loader\": \"^0.6.0\",\n    \"standard\": \"^12.0.1\",\n    \"webpack\": \"^4.28.3\",\n    \"webpack-bundle-analyzer\": \"^3.0.3\",\n    \"webpack-cli\": \"^3.2.1\",\n    \"wrapper-webpack-plugin\": \"^2.1.0\"\n  },\n  \"dependencies\": {\n    \"@babel/runtime\": \"^7.2.0\",\n    \"aws-sdk\": \"^2.400.0\",\n    \"esdoc-exclude-source-plugin\": \"^1.0.0\",\n    \"noble\": \"^1.9.1\",\n    \"noble-mac\": \"git+https://github.com/Timeular/noble-mac.git\"\n  },\n  \"optionalDependencies\": {\n    \"bluetooth-hci-socket\": \"git+https://github.com/sandeepmistry/node-bluetooth-hci-socket.git\",\n    \"buildthing-ble-sdk-usb\": \"^1.5.0\"\n  },\n  \"standard\": {\n    \"ignore\": [\n      \"dist/\",\n      \"webpack.*.js\"\n    ],\n    \"parser\": \"babel-eslint\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"buildthing-beacon-sdk\",\n  \"version\": \"0.0.1\",\n  \"description\": \"Buildit Inc. Buildthing Beacon Cross Platform SDK\",\n  \"main\": \"./index.js\",\n  \"scripts\": {\n    \"dev\": \"webpack --mode=development\",\n    \"prod\": \"webpack --mode=production\",\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\n    \"esdoc\": \"esdoc -c esdoc.json\"\n  },\n  \"keywords\": [\n    \"buildthing\",\n    \"ble\",\n    \"beacon\",\n    \"blutooth low energy\"\n  ],\n  \"author\": \"Buildit Inc.\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.2.2\",\n    \"@babel/plugin-transform-regenerator\": \"^7.0.0\",\n    \"@babel/preset-env\": \"^7.3.1\",\n    \"babel-eslint\": \"^10.0.1\",\n    \"babel-loader\": \"^8.0.5\",\n    \"babel-plugin-dynamic-import-webpack\": \"^1.1.0\",\n    \"babel-polyfill\": \"^6.26.0\",\n    \"cordova-plugin-ble-central\": \"^1.2.2\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-publish-html-plugin\": \"^1.1.2\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"native-ext-loader\": \"^2.3.0\",\n    \"node-loader\": \"^0.6.0\",\n    \"standard\": \"^12.0.1\",\n    \"webpack\": \"^4.28.3\",\n    \"webpack-bundle-analyzer\": \"^3.0.3\",\n    \"webpack-cli\": \"^3.2.1\",\n    \"wrapper-webpack-plugin\": \"^2.1.0\"\n  },\n  \"dependencies\": {\n    \"@babel/runtime\": \"^7.2.0\",\n    \"aws-sdk\": \"^2.400.0\",\n    \"esdoc-exclude-source-plugin\": \"^1.0.0\",\n    \"noble\": \"^1.9.1\",\n    \"noble-mac\": \"git+https://github.com/Timeular/noble-mac.git\"\n  },\n  \"optionalDependencies\": {\n    \"buildthing-bluetooth-hci-socket\": \"^0.5.3-5\",\n    \"buildthing-ble-sdk-usb\": \"^1.5.0\"\n  },\n  \"standard\": {\n    \"ignore\": [\n      \"dist/\",\n      \"webpack.*.js\"\n    ],\n    \"parser\": \"babel-eslint\"\n  }\n}\n",
     "longname": "/Users/yeonbongkim/dev/buildthing-ble-sdk/package.json",
     "name": "package.json",
     "static": true,

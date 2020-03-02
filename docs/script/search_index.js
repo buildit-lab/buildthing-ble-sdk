@@ -132,6 +132,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "buildthing-beacon-sdk/src/service/ranging.js~rangingdata",
+    "class/src/service/ranging.js~RangingData.html",
+    "<span>RangingData</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/ranging.js</span>",
+    "class"
+  ],
+  [
     "buildthing-beacon-sdk/src/service/region.js~region",
     "class/src/service/region.js~Region.html",
     "<span>Region</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/region.js</span>",
@@ -2536,6 +2542,36 @@ window.esdocSearchIndex = [
     "class/src/service/ranging.js~Ranging.html#instance-method-updateRangeState",
     "src/service/ranging.js~Ranging#updateRangeState",
     "method"
+  ],
+  [
+    "src/service/ranging.js~rangingdata#beacons",
+    "class/src/service/ranging.js~RangingData.html#instance-member-beacons",
+    "src/service/ranging.js~RangingData#beacons",
+    "member"
+  ],
+  [
+    "src/service/ranging.js~rangingdata#constructor",
+    "class/src/service/ranging.js~RangingData.html#instance-constructor-constructor",
+    "src/service/ranging.js~RangingData#constructor",
+    "method"
+  ],
+  [
+    "src/service/ranging.js~rangingdata#getbeacons",
+    "class/src/service/ranging.js~RangingData.html#instance-method-getBeacons",
+    "src/service/ranging.js~RangingData#getBeacons",
+    "method"
+  ],
+  [
+    "src/service/ranging.js~rangingdata#getregion",
+    "class/src/service/ranging.js~RangingData.html#instance-method-getRegion",
+    "src/service/ranging.js~RangingData#getRegion",
+    "method"
+  ],
+  [
+    "src/service/ranging.js~rangingdata#region",
+    "class/src/service/ranging.js~RangingData.html#instance-member-region",
+    "src/service/ranging.js~RangingData#region",
+    "member"
   ],
   [
     "src/service/ranging.js~regionrangestate#addbeacon",

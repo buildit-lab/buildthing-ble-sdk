@@ -58,6 +58,7 @@
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/monitoring.js~RegionMonitoringState.html">RegionMonitoringState</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~RangedBeacon.html">RangedBeacon</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~Ranging.html">Ranging</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~RangingData.html">RangingData</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/ranging.js~RegionRangeState.html">RegionRangeState</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/region.js~Region.html">Region</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/service/scanner.js~Scanner.html">Scanner</a></span></span></li>
@@ -88,7 +89,7 @@
   
   
   
-  <span data-ice="source">| <span><a href="file/src/service/manager.js.html#lineNumber72">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/src/service/manager.js.html#lineNumber81">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -121,22 +122,31 @@
     
   <div class="example-doc" data-ice="exampleDoc">
       
-      <pre class="prettyprint source-code"><code data-ice="exampleCode">// &#xB9E4;&#xB2C8;&#xC800; &#xC0DD;&#xC131; &#xBC0F; &#xC2A4;&#xCE94; &#xC2DC;&#xAC04; &#xC124;&#xC815;
+      <pre class="prettyprint source-code"><code data-ice="exampleCode">// &#xB9E4;&#xB2C8;&#xC800; &#xC0DD;&#xC131; &#xBC0F; &#xC2A4;&#xCE94; &#xC2DC;&#xAC04; &#xC124;&#xC815;.
 var bleManager = new Manager()
 bleManager.setForegroundScanPeriod(2000)
 bleManager.setForegroundBetweenScanPeriod(2000)
 bleManager.updateScanPeriod()
-// &#xC2A4;&#xCE94;, &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;, &#xB808;&#xC778;&#xC9D5; &#xAD00;&#xB828; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;.
-bleManager.on(&apos;discover&apos;, function (beacon) {...}) // &#xC2A4;&#xCE94; &#xBC1C;&#xACAC; &#xC2DC;, &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;
-bleManager.on(&apos;update&apos;, function (monitoringData) {...}) // &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xC0C1;&#xD0DC; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xC2DC;, &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;
-bleManager.on(&apos;enter&apos;, function (region) {...}) // &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xB9AC;&#xC804; &#xC548;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xC628; &#xACBD;&#xC6B0;, &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;
-bleManager.on(&apos;exit&apos;, function (region) {...}) // &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xB9AC;&#xC804; &#xBC16;&#xC73C;&#xB85C; &#xB098;&#xAC04; &#xACBD;&#xC6B0;, &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;
-bleManager.on(&apos;ranged&apos;, function (rangingData) {...}) // &#xB808;&#xC778;&#xC9D5; &#xB9AC;&#xC804; &#xBC94;&#xC704; &#xC548;&#xC5D0; &#xC788;&#xB294; &#xACBD;&#xC6B0;, &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;
 
-var region = new Region({&apos;id&apos;: &apos;asdfg1234&apos;, &apos;major&apos;: 12594, &apos;minor&apos;: 13108}) // &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;, &#xB808;&#xC778;&#xC9D5; &#xD558;&#xACE0;&#xC790; &#xD558;&#xB294; &#xB9AC;&#xC804; &#xC0DD;&#xC131;
-bleManager.startScan() //&#xC2A4;&#xCE94; &#xC2DC;&#xC791;
-bleManager.startMonitoring(region) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xC2DC;&#xC791;
-bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#xC2DC;&#xC791;</code></pre>
+// &#xC2A4;&#xCE94;, &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;, &#xB808;&#xC778;&#xC9D5; &#xAD00;&#xB828; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D;.
+// &#xD604;&#xC7AC; ble &#xC7A5;&#xCE58;&#xC5D0; &#xC0C1;&#xD0DC; &#xBCC0;&#xACBD; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (state: &apos;poweredOn&apos;|&apos;poweredOff&apos;|&apos;unknown&apos;|&apos;resetting&apos;|&apos;unsupported&apos;|&apos;unauthorized&apos;|&apos;turningOn&apos;|&apos;turningOff&apos;)
+bleManager.on(&apos;stateChange&apos;, function (state) {...})
+// &#xBE44;&#xCF58; &#xC2A4;&#xCE94;&#xC911; &#xBE44;&#xCF58; &#xBC1C;&#xACAC; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (beacon: BuildThingBeacon|iBeacon|EddystoneTLM|EddystoneUID|EddystoneURL)
+bleManager.on(&apos;discover&apos;, function (beacon) {...})
+// &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xC0C1;&#xD0DC; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (monitoringData: MonitoringData)
+bleManager.on(&apos;update&apos;, function (monitoringData) {...})
+// &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xB9AC;&#xC804;&#xC5D0; &#xC9C4;&#xC785; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (region: Region, beacon: BuildThingBeacon|iBeacon|EddystoneTLM|EddystoneUID|EddystoneURL)
+bleManager.on(&apos;enter&apos;, function (region, beacon) {...})
+// &#xBAA8;&#xB2C8;&#xD130;&#xB9C1; &#xB9AC;&#xC804;&#xC5D0; &#xC774;&#xD0C8; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (region: Region)
+bleManager.on(&apos;exit&apos;, function (region) {...})
+// &#xB808;&#xC778;&#xC9D5; &#xB9AC;&#xC804;&#xC5D0; &#xB808;&#xC778;&#xC9D5;&#xAC12; &#xBCC0;&#xACBD; &#xC774;&#xBCA4;&#xD2B8; &#xCF5C;&#xBC31; &#xD568;&#xC218; &#xB4F1;&#xB85D; (rangingData: RangingData)
+bleManager.on(&apos;ranged&apos;, function (rangingData) {...})
+
+// &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;, &#xB808;&#xC778;&#xC9D5; &#xAD00;&#xB828; &#xB9AC;&#xC804; &#xC0DD;&#xC131; &#xBC0F; &#xBE44;&#xCF58; &#xC2A4;&#xCE94;, &#xBAA8;&#xB2C8;&#xD130;&#xB9C1;, &#xB808;&#xC778;&#xC9D5; &#xC11C;&#xBE44;&#xC2A4; &#xC2DC;&#xC791;.
+var region = new Region({&apos;id&apos;: &apos;asdfg1234&apos;, &apos;major&apos;: 12594, &apos;minor&apos;: 13108, &apos;beacons&apos;:[&apos;E1:3F:B2:12:30:D4&apos;] })
+bleManager.startScan()
+bleManager.startMonitoring(region)
+bleManager.startRanging(region)</code></pre>
     </div>
 </div>
 
@@ -1439,7 +1449,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber76">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber85">source</a></span></span>
     </span>
   </h3>
 
@@ -1486,7 +1496,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber141">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber150">source</a></span></span>
     </span>
   </h3>
 
@@ -1530,7 +1540,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber135">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber144">source</a></span></span>
     </span>
   </h3>
 
@@ -1574,7 +1584,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber154">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber163">source</a></span></span>
     </span>
   </h3>
 
@@ -1618,7 +1628,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber129">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber138">source</a></span></span>
     </span>
   </h3>
 
@@ -1662,7 +1672,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber123">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber132">source</a></span></span>
     </span>
   </h3>
 
@@ -1706,7 +1716,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber116">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber125">source</a></span></span>
     </span>
   </h3>
 
@@ -1730,14 +1740,14 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
       <td data-ice="name" class="code" data-depth="0">type</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>&#xD604;&#xC7AC; &#xD50C;&#xB7AB;&#xD3FC; &#xD0C0;&#xC785; (electron &#xB610;&#xB294; cordova)</p>
+      <td data-ice="description"><p>&#xD604;&#xC7AC; &#xD50C;&#xB7AB;&#xD3FC; &#xD0C0;&#xC785; (electron | cordova | node)</p>
 </td>
     </tr>
 <tr data-ice="property" data-depth="0">
       <td data-ice="name" class="code" data-depth="0">os</td>
       <td data-ice="type" class="code"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></span></td>
       <td data-ice="appendix"></td>
-      <td data-ice="description"><p>&#xD604;&#xC7AC; &#xD50C;&#xB7AB;&#xD3FC; &#xC6B4;&#xC601;&#xCCB4;&#xC81C; (win32 &#xB610;&#xB294; darwin)</p>
+      <td data-ice="description"><p>&#xD604;&#xC7AC; &#xD50C;&#xB7AB;&#xD3FC; &#xC6B4;&#xC601;&#xCCB4;&#xC81C; (win32 | darwin | linux)</p>
 </td>
     </tr>
 </tbody>
@@ -1774,7 +1784,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber148">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber157">source</a></span></span>
     </span>
   </h3>
 
@@ -1820,7 +1830,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber396">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber402">source</a></span></span>
     </span>
   </h3>
 
@@ -1877,7 +1887,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber353">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber359">source</a></span></span>
     </span>
   </h3>
 
@@ -1934,7 +1944,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber334">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber340">source</a></span></span>
     </span>
   </h3>
 
@@ -1991,7 +2001,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber378">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber384">source</a></span></span>
     </span>
   </h3>
 
@@ -2048,7 +2058,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber414">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber420">source</a></span></span>
     </span>
   </h3>
 
@@ -2105,7 +2115,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber344">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber350">source</a></span></span>
     </span>
   </h3>
 
@@ -2162,7 +2172,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber324">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber330">source</a></span></span>
     </span>
   </h3>
 
@@ -2219,7 +2229,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber432">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber438">source</a></span></span>
     </span>
   </h3>
 
@@ -2276,7 +2286,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber297">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber303">source</a></span></span>
     </span>
   </h3>
 
@@ -2348,7 +2358,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber224">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber230">source</a></span></span>
     </span>
   </h3>
 
@@ -2426,7 +2436,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber282">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber288">source</a></span></span>
     </span>
   </h3>
 
@@ -2498,7 +2508,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber387">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber393">source</a></span></span>
     </span>
   </h3>
 
@@ -2559,7 +2569,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber315">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber321">source</a></span></span>
     </span>
   </h3>
 
@@ -2620,7 +2630,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber369">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber375">source</a></span></span>
     </span>
   </h3>
 
@@ -2681,7 +2691,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber267">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber273">source</a></span></span>
     </span>
   </h3>
 
@@ -2753,7 +2763,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber252">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber258">source</a></span></span>
     </span>
   </h3>
 
@@ -2825,7 +2835,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber405">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber411">source</a></span></span>
     </span>
   </h3>
 
@@ -2886,7 +2896,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber306">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber312">source</a></span></span>
     </span>
   </h3>
 
@@ -2947,7 +2957,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber423">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber429">source</a></span></span>
     </span>
   </h3>
 
@@ -3008,7 +3018,7 @@ bleManager.updateScanPeriod() // &#xC2A4;&#xCE90;&#xB108;&#xC5D0; &#xD574;&#xB2F
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber517">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber549">source</a></span></span>
     </span>
   </h3>
 
@@ -3081,7 +3091,7 @@ bleManager.startMonitoring(region) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#xD130;&
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber542">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber574">source</a></span></span>
     </span>
   </h3>
 
@@ -3158,7 +3168,7 @@ bleManager.startMonitoringAll(regions) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#xD1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber622">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber654">source</a></span></span>
     </span>
   </h3>
 
@@ -3229,7 +3239,7 @@ bleManager.startRanging(region) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5; &#x
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber644">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber676">source</a></span></span>
     </span>
   </h3>
 
@@ -3304,7 +3314,7 @@ bleManager.startRangingAll(regions) // &#xB9AC;&#xC804; &#xB808;&#xC778;&#xC9D5;
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber482">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber514">source</a></span></span>
     </span>
   </h3>
 
@@ -3357,7 +3367,7 @@ bleManager.startScan() //&#xC2A4;&#xCE94; &#xC2DC;&#xC791;</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber566">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber598">source</a></span></span>
     </span>
   </h3>
 
@@ -3432,7 +3442,7 @@ bleManager.stopMonitoring(region) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#xD130;&#
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber599">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber631">source</a></span></span>
     </span>
   </h3>
 
@@ -3515,7 +3525,7 @@ bleManager.stopMonitoringAll(stopRegions) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber665">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber697">source</a></span></span>
     </span>
   </h3>
 
@@ -3588,7 +3598,7 @@ bleManager.stopRanging(region) // &#xD574;&#xB2F9; &#xB9AC;&#xC804; &#xB808;&#xC
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber697">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber729">source</a></span></span>
     </span>
   </h3>
 
@@ -3671,7 +3681,7 @@ bleManager.stopRangingAll(stopRegions) // &#xB9AC;&#xC804; &#xBAA8;&#xB2C8;&#xD1
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber498">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber530">source</a></span></span>
     </span>
   </h3>
 
@@ -3726,7 +3736,7 @@ bleManager.stopScan() //&#xC2A4;&#xCE94; &#xC815;&#xC9C0;.</code></pre>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber360">source</a></span></span>
+      <span data-ice="source"><span><a href="file/src/service/manager.js.html#lineNumber366">source</a></span></span>
     </span>
   </h3>
 

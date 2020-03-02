@@ -1,7 +1,7 @@
 {
   "type": "File",
   "start": 0,
-  "end": 11459,
+  "end": 11472,
   "loc": {
     "start": {
       "line": 1,
@@ -15,7 +15,7 @@
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 11459,
+    "end": 11472,
     "loc": {
       "start": {
         "line": 1,
@@ -10052,7 +10052,7 @@
         "name": "_"
       },
       {
-        "type": "ClassDeclaration",
+        "type": "Identifier",
         "start": 6494,
         "end": 6999,
         "loc": {
@@ -10787,42 +10787,9 @@
           ],
           "trailingComments": null
         },
-        "leadingComments": [
-          {
-            "type": "CommentBlock",
-            "value": "*\n *   Region과 Ranging된 비콘들을 저장하는 객체\n ",
-            "start": 6451,
-            "end": 6493,
-            "loc": {
-              "start": {
-                "line": 251,
-                "column": 0
-              },
-              "end": {
-                "line": 253,
-                "column": 3
-              }
-            }
-          }
-        ],
-        "trailingComments": [
-          {
-            "type": "CommentBlock",
-            "value": "*\n * 비콘과의 거리를 계산하고 업데이트를 하는 레인징 서비스를 담당하는 클래스\n ",
-            "start": 7001,
-            "end": 7052,
-            "loc": {
-              "start": {
-                "line": 282,
-                "column": 0
-              },
-              "end": {
-                "line": 284,
-                "column": 3
-              }
-            }
-          }
-        ]
+        "leadingComments": [],
+        "trailingComments": [],
+        "name": "_"
       },
       {
         "type": "Identifier",
@@ -18162,7 +18129,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 11408,
-        "end": 11458,
+        "end": 11471,
         "loc": {
           "start": {
             "line": 450,
@@ -18170,7 +18137,7 @@
           },
           "end": {
             "line": 450,
-            "column": 50
+            "column": 63
           }
         },
         "declaration": null,
@@ -18321,6 +18288,55 @@
               },
               "name": "Ranging"
             }
+          },
+          {
+            "type": "ExportSpecifier",
+            "start": 11458,
+            "end": 11469,
+            "loc": {
+              "start": {
+                "line": 450,
+                "column": 50
+              },
+              "end": {
+                "line": 450,
+                "column": 61
+              }
+            },
+            "local": {
+              "type": "Identifier",
+              "start": 11458,
+              "end": 11469,
+              "loc": {
+                "start": {
+                  "line": 450,
+                  "column": 50
+                },
+                "end": {
+                  "line": 450,
+                  "column": 61
+                },
+                "identifierName": "RangingData"
+              },
+              "name": "RangingData"
+            },
+            "exported": {
+              "type": "Identifier",
+              "start": 11458,
+              "end": 11469,
+              "loc": {
+                "start": {
+                  "line": 450,
+                  "column": 50
+                },
+                "end": {
+                  "line": 450,
+                  "column": 61
+                },
+                "identifierName": "RangingData"
+              },
+              "name": "RangingData"
+            }
           }
         ],
         "source": null
@@ -18328,7 +18344,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 11408,
-        "end": 11458,
+        "end": 11471,
         "loc": {
           "start": {
             "line": 450,
@@ -18336,7 +18352,7 @@
           },
           "end": {
             "line": 450,
-            "column": 50
+            "column": 63
           }
         },
         "declaration": {
@@ -24539,7 +24555,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 11408,
-        "end": 11458,
+        "end": 11471,
         "loc": {
           "start": {
             "line": 450,
@@ -24547,7 +24563,7 @@
           },
           "end": {
             "line": 450,
-            "column": 50
+            "column": 63
           }
         },
         "declaration": {
@@ -28092,7 +28108,7 @@
       {
         "type": "ExportNamedDeclaration",
         "start": 11408,
-        "end": 11458,
+        "end": 11471,
         "loc": {
           "start": {
             "line": 450,
@@ -28100,7 +28116,7 @@
           },
           "end": {
             "line": 450,
-            "column": 50
+            "column": 63
           }
         },
         "declaration": {
@@ -35056,6 +35072,798 @@
                 "end": {
                   "line": 444,
                   "column": 20
+                }
+              }
+            }
+          ],
+          "__PseudoExport__": false
+        },
+        "specifiers": null,
+        "source": null,
+        "leadingComments": null
+      },
+      {
+        "type": "ExportNamedDeclaration",
+        "start": 11408,
+        "end": 11471,
+        "loc": {
+          "start": {
+            "line": 450,
+            "column": 0
+          },
+          "end": {
+            "line": 450,
+            "column": 63
+          }
+        },
+        "declaration": {
+          "type": "ClassDeclaration",
+          "start": 6494,
+          "end": 6999,
+          "loc": {
+            "start": {
+              "line": 254,
+              "column": 0
+            },
+            "end": {
+              "line": 280,
+              "column": 1
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 6500,
+            "end": 6511,
+            "loc": {
+              "start": {
+                "line": 254,
+                "column": 6
+              },
+              "end": {
+                "line": 254,
+                "column": 17
+              },
+              "identifierName": "RangingData"
+            },
+            "name": "RangingData",
+            "leadingComments": null
+          },
+          "superClass": null,
+          "body": {
+            "type": "ClassBody",
+            "start": 6512,
+            "end": 6999,
+            "loc": {
+              "start": {
+                "line": 254,
+                "column": 18
+              },
+              "end": {
+                "line": 280,
+                "column": 1
+              }
+            },
+            "body": [
+              {
+                "type": "ClassMethod",
+                "start": 6655,
+                "end": 6796,
+                "loc": {
+                  "start": {
+                    "line": 260,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 265,
+                    "column": 3
+                  }
+                },
+                "static": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 6655,
+                  "end": 6666,
+                  "loc": {
+                    "start": {
+                      "line": 260,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 260,
+                      "column": 13
+                    },
+                    "identifierName": "constructor"
+                  },
+                  "name": "constructor",
+                  "leadingComments": null
+                },
+                "kind": "constructor",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [
+                  {
+                    "type": "Identifier",
+                    "start": 6668,
+                    "end": 6675,
+                    "loc": {
+                      "start": {
+                        "line": 260,
+                        "column": 15
+                      },
+                      "end": {
+                        "line": 260,
+                        "column": 22
+                      },
+                      "identifierName": "beacons"
+                    },
+                    "name": "beacons"
+                  },
+                  {
+                    "type": "Identifier",
+                    "start": 6677,
+                    "end": 6683,
+                    "loc": {
+                      "start": {
+                        "line": 260,
+                        "column": 24
+                      },
+                      "end": {
+                        "line": 260,
+                        "column": 30
+                      },
+                      "identifierName": "region"
+                    },
+                    "name": "region"
+                  }
+                ],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 6685,
+                  "end": 6796,
+                  "loc": {
+                    "start": {
+                      "line": 260,
+                      "column": 32
+                    },
+                    "end": {
+                      "line": 265,
+                      "column": 3
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 6719,
+                      "end": 6741,
+                      "loc": {
+                        "start": {
+                          "line": 262,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 262,
+                          "column": 26
+                        }
+                      },
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "start": 6719,
+                        "end": 6741,
+                        "loc": {
+                          "start": {
+                            "line": 262,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 262,
+                            "column": 26
+                          }
+                        },
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "start": 6719,
+                          "end": 6731,
+                          "loc": {
+                            "start": {
+                              "line": 262,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 262,
+                              "column": 16
+                            }
+                          },
+                          "object": {
+                            "type": "ThisExpression",
+                            "start": 6719,
+                            "end": 6723,
+                            "loc": {
+                              "start": {
+                                "line": 262,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 262,
+                                "column": 8
+                              }
+                            },
+                            "leadingComments": null
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 6724,
+                            "end": 6731,
+                            "loc": {
+                              "start": {
+                                "line": 262,
+                                "column": 9
+                              },
+                              "end": {
+                                "line": 262,
+                                "column": 16
+                              },
+                              "identifierName": "beacons"
+                            },
+                            "name": "beacons"
+                          },
+                          "computed": false,
+                          "leadingComments": null
+                        },
+                        "right": {
+                          "type": "Identifier",
+                          "start": 6734,
+                          "end": 6741,
+                          "loc": {
+                            "start": {
+                              "line": 262,
+                              "column": 19
+                            },
+                            "end": {
+                              "line": 262,
+                              "column": 26
+                            },
+                            "identifierName": "beacons"
+                          },
+                          "name": "beacons",
+                          "leadingComments": null,
+                          "trailingComments": null
+                        },
+                        "leadingComments": null,
+                        "trailingComments": null
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "CommentBlock",
+                          "value": "* @type {Beacon[]} ",
+                          "start": 6691,
+                          "end": 6714,
+                          "loc": {
+                            "start": {
+                              "line": 261,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 261,
+                              "column": 27
+                            }
+                          }
+                        }
+                      ],
+                      "trailingComments": [
+                        {
+                          "type": "CommentBlock",
+                          "value": "* @type {Region} ",
+                          "start": 6746,
+                          "end": 6767,
+                          "loc": {
+                            "start": {
+                              "line": 263,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 263,
+                              "column": 25
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ExpressionStatement",
+                      "start": 6772,
+                      "end": 6792,
+                      "loc": {
+                        "start": {
+                          "line": 264,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 264,
+                          "column": 24
+                        }
+                      },
+                      "expression": {
+                        "type": "AssignmentExpression",
+                        "start": 6772,
+                        "end": 6792,
+                        "loc": {
+                          "start": {
+                            "line": 264,
+                            "column": 4
+                          },
+                          "end": {
+                            "line": 264,
+                            "column": 24
+                          }
+                        },
+                        "operator": "=",
+                        "left": {
+                          "type": "MemberExpression",
+                          "start": 6772,
+                          "end": 6783,
+                          "loc": {
+                            "start": {
+                              "line": 264,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 264,
+                              "column": 15
+                            }
+                          },
+                          "object": {
+                            "type": "ThisExpression",
+                            "start": 6772,
+                            "end": 6776,
+                            "loc": {
+                              "start": {
+                                "line": 264,
+                                "column": 4
+                              },
+                              "end": {
+                                "line": 264,
+                                "column": 8
+                              }
+                            },
+                            "leadingComments": null
+                          },
+                          "property": {
+                            "type": "Identifier",
+                            "start": 6777,
+                            "end": 6783,
+                            "loc": {
+                              "start": {
+                                "line": 264,
+                                "column": 9
+                              },
+                              "end": {
+                                "line": 264,
+                                "column": 15
+                              },
+                              "identifierName": "region"
+                            },
+                            "name": "region"
+                          },
+                          "computed": false,
+                          "leadingComments": null
+                        },
+                        "right": {
+                          "type": "Identifier",
+                          "start": 6786,
+                          "end": 6792,
+                          "loc": {
+                            "start": {
+                              "line": 264,
+                              "column": 18
+                            },
+                            "end": {
+                              "line": 264,
+                              "column": 24
+                            },
+                            "identifierName": "region"
+                          },
+                          "name": "region"
+                        },
+                        "leadingComments": null
+                      },
+                      "leadingComments": [
+                        {
+                          "type": "CommentBlock",
+                          "value": "* @type {Region} ",
+                          "start": 6746,
+                          "end": 6767,
+                          "loc": {
+                            "start": {
+                              "line": 263,
+                              "column": 4
+                            },
+                            "end": {
+                              "line": 263,
+                              "column": 25
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "directives": [],
+                  "trailingComments": null
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n   *  Region과 해당 Region에 Ranging된 비콘 목록\n   *  @param {Beacon[]} beacons - Ranging된 비콘 목록\n   *  @param {Region} region - Region\n   ",
+                    "start": 6516,
+                    "end": 6652,
+                    "loc": {
+                      "start": {
+                        "line": 255,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 259,
+                        "column": 5
+                      }
+                    }
+                  }
+                ],
+                "trailingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n   *  비콘 목록을 반환한다.\n   *  @return {Beacon[]}\n   ",
+                    "start": 6799,
+                    "end": 6852,
+                    "loc": {
+                      "start": {
+                        "line": 266,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 269,
+                        "column": 5
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ClassMethod",
+                "start": 6855,
+                "end": 6898,
+                "loc": {
+                  "start": {
+                    "line": 270,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 272,
+                    "column": 3
+                  }
+                },
+                "static": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 6855,
+                  "end": 6865,
+                  "loc": {
+                    "start": {
+                      "line": 270,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 270,
+                      "column": 12
+                    },
+                    "identifierName": "getBeacons"
+                  },
+                  "name": "getBeacons",
+                  "leadingComments": null
+                },
+                "kind": "method",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 6869,
+                  "end": 6898,
+                  "loc": {
+                    "start": {
+                      "line": 270,
+                      "column": 16
+                    },
+                    "end": {
+                      "line": 272,
+                      "column": 3
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 6875,
+                      "end": 6894,
+                      "loc": {
+                        "start": {
+                          "line": 271,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 271,
+                          "column": 23
+                        }
+                      },
+                      "argument": {
+                        "type": "MemberExpression",
+                        "start": 6882,
+                        "end": 6894,
+                        "loc": {
+                          "start": {
+                            "line": 271,
+                            "column": 11
+                          },
+                          "end": {
+                            "line": 271,
+                            "column": 23
+                          }
+                        },
+                        "object": {
+                          "type": "ThisExpression",
+                          "start": 6882,
+                          "end": 6886,
+                          "loc": {
+                            "start": {
+                              "line": 271,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 271,
+                              "column": 15
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "start": 6887,
+                          "end": 6894,
+                          "loc": {
+                            "start": {
+                              "line": 271,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 271,
+                              "column": 23
+                            },
+                            "identifierName": "beacons"
+                          },
+                          "name": "beacons"
+                        },
+                        "computed": false
+                      }
+                    }
+                  ],
+                  "directives": [],
+                  "trailingComments": null
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n   *  비콘 목록을 반환한다.\n   *  @return {Beacon[]}\n   ",
+                    "start": 6799,
+                    "end": 6852,
+                    "loc": {
+                      "start": {
+                        "line": 266,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 269,
+                        "column": 5
+                      }
+                    }
+                  }
+                ],
+                "trailingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n   *  Region을 반환한다.\n   *  @return {Region}\n   ",
+                    "start": 6901,
+                    "end": 6953,
+                    "loc": {
+                      "start": {
+                        "line": 273,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 276,
+                        "column": 5
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ClassMethod",
+                "start": 6956,
+                "end": 6997,
+                "loc": {
+                  "start": {
+                    "line": 277,
+                    "column": 2
+                  },
+                  "end": {
+                    "line": 279,
+                    "column": 3
+                  }
+                },
+                "static": false,
+                "computed": false,
+                "key": {
+                  "type": "Identifier",
+                  "start": 6956,
+                  "end": 6965,
+                  "loc": {
+                    "start": {
+                      "line": 277,
+                      "column": 2
+                    },
+                    "end": {
+                      "line": 277,
+                      "column": 11
+                    },
+                    "identifierName": "getRegion"
+                  },
+                  "name": "getRegion",
+                  "leadingComments": null
+                },
+                "kind": "method",
+                "id": null,
+                "generator": false,
+                "expression": false,
+                "async": false,
+                "params": [],
+                "body": {
+                  "type": "BlockStatement",
+                  "start": 6969,
+                  "end": 6997,
+                  "loc": {
+                    "start": {
+                      "line": 277,
+                      "column": 15
+                    },
+                    "end": {
+                      "line": 279,
+                      "column": 3
+                    }
+                  },
+                  "body": [
+                    {
+                      "type": "ReturnStatement",
+                      "start": 6975,
+                      "end": 6993,
+                      "loc": {
+                        "start": {
+                          "line": 278,
+                          "column": 4
+                        },
+                        "end": {
+                          "line": 278,
+                          "column": 22
+                        }
+                      },
+                      "argument": {
+                        "type": "MemberExpression",
+                        "start": 6982,
+                        "end": 6993,
+                        "loc": {
+                          "start": {
+                            "line": 278,
+                            "column": 11
+                          },
+                          "end": {
+                            "line": 278,
+                            "column": 22
+                          }
+                        },
+                        "object": {
+                          "type": "ThisExpression",
+                          "start": 6982,
+                          "end": 6986,
+                          "loc": {
+                            "start": {
+                              "line": 278,
+                              "column": 11
+                            },
+                            "end": {
+                              "line": 278,
+                              "column": 15
+                            }
+                          }
+                        },
+                        "property": {
+                          "type": "Identifier",
+                          "start": 6987,
+                          "end": 6993,
+                          "loc": {
+                            "start": {
+                              "line": 278,
+                              "column": 16
+                            },
+                            "end": {
+                              "line": 278,
+                              "column": 22
+                            },
+                            "identifierName": "region"
+                          },
+                          "name": "region"
+                        },
+                        "computed": false
+                      }
+                    }
+                  ],
+                  "directives": []
+                },
+                "leadingComments": [
+                  {
+                    "type": "CommentBlock",
+                    "value": "*\n   *  Region을 반환한다.\n   *  @return {Region}\n   ",
+                    "start": 6901,
+                    "end": 6953,
+                    "loc": {
+                      "start": {
+                        "line": 273,
+                        "column": 2
+                      },
+                      "end": {
+                        "line": 276,
+                        "column": 5
+                      }
+                    }
+                  }
+                ]
+              }
+            ],
+            "trailingComments": null
+          },
+          "leadingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n *   Region과 Ranging된 비콘들을 저장하는 객체\n ",
+              "start": 6451,
+              "end": 6493,
+              "loc": {
+                "start": {
+                  "line": 251,
+                  "column": 0
+                },
+                "end": {
+                  "line": 253,
+                  "column": 3
+                }
+              }
+            }
+          ],
+          "trailingComments": [
+            {
+              "type": "CommentBlock",
+              "value": "*\n * 비콘과의 거리를 계산하고 업데이트를 하는 레인징 서비스를 담당하는 클래스\n ",
+              "start": 7001,
+              "end": 7052,
+              "loc": {
+                "start": {
+                  "line": 282,
+                  "column": 0
+                },
+                "end": {
+                  "line": 284,
+                  "column": 3
                 }
               }
             }
@@ -66560,6 +67368,58 @@
     },
     {
       "type": {
+        "label": ",",
+        "beforeExpr": true,
+        "startsExpr": false,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null,
+        "updateContext": null
+      },
+      "start": 11456,
+      "end": 11457,
+      "loc": {
+        "start": {
+          "line": 450,
+          "column": 48
+        },
+        "end": {
+          "line": 450,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": {
+        "label": "name",
+        "beforeExpr": false,
+        "startsExpr": true,
+        "rightAssociative": false,
+        "isLoop": false,
+        "isAssign": false,
+        "prefix": false,
+        "postfix": false,
+        "binop": null
+      },
+      "value": "RangingData",
+      "start": 11458,
+      "end": 11469,
+      "loc": {
+        "start": {
+          "line": 450,
+          "column": 50
+        },
+        "end": {
+          "line": 450,
+          "column": 61
+        }
+      }
+    },
+    {
+      "type": {
         "label": "}",
         "beforeExpr": false,
         "startsExpr": false,
@@ -66570,16 +67430,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 11457,
-      "end": 11458,
+      "start": 11470,
+      "end": 11471,
       "loc": {
         "start": {
           "line": 450,
-          "column": 49
+          "column": 62
         },
         "end": {
           "line": 450,
-          "column": 50
+          "column": 63
         }
       }
     },
@@ -66596,8 +67456,8 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 11459,
-      "end": 11459,
+      "start": 11472,
+      "end": 11472,
       "loc": {
         "start": {
           "line": 451,
