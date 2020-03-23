@@ -203,6 +203,19 @@ public bleManager: Manager
 ```
 
 ### Desktop
+#### 운영체제 별 Node.js 및 Electron 권장 버전
+각 운영 체제 별 호환되는 Node.js 및 Electron의 버전을 확인한 후에 SDK를 사용하는 것을 권장합니다.
+##### Windows/MacOS
+||Windows|MacOS|
+|------|---|---|
+|Node.js|v8.x, v10.x, v12.x|v8.x, v10.x, v12.x|
+|Electron|v3.0.0|v3.0.0,  v8.0.0|
+##### Linux
+|| Ubuntu 16.04 (x86) | Ubuntu 18.04 (x86) | Ubuntu 19.10 (ARM64) |  raspbian-buster-lite (ARM64)|
+|----|---|---|---|---|
+|Node.js|v8,x, v10.x, v12.x|v8.x, v10.x, v12.x|v8.x, v10.x, v12.x|v8.x, v10.x, v12.x|
+|Electron|v3.0.0|v3.0.0|v3.0.0|해당 없음|
+
 #### 사전 준비
 ##### Windows
 Powershell 또는 cmd.exe 에서 관리자 권한으로 실행 뒤 [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)를 설치합니다.
@@ -239,8 +252,6 @@ set BLUETOOTH_HCI_SOCKET_USB_PID=0x0aaa
 - [Xcode](https://itunes.apple.com/ca/app/xcode/id497799835?mt=12)를 설치합니다.
 
 ##### Linux (Ubuntu/Debian/Raspbian)
-###### 권장 Ubuntu 버전
-- SDK의 권장 리눅스 버전은 Ubuntu 18.04 입니다.
 ###### 의존 패키지 설치
 - libbluetooth-dev 패키지 등을 다음 커맨드를 통해 설치합니다.
 ```sh
@@ -315,7 +326,7 @@ electron-packager 로 빌드를 수행하는 경우, package.json 내 dependenci
 }
 ```
 
-###### Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (Windows 환경 필수)
+######  Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (SDK v1.1.5 이하 필수 사항)
 Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.
 
 ##### Electron : 예제
@@ -450,8 +461,7 @@ module.exports = BuildThingBLE
 ##### Linux
 ```
 // for Linux (No Webpack Configuration)
-// for Linux - Node.js
-var BuildThingBLE = require('./dist/buildthing.ble.linux.node.js')
+var BuildThingBLE = require('./dist/buildthing.ble.linux.js')
 module.exports = BuildThingBLE
 ```
 #### Webpack 사용
@@ -467,7 +477,7 @@ const CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'
 //const MACOS_BUNDLE = 'buildthing.ble.darwin.js'
 //const WINDOWS_NODE_BUNDLE = 'buildthing.ble.win32.node.js'
 //const WINDOWS_ElECTRON_BUNDLE = 'buildthing.ble.win32.electron.js'
-//const LINUX_NODE_BUNDLE = 'buildthing.ble.linux.node.js'
+//const LINUX_NODE_BUNDLE = 'buildthing.ble.linux.js'
 
 //.. Webpack Config Object
     resolve: {

@@ -19,10 +19,9 @@
   "dependencies": {
     "@babel/runtime": "^7.2.0",
     "aws-sdk": "^2.400.0",
-    "noble": "^1.9.1"
+    "@abandonware/noble": "^1.9.2-7"
   },
   "optionalDependencies": {
-    "noble-mac": "git+https://github.com/Timeular/noble-mac.git",
     "buildthing-bluetooth-hci-socket": "^0.5.3-5",
     "buildthing-ble-sdk-usb": "^1.5.0"
   },

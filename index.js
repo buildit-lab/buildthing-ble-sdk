@@ -10,8 +10,8 @@
 // var BuildThingBLE = require('./dist/buildthing.ble.win32.node.js')
 // for Windows - Electron (No Webpack Configuration)
 // var BuildThingBLE = require('./dist/buildthing.ble.win32.electron.js')
-// for Linux - Node.js (No webpack Configuration)
-// var BuildThingBLE = require('./dist/buildthing.ble.linux.node.js')
+// for Linux (No webpack Configuration)
+// var BuildThingBLE = require('./dist/buildthing.ble.linux.js')
 // for Mobile (iOS, Android) (No Webpack Configuration)
 // var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
 // for Webpack alias Configuration
