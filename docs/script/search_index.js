@@ -1,194 +1,194 @@
 window.esdocSearchIndex = [
   [
-    "buildthing-beacon-sdk/src/service/filter/arma.js~armarssifilter",
+    "buildthing-ble-sdk/src/service/filter/arma.js~armarssifilter",
     "class/src/service/filter/arma.js~ArmaRssiFilter.html",
-    "<span>ArmaRssiFilter</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/filter/arma.js</span>",
+    "<span>ArmaRssiFilter</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/filter/arma.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/ble.js~ble",
+    "buildthing-ble-sdk/src/core/ble.js~ble",
     "class/src/core/ble.js~BLE.html",
-    "<span>BLE</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/ble.js</span>",
+    "<span>BLE</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/ble.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/beacon.js~beacon",
+    "buildthing-ble-sdk/src/core/beacon/beacon.js~beacon",
     "class/src/core/beacon/beacon.js~Beacon.html",
-    "<span>Beacon</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/beacon.js</span>",
+    "<span>Beacon</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/beacon.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon-parser.js~beaconparser",
+    "buildthing-ble-sdk/src/core/beacon-parser.js~beaconparser",
     "class/src/core/beacon-parser.js~BeaconParser.html",
-    "<span>BeaconParser</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon-parser.js</span>",
+    "<span>BeaconParser</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon-parser.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/buildthing-beacon.js~buildthingbeacon",
+    "buildthing-ble-sdk/src/core/beacon/buildthing-beacon.js~buildthingbeacon",
     "class/src/core/beacon/buildthing-beacon.js~BuildThingBeacon.html",
-    "<span>BuildThingBeacon</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/buildthing-beacon.js</span>",
+    "<span>BuildThingBeacon</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/buildthing-beacon.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/connection.js~connection",
+    "buildthing-ble-sdk/src/service/connection.js~connection",
     "class/src/service/connection.js~Connection.html",
-    "<span>Connection</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/connection.js</span>",
+    "<span>Connection</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/connection.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/calculator/curve-fitted.js~curvefitteddistancecalculator",
+    "buildthing-ble-sdk/src/service/calculator/curve-fitted.js~curvefitteddistancecalculator",
     "class/src/service/calculator/curve-fitted.js~CurveFittedDistanceCalculator.html",
-    "<span>CurveFittedDistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/calculator/curve-fitted.js</span>",
+    "<span>CurveFittedDistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/calculator/curve-fitted.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/calculator/base.js~distancecalculator",
+    "buildthing-ble-sdk/src/service/calculator/base.js~distancecalculator",
     "class/src/service/calculator/base.js~DistanceCalculator.html",
-    "<span>DistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/calculator/base.js</span>",
+    "<span>DistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/calculator/base.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/calculator/distance-config.js~distanceconfig",
+    "buildthing-ble-sdk/src/service/calculator/distance-config.js~distanceconfig",
     "class/src/service/calculator/distance-config.js~DistanceConfig.html",
-    "<span>DistanceConfig</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/calculator/distance-config.js</span>",
+    "<span>DistanceConfig</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/calculator/distance-config.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/eddystone.js~eddystone",
+    "buildthing-ble-sdk/src/core/beacon/eddystone.js~eddystone",
     "class/src/core/beacon/eddystone.js~EddyStone.html",
-    "<span>EddyStone</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/eddystone.js</span>",
+    "<span>EddyStone</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/eddystone.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/eddystone-tlm.js~eddystonetlm",
+    "buildthing-ble-sdk/src/core/beacon/eddystone-tlm.js~eddystonetlm",
     "class/src/core/beacon/eddystone-tlm.js~EddyStoneTLM.html",
-    "<span>EddyStoneTLM</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/eddystone-tlm.js</span>",
+    "<span>EddyStoneTLM</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/eddystone-tlm.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/eddystone-uid.js~eddystoneuid",
+    "buildthing-ble-sdk/src/core/beacon/eddystone-uid.js~eddystoneuid",
     "class/src/core/beacon/eddystone-uid.js~EddyStoneUID.html",
-    "<span>EddyStoneUID</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/eddystone-uid.js</span>",
+    "<span>EddyStoneUID</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/eddystone-uid.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/eddystone-url.js~eddystoneurl",
+    "buildthing-ble-sdk/src/core/beacon/eddystone-url.js~eddystoneurl",
     "class/src/core/beacon/eddystone-url.js~EddyStoneURL.html",
-    "<span>EddyStoneURL</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/eddystone-url.js</span>",
+    "<span>EddyStoneURL</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/eddystone-url.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/event-emitter.js~eventemitter",
+    "buildthing-ble-sdk/src/core/event-emitter.js~eventemitter",
     "class/src/core/event-emitter.js~EventEmitter.html",
-    "<span>EventEmitter</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/event-emitter.js</span>",
+    "<span>EventEmitter</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/event-emitter.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/filter/kalman.js~kalmanrssifilter",
+    "buildthing-ble-sdk/src/service/filter/kalman.js~kalmanrssifilter",
     "class/src/service/filter/kalman.js~KalmanRssiFilter.html",
-    "<span>KalmanRssiFilter</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/filter/kalman.js</span>",
+    "<span>KalmanRssiFilter</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/filter/kalman.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/calculator/log-distance-path.js~logdistancepathdistancecalculator",
+    "buildthing-ble-sdk/src/service/calculator/log-distance-path.js~logdistancepathdistancecalculator",
     "class/src/service/calculator/log-distance-path.js~LogDistancePathDistanceCalculator.html",
-    "<span>LogDistancePathDistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/calculator/log-distance-path.js</span>",
+    "<span>LogDistancePathDistanceCalculator</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/calculator/log-distance-path.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/manager.js~manager",
+    "buildthing-ble-sdk/src/service/manager.js~manager",
     "class/src/service/manager.js~Manager.html",
-    "<span>Manager</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/manager.js</span>",
+    "<span>Manager</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/manager.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/filter/base.js~measurement",
+    "buildthing-ble-sdk/src/service/filter/base.js~measurement",
     "class/src/service/filter/base.js~Measurement.html",
-    "<span>Measurement</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/filter/base.js</span>",
+    "<span>Measurement</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/filter/base.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/monitoring.js~monitoring",
+    "buildthing-ble-sdk/src/service/monitoring.js~monitoring",
     "class/src/service/monitoring.js~Monitoring.html",
-    "<span>Monitoring</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/monitoring.js</span>",
+    "<span>Monitoring</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/monitoring.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/monitoring.js~monitoringdata",
+    "buildthing-ble-sdk/src/service/monitoring.js~monitoringdata",
     "class/src/service/monitoring.js~MonitoringData.html",
-    "<span>MonitoringData</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/monitoring.js</span>",
+    "<span>MonitoringData</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/monitoring.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/ranging.js~rangedbeacon",
+    "buildthing-ble-sdk/src/service/ranging.js~rangedbeacon",
     "class/src/service/ranging.js~RangedBeacon.html",
-    "<span>RangedBeacon</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/ranging.js</span>",
+    "<span>RangedBeacon</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/ranging.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/ranging.js~ranging",
+    "buildthing-ble-sdk/src/service/ranging.js~ranging",
     "class/src/service/ranging.js~Ranging.html",
-    "<span>Ranging</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/ranging.js</span>",
+    "<span>Ranging</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/ranging.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/ranging.js~rangingdata",
+    "buildthing-ble-sdk/src/service/ranging.js~rangingdata",
     "class/src/service/ranging.js~RangingData.html",
-    "<span>RangingData</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/ranging.js</span>",
+    "<span>RangingData</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/ranging.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/region.js~region",
+    "buildthing-ble-sdk/src/service/region.js~region",
     "class/src/service/region.js~Region.html",
-    "<span>Region</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/region.js</span>",
+    "<span>Region</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/region.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/monitoring.js~regionmonitoringstate",
+    "buildthing-ble-sdk/src/service/monitoring.js~regionmonitoringstate",
     "class/src/service/monitoring.js~RegionMonitoringState.html",
-    "<span>RegionMonitoringState</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/monitoring.js</span>",
+    "<span>RegionMonitoringState</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/monitoring.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/ranging.js~regionrangestate",
+    "buildthing-ble-sdk/src/service/ranging.js~regionrangestate",
     "class/src/service/ranging.js~RegionRangeState.html",
-    "<span>RegionRangeState</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/ranging.js</span>",
+    "<span>RegionRangeState</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/ranging.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/filter/base.js~rssifilter",
+    "buildthing-ble-sdk/src/service/filter/base.js~rssifilter",
     "class/src/service/filter/base.js~RssiFilter.html",
-    "<span>RssiFilter</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/filter/base.js</span>",
+    "<span>RssiFilter</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/filter/base.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/filter/running-average.js~runningaveragerssifilter",
+    "buildthing-ble-sdk/src/service/filter/running-average.js~runningaveragerssifilter",
     "class/src/service/filter/running-average.js~RunningAverageRssiFilter.html",
-    "<span>RunningAverageRssiFilter</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/filter/running-average.js</span>",
+    "<span>RunningAverageRssiFilter</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/filter/running-average.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/service/scanner.js~scanner",
+    "buildthing-ble-sdk/src/service/scanner.js~scanner",
     "class/src/service/scanner.js~Scanner.html",
-    "<span>Scanner</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/service/scanner.js</span>",
+    "<span>Scanner</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/service/scanner.js</span>",
     "class"
   ],
   [
-    "buildthing-beacon-sdk/src/core/util.js~util",
+    "buildthing-ble-sdk/src/core/util.js~util",
     "variable/index.html#static-variable-Util",
-    "<span>Util</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/util.js</span>",
+    "<span>Util</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/util.js</span>",
     "variable"
   ],
   [
-    "buildthing-beacon-sdk/src/core/ble-resolver.js~getblelibrary",
+    "buildthing-ble-sdk/src/core/ble-resolver.js~getblelibrary",
     "function/index.html#static-function-getBLELibrary",
-    "<span>getBLELibrary</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/ble-resolver.js</span>",
+    "<span>getBLELibrary</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/ble-resolver.js</span>",
     "function"
   ],
   [
-    "buildthing-beacon-sdk/src/core/beacon/ibeacon.js~ibeacon",
+    "buildthing-ble-sdk/src/core/beacon/ibeacon.js~ibeacon",
     "class/src/core/beacon/ibeacon.js~iBeacon.html",
-    "<span>iBeacon</span> <span class=\"search-result-import-path\">buildthing-beacon-sdk/src/core/beacon/ibeacon.js</span>",
+    "<span>iBeacon</span> <span class=\"search-result-import-path\">buildthing-ble-sdk/src/core/beacon/ibeacon.js</span>",
     "class"
   ],
   [

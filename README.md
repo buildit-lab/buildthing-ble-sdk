@@ -25,7 +25,7 @@ SDK에서 제공하는 주요 기능들은 다음과 같습니다.
 BuildThing™ beacon SDK의 실행을 위해서는 [Node.js](https://nodejs.org/) 8.x를 필요로합니다.
 
 ```sh
-$ npm install buildthing-beacon-sdk
+$ npm install buildthing-ble-sdk
 ```
 
 ## 사용 가이드
@@ -78,9 +78,9 @@ $ ionic cordova plugin add cordova-custom-config
 ```
 #### Cordova / PhoneGap
 ##### index.js
-아래와 같이 buildthing-beacon-sdk 모듈을 사용합니다. `deviceready 이벤트 함수 (cordova 정의 이벤트) 호출된 이후에 사용해야 정상적으로 동작합니다.`
+아래와 같이 buildthing-ble-sdk 모듈을 사용합니다. `deviceready 이벤트 함수 (cordova 정의 이벤트) 호출된 이후에 사용해야 정상적으로 동작합니다.`
 ```
-const { Manager } = require('buildthing-beacon-sdk')
+const { Manager } = require('buildthing-ble-sdk')
 
 var app = {
    // Application Constructor
@@ -178,12 +178,12 @@ $ browserify ./www/js/index.js -o ./www/dist/js/bundle.js
  Ionic Framework는 iOS에서 기본적으로 WKWebView를 사용하는데, 관련 플러그인과 buildthing-ble-sdk의 의존 플러그인인 cordova-plugin-background-mode 플러그인이 iOS 12.2 에서 충돌하는 이슈가 존재합니다. 2019년 5월 10일 기준, 아직 버그가 Fix 되지 않아 [연관 이슈](https://github.com/katzer/cordova-plugin-background-mode/issues/419#issuecomment-473851949)와 같이 플러그인의 iOS 코드를 수정해야만 정상 동작 합니다.
 
 ##### Ionic 4 : 예제
-buildthing-beacon-sdk 는 다른 Cordova 플러그인들과 마찬가지로 deviceready 이벤트 호출 이후에 사용가능합니다. 따라서 Ionic 4 내 Angular JS Component 에서 사용할 때에도 아래 코드와 같이 deviceready 이벤트 호출 이후에 사용합니다.
+buildthing-ble-sdk 는 다른 Cordova 플러그인들과 마찬가지로 deviceready 이벤트 호출 이후에 사용가능합니다. 따라서 Ionic 4 내 Angular JS Component 에서 사용할 때에도 아래 코드와 같이 deviceready 이벤트 호출 이후에 사용합니다.
 ```
 // home.page.ts
 
 import { Platform } from '@ionic/angular';
-import { Manager } from 'buildthing-beacon-sdk';
+import { Manager } from 'buildthing-ble-sdk';
 
 @Component({
 selector: 'app-home',
@@ -264,10 +264,10 @@ $sudo setcap cap_net_raw+eip $(eval readlink -f `which node`)
 ```
 
 #### Node.js
-buildthing-beacon-sdk 1.1.4 버전 이상부터 지원합니다.
+buildthing-ble-sdk 1.1.4 버전 이상부터 지원합니다.
 ##### Node.js : 예제
 ```
-const buildthing = require('buildthing-beacon-sdk')
+const buildthing = require('buildthing-ble-sdk')
 const Manager = buildthing.Manager
 
 const bleManager = new Manager()
@@ -295,7 +295,7 @@ $ npm install electron-packager --save-dev
 자세한 설정 및 사용 방법은 [electron-packager](https://github.com/electron-userland/electron-packager) 에서 확인할 수 있습니다.
 
 ###### package.json
-electron-packager 로 빌드를 수행하는 경우, package.json 내 dependencies에 buildthing-beacon-sdk를 명시해야만합니다.
+electron-packager 로 빌드를 수행하는 경우, package.json 내 dependencies에 buildthing-ble-sdk를 명시해야만합니다.
 ```
 {
   "name": "electron-quick-start",
@@ -321,18 +321,18 @@ electron-packager 로 빌드를 수행하는 경우, package.json 내 dependenci
     "electron-packager": "^13.1.1"
   },
   "dependencies": {
-    "buildthing-beacon-sdk": "^1.0.0"
+    "buildthing-ble-sdk": "^1.1.6"
   }
 }
 ```
 
-######  Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (SDK v1.1.5 이하 필수 사항)
-Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beaon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.
+######  Windows 개발 환경 설정 : 불필요 의존 모듈 삭제 및 재빌드 수행 (SDK v1.1.5 이하(buildthing-beacon-sdk) 필수 사항)
+Electron을 Windows 에서 사용하는 경우, Electron 프로젝트 내 `/node_modules/` 에 설치되는 `noble-mac`을 삭제하고 `/node_modules/buildthing-beacon-sdk/package.json` 내 `dependencies` 에서 `noble-mac을 제거` 합니다. 이후 `node_modules/.bin/electron-rebuild` 를 실행시켜야, 이후에 정상적으로 electron 빌드가 가능합니다.
 
 ##### Electron : 예제
-아래와 같이 renderer.js(Renderer Process)에서 buildthing-beacon-sdk를 사용할 수 있습니다.
+아래와 같이 renderer.js(Renderer Process)에서 buildthing-ble-sdk를 사용할 수 있습니다.
 ```
-const { Manager } = require('buildthing-beacon-sdk')
+const { Manager } = require('buildthing-ble-sdk')
 
 window.addEventListener("load", function(event) {
   var bleManager = new Manager()
@@ -350,7 +350,7 @@ window.addEventListener("load", function(event) {
 
 ```
 ##### Electron-vue : 예제
-Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://github.com/SimulatedGREG/electron-vue) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.
+Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://github.com/SimulatedGREG/electron-vue) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-ble-sdk를 사용 할 수 있습니다.
 
 ```
 // LandingPage.vue
@@ -366,7 +366,7 @@ Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://gith
 
 <script>
   import SystemInformation from './LandingPage/SystemInformation'
-  import { Manager } from 'buildthing-beacon-sdk'
+  import { Manager } from 'buildthing-ble-sdk'
 
   export default {
     name: 'landing-page',
@@ -396,10 +396,10 @@ Electron 과 vue.js 를 같이 사용 하는 경우, [electron-vue](https://gith
 ```
 
 ##### Electron-react : 예제
-Electron 과 React 를 같이 사용 하는 경우, [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-beacon-sdk를 사용 할 수 있습니다.
+Electron 과 React 를 같이 사용 하는 경우, [electron-react-boilerplate](https://github.com/electron-react-boilerplate/electron-react-boilerplate) 를 이용해 프로젝트 초기 구성을 하는 것을 권장합니다. 다음과 같이 buildthing-ble-sdk를 사용 할 수 있습니다.
 ```
 import React, { Component } from 'react';
-import { Manager } from 'buildthing-beacon-sdk';
+import { Manager } from 'buildthing-ble-sdk';
 import styles from './Home.css';
 
 type Props = {};
@@ -436,7 +436,7 @@ export default class Home extends Component<Props> {
 
 ### 공통 Webpack 설정
 #### Webpack 미사용
-Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-beacon-sdk/index.js를 수정합니다.
+Webpack을 사용하지 않을 경우 아래와 같이 /node_modules/buildthing-ble-sdk/index.js를 수정합니다.
 ##### Mobile
 ```
 // for Mobile (iOS, Android) (No Webpack Configuration)
@@ -470,19 +470,19 @@ module.exports = BuildThingBLE
 const path = require('path')
 // Set Root Path
 const ROOT_PATH = path.resolve(__dirname, '../')
-const NODE_MODULE_PATH = '/node_modules/buildthing-beacon-sdk/dist/'
+const NODE_MODULE_PATH = '/node_modules/buildthing-ble-sdk/dist/'
 
 //Target Platform
 const CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'
 //const MACOS_BUNDLE = 'buildthing.ble.darwin.js'
 //const WINDOWS_NODE_BUNDLE = 'buildthing.ble.win32.node.js'
 //const WINDOWS_ElECTRON_BUNDLE = 'buildthing.ble.win32.electron.js'
-//const LINUX_NODE_BUNDLE = 'buildthing.ble.linux.js'
+//const LINUX_BUNDLE = 'buildthing.ble.linux.js'
 
 //.. Webpack Config Object
     resolve: {
         alias: {
-          'buildthing-beacon-sdk': ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE
+          'buildthing-ble-sdk': ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE
         }
     }
 ```
@@ -490,14 +490,14 @@ const CORDOVA_BUNDLE = 'buildthing.ble.cordova.js'
 ## API 문서
 플랫폼 별 라이브러리 사용의 예제 코드는 아래와 같습니다.
 ```
-import { Manager } from 'buildthing-beacon-sdk'
+import { Manager } from 'buildthing-ble-sdk'
 var manager = new Manager()
 manager.on('discover', function(beacon){...})
 manager.startScan() //스캔 시작
 manager.stopScan() //스캔 종료
 ```
 상세한 API는 아래 문서를 참고해주시기 바랍니다.
-[API 문서 바로가기](https://buildit-lab.github.io/buildthing-beacon-sdk/)
+[API 문서 바로가기](https://buildit-lab.github.io/buildthing-ble-sdk/)
 
 ## Scan Response
 BuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.

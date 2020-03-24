@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | buildthing-beacon-sdk</title>
+  <title data-ice="title">Home | buildthing-ble-sdk</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="buildthing-beacon-sdk"><meta property="twitter:description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"></head>
+<meta name="description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="buildthing-ble-sdk"><meta property="twitter:description" content="Buildit Inc. Buildthing Beacon Cross Platform SDK"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -96,7 +96,7 @@ SDK&#xC5D0;&#xC11C; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xC8FC;&#xC694; &#xAE30;&#
 <li><a href="#&#xACE0;&#xAC1D;-&#xBB38;&#xC758;">&#xACE0;&#xAC1D; &#xBB38;&#xC758;</a></li>
 </ul>
 <h2 id="&#xC124;&#xCE58;">&#xC124;&#xCE58;</h2><p>BuildThing&#x2122; beacon SDK&#xC758; &#xC2E4;&#xD589;&#xC744; &#xC704;&#xD574;&#xC11C;&#xB294; <a href="https://nodejs.org/">Node.js</a> 8.x&#xB97C; &#xD544;&#xC694;&#xB85C;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<pre><code class="lang-sh"><code class="source-code prettyprint">$ npm install buildthing-beacon-sdk</code>
+<pre><code class="lang-sh"><code class="source-code prettyprint">$ npm install buildthing-ble-sdk</code>
 </code></pre>
 <h2 id="&#xC0AC;&#xC6A9;-&#xAC00;&#xC774;&#xB4DC;">&#xC0AC;&#xC6A9; &#xAC00;&#xC774;&#xB4DC;</h2><p>iOS/Android &#xB4F1; Mobile &#xD50C;&#xB7AB;&#xD3FC;&#xC740; Codrova &#xAE30;&#xBC18;&#xC758; &#xAC1C;&#xBC1C; &#xD658;&#xACBD;(e.g : Ionic Framework, PhoneGap &#xB4F1;)&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD558;&#xBA70;, MacOS/Windows &#xB4F1; Desktop &#xD50C;&#xB7AB;&#xD3FC;&#xC740; Electron &#xAE30;&#xBC18;&#xC758; &#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC5D0;&#xC11C; &#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h3 id="mobile">Mobile</h3><h4 id="&#xC758;&#xC874;-cordova-plugin-&#xC124;&#xCE58;">&#xC758;&#xC874; Cordova Plugin &#xC124;&#xCE58;</h4><p>Ionic Framework, Phonegap &#xB4F1; Cordova &#xAE30;&#xBC18;&#xC758; &#xAC1C;&#xBC1C; &#xD658;&#xACBD;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; &#xD504;&#xB85C;&#xC81D;&#xD2B8; Root &#xB514;&#xB809;&#xD1A0;&#xB9AC;&#xC5D0;&#xC11C; Cordova CLI &#xB97C; &#xD1B5;&#xD574; &#xC758;&#xC874; Cordova &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xB4E4;&#xC744; &#xC124;&#xCE58; &#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
@@ -134,8 +134,8 @@ $ ionic cordova plugin add cordova-custom-config</code>
   &lt;/config-file&gt;
 &lt;/platform&gt;</code>
 </code></pre>
-<h4 id="cordova---phonegap">Cordova / PhoneGap</h4><h5 id="index-js">index.js</h5><p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; buildthing-beacon-sdk &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. <code>deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD568;&#xC218; (cordova &#xC815;&#xC758; &#xC774;&#xBCA4;&#xD2B8;) &#xD638;&#xCD9C;&#xB41C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</code></p>
-<pre><code><code class="source-code prettyprint">const { Manager } = require(&apos;buildthing-beacon-sdk&apos;)
+<h4 id="cordova---phonegap">Cordova / PhoneGap</h4><h5 id="index-js">index.js</h5><p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; buildthing-ble-sdk &#xBAA8;&#xB4C8;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. <code>deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD568;&#xC218; (cordova &#xC815;&#xC758; &#xC774;&#xBCA4;&#xD2B8;) &#xD638;&#xCD9C;&#xB41C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;.</code></p>
+<pre><code><code class="source-code prettyprint">const { Manager } = require(&apos;buildthing-ble-sdk&apos;)
 
 var app = {
    // Application Constructor
@@ -213,11 +213,11 @@ module.exports = {
 &lt;/body&gt;
 &lt;/html&gt;</code>
 </code></pre><h4 id="ionic-4--cordova---angularjs-">Ionic 4 (Cordova + AngularJS)</h4><h5 id="known-issues">Known Issues</h5><h6 id="ios-12-2-&#xC5D0;&#xC11C;-cordova-plugin-ionic-webview-&#xC640;-cordova-plugin-background-mode-&#xD50C;&#xB7EC;&#xADF8;&#xC778;-&#xCDA9;&#xB3CC;">iOS 12.2 &#xC5D0;&#xC11C; cordova-plugin-ionic-webview &#xC640; cordova-plugin-background-mode &#xD50C;&#xB7EC;&#xADF8;&#xC778; &#xCDA9;&#xB3CC;</h6><p> Ionic Framework&#xB294; iOS&#xC5D0;&#xC11C; &#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; WKWebView&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294;&#xB370;, &#xAD00;&#xB828; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xACFC; buildthing-ble-sdk&#xC758; &#xC758;&#xC874; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC778; cordova-plugin-background-mode &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC774; iOS 12.2 &#xC5D0;&#xC11C; &#xCDA9;&#xB3CC;&#xD558;&#xB294; &#xC774;&#xC288;&#xAC00; &#xC874;&#xC7AC;&#xD569;&#xB2C8;&#xB2E4;. 2019&#xB144; 5&#xC6D4; 10&#xC77C; &#xAE30;&#xC900;, &#xC544;&#xC9C1; &#xBC84;&#xADF8;&#xAC00; Fix &#xB418;&#xC9C0; &#xC54A;&#xC544; <a href="https://github.com/katzer/cordova-plugin-background-mode/issues/419#issuecomment-473851949">&#xC5F0;&#xAD00; &#xC774;&#xC288;</a>&#xC640; &#xAC19;&#xC774; &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xC758; iOS &#xCF54;&#xB4DC;&#xB97C; &#xC218;&#xC815;&#xD574;&#xC57C;&#xB9CC; &#xC815;&#xC0C1; &#xB3D9;&#xC791; &#xD569;&#xB2C8;&#xB2E4;.</p>
-<h5 id="ionic-4---&#xC608;&#xC81C;">Ionic 4 : &#xC608;&#xC81C;</h5><p>buildthing-beacon-sdk &#xB294; &#xB2E4;&#xB978; Cordova &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xB4E4;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD638;&#xCD9C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; Ionic 4 &#xB0B4; Angular JS Component &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xC5D0;&#xB3C4; &#xC544;&#xB798; &#xCF54;&#xB4DC;&#xC640; &#xAC19;&#xC774; deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD638;&#xCD9C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="ionic-4---&#xC608;&#xC81C;">Ionic 4 : &#xC608;&#xC81C;</h5><p>buildthing-ble-sdk &#xB294; &#xB2E4;&#xB978; Cordova &#xD50C;&#xB7EC;&#xADF8;&#xC778;&#xB4E4;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD638;&#xCD9C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; Ionic 4 &#xB0B4; Angular JS Component &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD560; &#xB54C;&#xC5D0;&#xB3C4; &#xC544;&#xB798; &#xCF54;&#xB4DC;&#xC640; &#xAC19;&#xC774; deviceready &#xC774;&#xBCA4;&#xD2B8; &#xD638;&#xCD9C; &#xC774;&#xD6C4;&#xC5D0; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code><code class="source-code prettyprint">// home.page.ts
 
 import { Platform } from &apos;@ionic/angular&apos;;
-import { Manager } from &apos;buildthing-beacon-sdk&apos;;
+import { Manager } from &apos;buildthing-ble-sdk&apos;;
 
 @Component({
 selector: &apos;app-home&apos;,
@@ -234,7 +234,56 @@ public bleManager: Manager
     });
   }
 }</code>
-</code></pre><h3 id="desktop">Desktop</h3><h4 id="&#xC0AC;&#xC804;-&#xC900;&#xBE44;">&#xC0AC;&#xC804; &#xC900;&#xBE44;</h4><h5 id="windows">Windows</h5><p>Powershell &#xB610;&#xB294; cmd.exe &#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xC790; &#xAD8C;&#xD55C;&#xC73C;&#xB85C; &#xC2E4;&#xD589; &#xB4A4; <a href="https://github.com/felixrieseberg/windows-build-tools">windows-build-tools</a>&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</code></pre><h3 id="desktop">Desktop</h3><h4 id="&#xC6B4;&#xC601;&#xCCB4;&#xC81C;-&#xBCC4;-node-js-&#xBC0F;-electron-&#xAD8C;&#xC7A5;-&#xBC84;&#xC804;">&#xC6B4;&#xC601;&#xCCB4;&#xC81C; &#xBCC4; Node.js &#xBC0F; Electron &#xAD8C;&#xC7A5; &#xBC84;&#xC804;</h4><p>&#xAC01; &#xC6B4;&#xC601; &#xCCB4;&#xC81C; &#xBCC4; &#xD638;&#xD658;&#xB418;&#xB294; Node.js &#xBC0F; Electron&#xC758; &#xBC84;&#xC804;&#xC744; &#xD655;&#xC778;&#xD55C; &#xD6C4;&#xC5D0; SDK&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="windows-macos">Windows/MacOS</h5><table>
+<thead>
+<tr>
+<th></th>
+<th>Windows</th>
+<th>MacOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node.js</td>
+<td>v8.x, v10.x, v12.x</td>
+<td>v8.x, v10.x, v12.x</td>
+</tr>
+<tr>
+<td>Electron</td>
+<td>v3.0.0</td>
+<td>v3.0.0,  v8.0.0</td>
+</tr>
+</tbody>
+</table>
+<h5 id="linux">Linux</h5><table>
+<thead>
+<tr>
+<th></th>
+<th>Ubuntu 16.04 (x86)</th>
+<th>Ubuntu 18.04 (x86)</th>
+<th>Ubuntu 19.10 (ARM64)</th>
+<th>raspbian-buster-lite (ARM64)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node.js</td>
+<td>v8,x, v10.x, v12.x</td>
+<td>v8.x, v10.x, v12.x</td>
+<td>v8.x, v10.x, v12.x</td>
+<td>v8.x, v10.x, v12.x</td>
+</tr>
+<tr>
+<td>Electron</td>
+<td>v3.0.0</td>
+<td>v3.0.0</td>
+<td>v3.0.0</td>
+<td>&#xD574;&#xB2F9; &#xC5C6;&#xC74C;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#xC0AC;&#xC804;-&#xC900;&#xBE44;">&#xC0AC;&#xC804; &#xC900;&#xBE44;</h4><h5 id="windows">Windows</h5><p>Powershell &#xB610;&#xB294; cmd.exe &#xC5D0;&#xC11C; &#xAD00;&#xB9AC;&#xC790; &#xAD8C;&#xD55C;&#xC73C;&#xB85C; &#xC2E4;&#xD589; &#xB4A4; <a href="https://github.com/felixrieseberg/windows-build-tools">windows-build-tools</a>&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code class="lang-sh"><code class="source-code prettyprint">$ npm install --global --production windows-build-tools</code>
 </code></pre>
 <p>Bluetooth 4.0 USB &#xC5B4;&#xB311;&#xD130;&#xB97C; &#xC704;&#xD558;&#xC5EC; <a href="https://zadig.akeo.ie/">Zadig Tool</a>&#xC744; &#xD1B5;&#xD574; <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/content/index">WinUSB</a> &#xB4DC;&#xB77C;&#xC774;&#xBC84;&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.
@@ -318,8 +367,7 @@ set BLUETOOTH_HCI_SOCKET_USB_PID=0x0aaa</code>
 <h5 id="macos">MacOS</h5><ul>
 <li><a href="https://itunes.apple.com/ca/app/xcode/id497799835?mt=12">Xcode</a>&#xB97C; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.</li>
 </ul>
-<h5 id="linux--ubuntu-debian-raspbian-">Linux (Ubuntu/Debian/Raspbian)</h5><h6 id="&#xAD8C;&#xC7A5;-ubuntu-&#xBC84;&#xC804;">&#xAD8C;&#xC7A5; Ubuntu &#xBC84;&#xC804;</h6><ul>
-<li>SDK&#xC758; &#xAD8C;&#xC7A5; &#xB9AC;&#xB205;&#xC2A4; &#xBC84;&#xC804;&#xC740; Ubuntu 18.04 &#xC785;&#xB2C8;&#xB2E4;.<h6 id="&#xC758;&#xC874;-&#xD328;&#xD0A4;&#xC9C0;-&#xC124;&#xCE58;">&#xC758;&#xC874; &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58;</h6></li>
+<h5 id="linux--ubuntu-debian-raspbian-">Linux (Ubuntu/Debian/Raspbian)</h5><h6 id="&#xC758;&#xC874;-&#xD328;&#xD0A4;&#xC9C0;-&#xC124;&#xCE58;">&#xC758;&#xC874; &#xD328;&#xD0A4;&#xC9C0; &#xC124;&#xCE58;</h6><ul>
 <li>libbluetooth-dev &#xD328;&#xD0A4;&#xC9C0; &#xB4F1;&#xC744; &#xB2E4;&#xC74C; &#xCEE4;&#xB9E8;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC124;&#xCE58;&#xD569;&#xB2C8;&#xB2E4;.<pre><code class="lang-sh"><code class="source-code prettyprint">$sudo apt-get install bluetooth bluez libbluetooth-dev libudev-dev</code>
 </code></pre>
 </li>
@@ -328,8 +376,8 @@ set BLUETOOTH_HCI_SOCKET_USB_PID=0x0aaa</code>
 </code></pre>
 </li>
 </ul>
-<h4 id="node-js">Node.js</h4><p>buildthing-beacon-sdk 1.1.4 &#xBC84;&#xC804; &#xC774;&#xC0C1;&#xBD80;&#xD130; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h5 id="node-js---&#xC608;&#xC81C;">Node.js : &#xC608;&#xC81C;</h5><pre><code><code class="source-code prettyprint">const buildthing = require(&apos;buildthing-beacon-sdk&apos;)
+<h4 id="node-js">Node.js</h4><p>buildthing-ble-sdk 1.1.4 &#xBC84;&#xC804; &#xC774;&#xC0C1;&#xBD80;&#xD130; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="node-js---&#xC608;&#xC81C;">Node.js : &#xC608;&#xC81C;</h5><pre><code><code class="source-code prettyprint">const buildthing = require(&apos;buildthing-ble-sdk&apos;)
 const Manager = buildthing.Manager
 
 const bleManager = new Manager()
@@ -349,7 +397,7 @@ function main() {
 <pre><code class="lang-sh"><code class="source-code prettyprint">$ npm install electron-packager --save-dev</code>
 </code></pre>
 <p>&#xC790;&#xC138;&#xD55C; &#xC124;&#xC815; &#xBC0F; &#xC0AC;&#xC6A9; &#xBC29;&#xBC95;&#xC740; <a href="https://github.com/electron-userland/electron-packager">electron-packager</a> &#xC5D0;&#xC11C; &#xD655;&#xC778;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<h6 id="package-json">package.json</h6><p>electron-packager &#xB85C; &#xBE4C;&#xB4DC;&#xB97C; &#xC218;&#xD589;&#xD558;&#xB294; &#xACBD;&#xC6B0;, package.json &#xB0B4; dependencies&#xC5D0; buildthing-beacon-sdk&#xB97C; &#xBA85;&#xC2DC;&#xD574;&#xC57C;&#xB9CC;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h6 id="package-json">package.json</h6><p>electron-packager &#xB85C; &#xBE4C;&#xB4DC;&#xB97C; &#xC218;&#xD589;&#xD558;&#xB294; &#xACBD;&#xC6B0;, package.json &#xB0B4; dependencies&#xC5D0; buildthing-ble-sdk&#xB97C; &#xBA85;&#xC2DC;&#xD574;&#xC57C;&#xB9CC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code><code class="source-code prettyprint">{
   &quot;name&quot;: &quot;electron-quick-start&quot;,
   &quot;version&quot;: &quot;1.0.0&quot;,
@@ -374,12 +422,12 @@ function main() {
     &quot;electron-packager&quot;: &quot;^13.1.1&quot;
   },
   &quot;dependencies&quot;: {
-    &quot;buildthing-beacon-sdk&quot;: &quot;^1.0.0&quot;
+    &quot;buildthing-ble-sdk&quot;: &quot;^1.1.6&quot;
   }
 }</code>
-</code></pre><h6 id="windows-&#xAC1C;&#xBC1C;-&#xD658;&#xACBD;-&#xC124;&#xC815;---&#xBD88;&#xD544;&#xC694;-&#xC758;&#xC874;-&#xBAA8;&#xB4C8;-&#xC0AD;&#xC81C;-&#xBC0F;-&#xC7AC;&#xBE4C;&#xB4DC;-&#xC218;&#xD589;--windows-&#xD658;&#xACBD;-&#xD544;&#xC218;-">Windows &#xAC1C;&#xBC1C; &#xD658;&#xACBD; &#xC124;&#xC815; : &#xBD88;&#xD544;&#xC694; &#xC758;&#xC874; &#xBAA8;&#xB4C8; &#xC0AD;&#xC81C; &#xBC0F; &#xC7AC;&#xBE4C;&#xB4DC; &#xC218;&#xD589; (Windows &#xD658;&#xACBD; &#xD544;&#xC218;)</h6><p>Electron&#xC744; Windows &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;, Electron &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB0B4; <code>/node_modules/</code> &#xC5D0; &#xC124;&#xCE58;&#xB418;&#xB294; <code>noble-mac</code>&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xACE0; <code>/node_modules/buildthing-beaon-sdk/package.json</code> &#xB0B4; <code>dependencies</code> &#xC5D0;&#xC11C; <code>noble-mac&#xC744; &#xC81C;&#xAC70;</code> &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xD6C4; <code>node_modules/.bin/electron-rebuild</code> &#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xCF1C;&#xC57C;, &#xC774;&#xD6C4;&#xC5D0; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; electron &#xBE4C;&#xB4DC;&#xAC00; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
-<h5 id="electron---&#xC608;&#xC81C;">Electron : &#xC608;&#xC81C;</h5><p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; renderer.js(Renderer Process)&#xC5D0;&#xC11C; buildthing-beacon-sdk&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code><code class="source-code prettyprint">const { Manager } = require(&apos;buildthing-beacon-sdk&apos;)
+</code></pre><h6 id="windows-&#xAC1C;&#xBC1C;-&#xD658;&#xACBD;-&#xC124;&#xC815;---&#xBD88;&#xD544;&#xC694;-&#xC758;&#xC874;-&#xBAA8;&#xB4C8;-&#xC0AD;&#xC81C;-&#xBC0F;-&#xC7AC;&#xBE4C;&#xB4DC;-&#xC218;&#xD589;--sdk-v1-1-5-&#xC774;&#xD558;-buildthing-beacon-sdk--&#xD544;&#xC218;-&#xC0AC;&#xD56D;-">Windows &#xAC1C;&#xBC1C; &#xD658;&#xACBD; &#xC124;&#xC815; : &#xBD88;&#xD544;&#xC694; &#xC758;&#xC874; &#xBAA8;&#xB4C8; &#xC0AD;&#xC81C; &#xBC0F; &#xC7AC;&#xBE4C;&#xB4DC; &#xC218;&#xD589; (SDK v1.1.5 &#xC774;&#xD558;(buildthing-beacon-sdk) &#xD544;&#xC218; &#xC0AC;&#xD56D;)</h6><p>Electron&#xC744; Windows &#xC5D0;&#xC11C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xACBD;&#xC6B0;, Electron &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xB0B4; <code>/node_modules/</code> &#xC5D0; &#xC124;&#xCE58;&#xB418;&#xB294; <code>noble-mac</code>&#xC744; &#xC0AD;&#xC81C;&#xD558;&#xACE0; <code>/node_modules/buildthing-beacon-sdk/package.json</code> &#xB0B4; <code>dependencies</code> &#xC5D0;&#xC11C; <code>noble-mac&#xC744; &#xC81C;&#xAC70;</code> &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xD6C4; <code>node_modules/.bin/electron-rebuild</code> &#xB97C; &#xC2E4;&#xD589;&#xC2DC;&#xCF1C;&#xC57C;, &#xC774;&#xD6C4;&#xC5D0; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; electron &#xBE4C;&#xB4DC;&#xAC00; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+<h5 id="electron---&#xC608;&#xC81C;">Electron : &#xC608;&#xC81C;</h5><p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; renderer.js(Renderer Process)&#xC5D0;&#xC11C; buildthing-ble-sdk&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+<pre><code><code class="source-code prettyprint">const { Manager } = require(&apos;buildthing-ble-sdk&apos;)
 
 window.addEventListener(&quot;load&quot;, function(event) {
   var bleManager = new Manager()
@@ -395,7 +443,7 @@ window.addEventListener(&quot;load&quot;, function(event) {
   window.bleManager = bleManager
 });
 </code>
-</code></pre><h5 id="electron-vue---&#xC608;&#xC81C;">Electron-vue : &#xC608;&#xC81C;</h5><p>Electron &#xACFC; vue.js &#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9; &#xD558;&#xB294; &#xACBD;&#xC6B0;, <a href="https://github.com/SimulatedGREG/electron-vue">electron-vue</a> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30; &#xAD6C;&#xC131;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; buildthing-beacon-sdk&#xB97C; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</code></pre><h5 id="electron-vue---&#xC608;&#xC81C;">Electron-vue : &#xC608;&#xC81C;</h5><p>Electron &#xACFC; vue.js &#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9; &#xD558;&#xB294; &#xACBD;&#xC6B0;, <a href="https://github.com/SimulatedGREG/electron-vue">electron-vue</a> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30; &#xAD6C;&#xC131;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; buildthing-ble-sdk&#xB97C; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code><code class="source-code prettyprint">// LandingPage.vue
 
 &lt;template&gt;
@@ -409,7 +457,7 @@ window.addEventListener(&quot;load&quot;, function(event) {
 
 &lt;script&gt;
   import SystemInformation from &apos;./LandingPage/SystemInformation&apos;
-  import { Manager } from &apos;buildthing-beacon-sdk&apos;
+  import { Manager } from &apos;buildthing-ble-sdk&apos;
 
   export default {
     name: &apos;landing-page&apos;,
@@ -436,9 +484,9 @@ window.addEventListener(&quot;load&quot;, function(event) {
  ...
 &lt;/style&gt;
 </code>
-</code></pre><h5 id="electron-react---&#xC608;&#xC81C;">Electron-react : &#xC608;&#xC81C;</h5><p>Electron &#xACFC; React &#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9; &#xD558;&#xB294; &#xACBD;&#xC6B0;, <a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">electron-react-boilerplate</a> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30; &#xAD6C;&#xC131;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; buildthing-beacon-sdk&#xB97C; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+</code></pre><h5 id="electron-react---&#xC608;&#xC81C;">Electron-react : &#xC608;&#xC81C;</h5><p>Electron &#xACFC; React &#xB97C; &#xAC19;&#xC774; &#xC0AC;&#xC6A9; &#xD558;&#xB294; &#xACBD;&#xC6B0;, <a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">electron-react-boilerplate</a> &#xB97C; &#xC774;&#xC6A9;&#xD574; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30; &#xAD6C;&#xC131;&#xC744; &#xD558;&#xB294; &#xAC83;&#xC744; &#xAD8C;&#xC7A5;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC74C;&#xACFC; &#xAC19;&#xC774; buildthing-ble-sdk&#xB97C; &#xC0AC;&#xC6A9; &#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 <pre><code><code class="source-code prettyprint">import React, { Component } from &apos;react&apos;;
-import { Manager } from &apos;buildthing-beacon-sdk&apos;;
+import { Manager } from &apos;buildthing-ble-sdk&apos;;
 import styles from &apos;./Home.css&apos;;
 
 type Props = {};
@@ -471,7 +519,7 @@ export default class Home extends Component&lt;Props&gt; {
     );
   }
 }</code>
-</code></pre><h3 id="&#xACF5;&#xD1B5;-webpack-&#xC124;&#xC815;">&#xACF5;&#xD1B5; Webpack &#xC124;&#xC815;</h3><h4 id="webpack-&#xBBF8;&#xC0AC;&#xC6A9;">Webpack &#xBBF8;&#xC0AC;&#xC6A9;</h4><p>Webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; /node_modules/buildthing-beacon-sdk/index.js&#xB97C; &#xC218;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
+</code></pre><h3 id="&#xACF5;&#xD1B5;-webpack-&#xC124;&#xC815;">&#xACF5;&#xD1B5; Webpack &#xC124;&#xC815;</h3><h4 id="webpack-&#xBBF8;&#xC0AC;&#xC6A9;">Webpack &#xBBF8;&#xC0AC;&#xC6A9;</h4><p>Webpack&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; /node_modules/buildthing-ble-sdk/index.js&#xB97C; &#xC218;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <h5 id="mobile">Mobile</h5><pre><code><code class="source-code prettyprint">// for Mobile (iOS, Android) (No Webpack Configuration)
 var BuildThingBLE =  require(&apos;./dist/buildthing.ble.cordova.js&apos;)
 module.exports = BuildThingBLE</code>
@@ -485,36 +533,35 @@ module.exports = BuildThingBLE</code>
 var BuildThingBLE = require(&apos;./dist/buildthing.ble.win32.electron.js&apos;)
 module.exports = BuildThingBLE</code>
 </code></pre><h5 id="linux">Linux</h5><pre><code><code class="source-code prettyprint">// for Linux (No Webpack Configuration)
-// for Linux - Node.js
-var BuildThingBLE = require(&apos;./dist/buildthing.ble.linux.node.js&apos;)
+var BuildThingBLE = require(&apos;./dist/buildthing.ble.linux.js&apos;)
 module.exports = BuildThingBLE</code>
 </code></pre><h4 id="webpack-&#xC0AC;&#xC6A9;">Webpack &#xC0AC;&#xC6A9;</h4><p>&#xC544;&#xB798;&#xC640; &#xAC19;&#xC774; Webpack.config.js &#xD30C;&#xC77C;&#xC5D0;&#xC11C; alias &#xB97C; &#xC124;&#xC815;&#xD558;&#xC5EC; &#xD50C;&#xB7AB;&#xD3FC; &#xBCC4;&#xB85C; &#xB2E4;&#xB978; buildthing-ble-sdk bundle  &#xD30C;&#xC77C;&#xC744; &#xCC38;&#xC870;&#xD558;&#xC5EC; &#xAC1C;&#xBC1C;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <pre><code><code class="source-code prettyprint">const path = require(&apos;path&apos;)
 // Set Root Path
 const ROOT_PATH = path.resolve(__dirname, &apos;../&apos;)
-const NODE_MODULE_PATH = &apos;/node_modules/buildthing-beacon-sdk/dist/&apos;
+const NODE_MODULE_PATH = &apos;/node_modules/buildthing-ble-sdk/dist/&apos;
 
 //Target Platform
 const CORDOVA_BUNDLE = &apos;buildthing.ble.cordova.js&apos;
 //const MACOS_BUNDLE = &apos;buildthing.ble.darwin.js&apos;
 //const WINDOWS_NODE_BUNDLE = &apos;buildthing.ble.win32.node.js&apos;
 //const WINDOWS_ElECTRON_BUNDLE = &apos;buildthing.ble.win32.electron.js&apos;
-//const LINUX_NODE_BUNDLE = &apos;buildthing.ble.linux.node.js&apos;
+//const LINUX_BUNDLE = &apos;buildthing.ble.linux.js&apos;
 
 //.. Webpack Config Object
     resolve: {
         alias: {
-          &apos;buildthing-beacon-sdk&apos;: ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE
+          &apos;buildthing-ble-sdk&apos;: ROOT_PATH + NODE_MODULE_PATH + CORDOVA_BUNDLE
         }
     }</code>
 </code></pre><h2 id="api-&#xBB38;&#xC11C;">API &#xBB38;&#xC11C;</h2><p>&#xD50C;&#xB7AB;&#xD3FC; &#xBCC4; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC0AC;&#xC6A9;&#xC758; &#xC608;&#xC81C; &#xCF54;&#xB4DC;&#xB294; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
-<pre><code><code class="source-code prettyprint">import { Manager } from &apos;buildthing-beacon-sdk&apos;
+<pre><code><code class="source-code prettyprint">import { Manager } from &apos;buildthing-ble-sdk&apos;
 var manager = new Manager()
 manager.on(&apos;discover&apos;, function(beacon){...})
 manager.startScan() //&#xC2A4;&#xCE94; &#xC2DC;&#xC791;
 manager.stopScan() //&#xC2A4;&#xCE94; &#xC885;&#xB8CC;</code>
 </code></pre><p>&#xC0C1;&#xC138;&#xD55C; API&#xB294; &#xC544;&#xB798; &#xBB38;&#xC11C;&#xB97C; &#xCC38;&#xACE0;&#xD574;&#xC8FC;&#xC2DC;&#xAE30; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.
-<a href="https://buildit-lab.github.io/buildthing-beacon-sdk/">API &#xBB38;&#xC11C; &#xBC14;&#xB85C;&#xAC00;&#xAE30;</a></p>
+<a href="https://buildit-lab.github.io/buildthing-ble-sdk/">API &#xBB38;&#xC11C; &#xBC14;&#xB85C;&#xAC00;&#xAE30;</a></p>
 <h2 id="scan-response">Scan Response</h2><p>BuildThing beacon &#xC2A4;&#xCE94; &#xC218;&#xD589; &#xC2DC;, Scan Response&#xB85C; &#xC218;&#xC2E0;&#xB418;&#xB294; Service UUID&#xC640; Service &#xBCC4; &#xC218;&#xC2E0; &#xAC12;&#xC740; &#xC544;&#xB798;&#xC640; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.
 &#xC544;&#xB798; Scan Response&#xB294; BuildThing, iBeacon, Eddystone &#xBAA8;&#xB4DC; &#xBAA8;&#xB450; &#xB3D9;&#xC77C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 <table>

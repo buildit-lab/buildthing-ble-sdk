@@ -15,5 +15,5 @@
 // for Mobile (iOS, Android) (No Webpack Configuration)
 // var BuildThingBLE =  require('./dist/buildthing.ble.cordova.js')
 // for Webpack alias Configuration
-var BuildThingBLE = require('buildthing-beacon-sdk')
+var BuildThingBLE = require('buildthing-ble-sdk')
 module.exports = BuildThingBLE
