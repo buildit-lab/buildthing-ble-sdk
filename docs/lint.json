@@ -1,1 +1,229 @@
-[]
+[
+  {
+    "name": "BuildThingGateway#setSerialNumber",
+    "filePath": "src/core/device/gateway/buildthing-gateway.js",
+    "lines": [
+      {
+        "lineNumber": 568
+      },
+      {
+        "lineNumber": 569
+      },
+      {
+        "lineNumber": 570
+      },
+      {
+        "lineNumber": 571
+      },
+      {
+        "lineNumber": 572
+      },
+      {
+        "lineNumber": 573
+      }
+    ],
+    "codeParams": [
+      "serialNumber"
+    ],
+    "docParams": [
+      "serverId"
+    ]
+  },
+  {
+    "name": "BuildThingIAQParser#_getScoreFromCAI",
+    "filePath": "src/core/parser/buildthing-iaq-parser.js",
+    "lines": [
+      {
+        "lineNumber": 237
+      },
+      {
+        "lineNumber": 238
+      },
+      {
+        "lineNumber": 239
+      },
+      {
+        "lineNumber": 240
+      },
+      {
+        "lineNumber": 241
+      },
+      {
+        "lineNumber": 242
+      },
+      {
+        "lineNumber": 243
+      }
+    ],
+    "codeParams": [
+      "sensorType",
+      "status",
+      "value"
+    ],
+    "docParams": [
+      "sensorType",
+      "value"
+    ]
+  },
+  {
+    "name": "GatewayParser#_getAdvertisingDataHexString",
+    "filePath": "src/core/parser/gateway-parser.js",
+    "lines": [
+      {
+        "lineNumber": 224
+      },
+      {
+        "lineNumber": 225
+      },
+      {
+        "lineNumber": 226
+      },
+      {
+        "lineNumber": 227
+      },
+      {
+        "lineNumber": 228
+      },
+      {
+        "lineNumber": 229
+      },
+      {
+        "lineNumber": 230
+      },
+      {
+        "lineNumber": 231
+      }
+    ],
+    "codeParams": [
+      "peripheral"
+    ],
+    "docParams": [
+      "peripheral",
+      "beaconMode"
+    ]
+  },
+  {
+    "name": "Connection#_parseReadResponse",
+    "filePath": "src/service/connection.js",
+    "lines": [
+      {
+        "lineNumber": 767
+      },
+      {
+        "lineNumber": 768
+      },
+      {
+        "lineNumber": 769
+      },
+      {
+        "lineNumber": 770
+      },
+      {
+        "lineNumber": 771
+      },
+      {
+        "lineNumber": 772
+      },
+      {
+        "lineNumber": 773
+      },
+      {
+        "lineNumber": 774
+      },
+      {
+        "lineNumber": 775
+      },
+      {
+        "lineNumber": 776
+      },
+      {
+        "lineNumber": 777
+      }
+    ],
+    "codeParams": [
+      "resData",
+      "isAscii",
+      "isNumber",
+      "resByte",
+      "possibleEmptyResult"
+    ],
+    "docParams": [
+      "resData",
+      "isAscii",
+      "isNumber",
+      "resByte"
+    ]
+  },
+  {
+    "name": "Connection#changeScanTime",
+    "filePath": "src/service/connection.js",
+    "lines": [
+      {
+        "lineNumber": 1167
+      },
+      {
+        "lineNumber": 1168
+      },
+      {
+        "lineNumber": 1169
+      },
+      {
+        "lineNumber": 1170
+      },
+      {
+        "lineNumber": 1171
+      },
+      {
+        "lineNumber": 1172
+      },
+      {
+        "lineNumber": 1173
+      }
+    ],
+    "codeParams": [
+      "scanTime"
+    ],
+    "docParams": [
+      "scanType"
+    ]
+  },
+  {
+    "name": "Manager#startScan",
+    "filePath": "src/service/manager.js",
+    "lines": [
+      {
+        "lineNumber": 576
+      },
+      {
+        "lineNumber": 577
+      },
+      {
+        "lineNumber": 578
+      },
+      {
+        "lineNumber": 579
+      },
+      {
+        "lineNumber": 580
+      },
+      {
+        "lineNumber": 581
+      },
+      {
+        "lineNumber": 582
+      },
+      {
+        "lineNumber": 583
+      },
+      {
+        "lineNumber": 584
+      }
+    ],
+    "codeParams": [
+      "scanType"
+    ],
+    "docParams": [
+      "스캐너"
+    ]
+  }
+]

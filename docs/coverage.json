@@ -1,48 +1,8 @@
 {
-  "coverage": "89.01%",
-  "expectCount": 519,
-  "actualCount": 462,
+  "coverage": "83.13%",
+  "expectCount": 753,
+  "actualCount": 626,
   "files": {
-    "src/core/beacon/beacon.js": {
-      "expectCount": 38,
-      "actualCount": 38,
-      "undocumentLines": []
-    },
-    "src/core/beacon/buildthing-beacon.js": {
-      "expectCount": 24,
-      "actualCount": 24,
-      "undocumentLines": []
-    },
-    "src/core/beacon/eddystone-tlm.js": {
-      "expectCount": 17,
-      "actualCount": 17,
-      "undocumentLines": []
-    },
-    "src/core/beacon/eddystone-uid.js": {
-      "expectCount": 9,
-      "actualCount": 9,
-      "undocumentLines": []
-    },
-    "src/core/beacon/eddystone-url.js": {
-      "expectCount": 9,
-      "actualCount": 9,
-      "undocumentLines": []
-    },
-    "src/core/beacon/eddystone.js": {
-      "expectCount": 8,
-      "actualCount": 8,
-      "undocumentLines": []
-    },
-    "src/core/beacon/ibeacon.js": {
-      "expectCount": 18,
-      "actualCount": 18,
-      "undocumentLines": []
-    },
-    "src/core/beacon-parser.js": {
-      "expectCount": 45,
-      "actualCount": 45,
-      "undocumentLines": []
-    },
     "src/core/ble-resolver.js": {
       "expectCount": 3,
       "actualCount": 3,
@@ -53,20 +13,125 @@
       "actualCount": 11,
       "undocumentLines": []
     },
+    "src/core/device/beacon/beacon.js": {
+      "expectCount": 20,
+      "actualCount": 20,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/buildthing-beacon.js": {
+      "expectCount": 24,
+      "actualCount": 24,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/eddystone-tlm.js": {
+      "expectCount": 17,
+      "actualCount": 17,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/eddystone-uid.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/eddystone-url.js": {
+      "expectCount": 9,
+      "actualCount": 9,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/eddystone.js": {
+      "expectCount": 8,
+      "actualCount": 8,
+      "undocumentLines": []
+    },
+    "src/core/device/beacon/ibeacon.js": {
+      "expectCount": 18,
+      "actualCount": 18,
+      "undocumentLines": []
+    },
+    "src/core/device/device.js": {
+      "expectCount": 23,
+      "actualCount": 22,
+      "undocumentLines": [
+        157
+      ]
+    },
+    "src/core/device/gateway/buildthing-gateway.js": {
+      "expectCount": 69,
+      "actualCount": 69,
+      "undocumentLines": []
+    },
+    "src/core/device/iaq/buildthing-iaq.js": {
+      "expectCount": 42,
+      "actualCount": 25,
+      "undocumentLines": [
+        117,
+        120,
+        124,
+        128,
+        132,
+        136,
+        140,
+        144,
+        148,
+        152,
+        156,
+        160,
+        164,
+        168,
+        172,
+        176,
+        180
+      ]
+    },
     "src/core/event-emitter.js": {
       "expectCount": 8,
       "actualCount": 8,
       "undocumentLines": []
     },
+    "src/core/parser/beacon-parser.js": {
+      "expectCount": 35,
+      "actualCount": 35,
+      "undocumentLines": []
+    },
+    "src/core/parser/buildthing-iaq-parser.js": {
+      "expectCount": 29,
+      "actualCount": 22,
+      "undocumentLines": [
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23
+      ]
+    },
+    "src/core/parser/gateway-parser.js": {
+      "expectCount": 23,
+      "actualCount": 18,
+      "undocumentLines": [
+        11,
+        13,
+        15,
+        17,
+        19
+      ]
+    },
+    "src/core/parser/parser.js": {
+      "expectCount": 12,
+      "actualCount": 12,
+      "undocumentLines": []
+    },
     "src/core/util.js": {
-      "expectCount": 17,
+      "expectCount": 18,
       "actualCount": 12,
       "undocumentLines": [
         4,
         17,
         207,
         217,
-        231
+        231,
+        241
       ]
     },
     "src/service/calculator/base.js": {
@@ -86,7 +151,7 @@
       "expectCount": 3,
       "actualCount": 2,
       "undocumentLines": [
-        71
+        77
       ]
     },
     "src/service/calculator/log-distance-path.js": {
@@ -104,13 +169,49 @@
       ]
     },
     "src/service/connection.js": {
-      "expectCount": 63,
-      "actualCount": 59,
+      "expectCount": 107,
+      "actualCount": 67,
       "undocumentLines": [
-        47,
-        79,
-        115,
-        116
+        29,
+        116,
+        148,
+        184,
+        185,
+        671,
+        825,
+        1200,
+        1206,
+        1214,
+        1220,
+        1231,
+        1237,
+        1245,
+        1251,
+        1257,
+        1265,
+        1295,
+        1301,
+        1307,
+        1315,
+        1321,
+        1327,
+        1333,
+        1339,
+        1345,
+        1352,
+        1359,
+        1366,
+        1373,
+        1379,
+        1385,
+        1391,
+        1397,
+        1404,
+        1410,
+        1416,
+        1422,
+        1430,
+        1436
       ]
     },
     "src/service/filter/arma.js": {
@@ -158,17 +259,17 @@
       "undocumentLines": []
     },
     "src/service/manager.js": {
-      "expectCount": 59,
-      "actualCount": 51,
+      "expectCount": 68,
+      "actualCount": 60,
       "undocumentLines": [
-        21,
-        26,
-        31,
-        36,
-        40,
-        45,
-        127,
-        157
+        23,
+        28,
+        33,
+        38,
+        42,
+        47,
+        134,
+        164
       ]
     },
     "src/service/monitoring.js": {
@@ -180,25 +281,30 @@
       ]
     },
     "src/service/ranging.js": {
-      "expectCount": 51,
-      "actualCount": 51,
-      "undocumentLines": []
+      "expectCount": 54,
+      "actualCount": 52,
+      "undocumentLines": [
+        448,
+        458
+      ]
     },
     "src/service/region.js": {
       "expectCount": 15,
       "actualCount": 10,
       "undocumentLines": [
-        50,
-        87,
-        98,
-        109,
-        120
+        53,
+        96,
+        107,
+        118,
+        129
       ]
     },
     "src/service/scanner.js": {
-      "expectCount": 26,
-      "actualCount": 26,
-      "undocumentLines": []
+      "expectCount": 33,
+      "actualCount": 32,
+      "undocumentLines": [
+        154
+      ]
     }
   }
 }

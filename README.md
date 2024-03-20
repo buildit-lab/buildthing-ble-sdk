@@ -1,15 +1,16 @@
-# BuildThing™ ️beacon SDK
+# BuildThing™ ️Beacon/IAQ SDK
 
-[![BuildThing beacon](https://buildit.kr/dist/img/img-buildthing-beacon.ade36617.png)](https://buildit.kr/products/beacon-and-sdk)
+[![BuildThing Beacon](https://buildit.kr/dist/img/icon-40@2x.png)](https://buildit.kr/products/beacon-and-sdk)[![BuildThing Beacon](https://buildit.kr/dist/img/iaq-icon-40@2x.png)](https://buildit.kr/products/beacon-and-sdk)
 
-BuildThing™ beacon SDK는 Javascript로 구현된 Cross Platform SDK 입니다.
+BuildThing™ Beacon/IAQ SDK는 Javascript로 구현된 Cross Platform SDK 입니다.
 [Cordova](https://cordova.apache.org/) 및 [Node.js](https://nodejs.org/ko/) 기반으로 동작하며, [Cordova](https://cordova.apache.org/) 환경의 iOS/Android, [Electron](https://electronjs.org/) 환경의 Windows/MacOS/Linux 어플리케이션 배포가 가능합니다.
 SDK에서 제공하는 주요 기능들은 다음과 같습니다.
 
-  - BuildThing™ beacon의 스캔 및 Advertising Packet 수신
-  - BuildThing™ beacon 연결 및 비콘 값 설정
-  - BuildThing™ beacon 영역의 진입/이탈 이벤트 수신 (Monitoring)
-  - BuildThing™ beacon 과의 거리 확인 (Ranging)
+  - BuildThing™ Beacon의 스캔 및 Advertising Packet 수신
+  - BuildThing™ Beacon 연결 및 비콘 값 설정
+  - BuildThing™ Beacon 영역의 진입/이탈 이벤트 수신 (Monitoring)
+  - BuildThing™ Beacon 과의 거리 확인 (Ranging)
+  - BuildThing™ IAQ 스캔 및 Advertising Packet 수신
 
 ## 목차
 * [설치](#설치)
@@ -22,7 +23,7 @@ SDK에서 제공하는 주요 기능들은 다음과 같습니다.
 * [고객 문의](#고객-문의)
 
 ## 설치
-BuildThing™ beacon SDK의 실행을 위해서는 [Node.js](https://nodejs.org/) 8.x를 필요로합니다.
+BuildThing™ Beacon/IAQ SDK의 실행을 위해서는 [Node.js](https://nodejs.org/) 8.x 이상을 필요로합니다.
 
 ```sh
 $ npm install buildthing-ble-sdk
@@ -500,6 +501,7 @@ manager.stopScan() //스캔 종료
 [API 문서 바로가기](https://buildit-lab.github.io/buildthing-ble-sdk/)
 
 ## Scan Response
+### BuildThing Beacon
 BuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.
 아래 Scan Response는 BuildThing, iBeacon, Eddystone 모드 모두 동일합니다.
 
@@ -508,7 +510,16 @@ BuildThing beacon 스캔 수행 시, Scan Response로 수신되는 Service UUID�
 | Device Information & Firmware Version | 0x180A | 0x983006 또는 0x3006XX | 0x983006 : 펌웨어 v1.0, 0x3006XX : 펌웨어 vXX/10 (예 : 0x300611은 펌웨어 v1.1)
 | Mac Address | 0xADD0 | Mac Address | - |
 
+### BuildThing IAQ
+BuildThing IAQ 스캔 수행 시, Scan Response로 수신되는 Service UUID와 Service 별 수신 값은 아래와 같습니다.
+
+| 항목 | Service UUID | 수신 값 | 비고 |
+| ------ | ------ | ------ |------ |
+| Device Information & Firmware Version | 0x180A | 0x3700XX | 0x3700XX: 펌웨어 vXX (예 : 0x370011은 펌웨어 v1.1)
+| Mac Address | 0xADD0 | Mac Address | - |
+
 ## Advertising Packet
+### BuildThing Beacon
 BuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertising Packet 을 지원합니다. Advertising Packet을 수신하기 위한 각 모드 별 UUID 및 Service UUID는 다음과 같습니다.
 
 | 비콘 모드 | UUID | Service UUID |
@@ -519,6 +530,16 @@ BuildThing beacon은 BuildThing 모드 외 iBeacon, Eddystone 모드의 Advertis
 
 비콘 모드 별 수신되는 Advertising Packet Format은 아래와 같습니다.
 [![BuildThing beacon Advertising Packet Format](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)](https://buildit.kr/dist/assets/buildthing-beacon-advertising-packet-format.png)
+
+### BuildThing IAQ
+BuildThing IAQ의 Advertising Packet을 수신하기 위한 Service UUID는 다음과 같습니다.
+
+| 비콘 모드 | UUID | Service UUID |
+| ------ | ------ | ------ |
+| IAQ | - | 0xBCBC |
+
+수신되는 Advertising Packet Format은 아래와 같습니다.
+[![BuildThing IAQ Advertising Packet Format](https://buildit.kr/dist/img/iaq-packet.png)](https://buildit.kr/dist/img/iaq-packet.png)
 
 ## Connection Service
 아래 Connection Service UUID를 통하여 BuildThing beacon Connection Service에 연결합니다.
@@ -538,7 +559,11 @@ Connection이 완료되면 아래 2개의 Characteristic에 접근할 수 있습
 설정 시, 아래와 같은 전송 패킷 포맷으로 Write 합니다.
 **최초 Password 값은 000000** 입니다.
 
+### BuildThing Beacon
 [![BuildThing beacon Connection Service](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)](https://buildit.kr/dist/assets/buildthing-beacon-connection-service.png)
+
+### BuildThing IAQ
+[![BuildThing IAQ Connection Service](https://buildit.kr/dist/img/iaq-connection.png)](https://buildit.kr/dist/img/iaq-connection.png)
 
 ## 참고 사항
 ### 거리 계산 테스트
